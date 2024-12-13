@@ -1,3 +1,5 @@
 /node_modules
 /.vscode
-next-env.d.ts
+/.next
+/.env
+/next-env.d.ts

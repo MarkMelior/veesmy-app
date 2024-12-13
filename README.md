@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Veesmy App
 
-## Getting Started
+> Лучшее приложение для записи результатов тренировок
 
-First, run the development server:
+Продемонстрировать свои навыки, это не про "усложнить проект" (ручная настройка webpack, всевозможные самописные утилиты, размазывание не переиспользуемого функционала по всей архитектуре, тесты на всё). Настоящее мастерство находится в простоте
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Общие правила проекта
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Оставлять комментарии к сложному функционалу.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##### Git
 
-## Learn More
+- `add` - Добавление нового функционала;
+- `fix` - Исправление какой-либо программной ошибки;
+- `refactor` - Изменения в коде, не исправляющие ошибок и не добавляющие новый функционал;
+- `test` - Добавление новых тестов или исправление существующих;
+- `core` - Любые другие изменения.
 
-To learn more about Next.js, take a look at the following resources:
+> Пример названия ветки: `feature/VEES-330-short-description`
+> Пример сообщения коммита: `VEES-330 | Short description`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Скрипты
 
-## Deploy on Vercel
+- `yarn dev` - Запуск в Development режиме;
+- `yarn build` - Production сборка;
+- `yarn start` - Запуск Production сборки;
+- `yarn lint` - Проверка линтером.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Архитектура проекта
+
+Проект написан в соответствии с архитектурной методологией [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/tutorial) и [AppRouter](https://nextjs.org/docs/app) Next.js 15.
+
+- [app](/src/app/) - [AppRouter](https://nextjs.org/docs/app);
+- [widgets](/src/widgets/) - Большие, автономные блоки функциональности или пользовательского интерфейса;
+- [features](/src/features/) - Повторно используемые реализации целых функций продукта;
+- [entities](/src/entities/) - Бизнес сущности;
+- [shared](/src/shared/) - Многократно-переиспользуемые компоненты и функции.
