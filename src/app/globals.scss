@@ -2,20 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+// :root {
+// 	--z-navbar: 40;
+// 	--z-light: 30;
+// 	--z-notification: 30;
+// }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+	font-size: 16px;
+
+	@media (max-width: theme('screens.sm')) {
+		font-size: 15px;
+	}
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+	min-height: 100vh;
+	background: linear-gradient(90deg, theme('colors.base.950') 15px, transparent 1%) 50%, linear-gradient(theme('colors.base.950') 15px, theme('colors.base.800') 1%) 0, hsla(0deg, 0%, 100%, 16%);
+	background-size: 16px 16px;
+
+	[data-mode="light"] & {
+		background: linear-gradient(90deg, theme('colors.base.100') 15px, transparent 1%) 50%, linear-gradient(theme('colors.base.100') 15px, theme('colors.base.300') 1%) 0, hsla(0deg, 0%, 100%, 16%);
+		background-size: 16px 16px;
+	}
+
+}
+
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-base-100;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-base-300;
+
+	&:hover {
+		@apply bg-base-600;
+	}
 }

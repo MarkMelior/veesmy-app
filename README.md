@@ -10,16 +10,15 @@
 
 - Оставлять комментарии к сложному функционалу.
 
-##### Git
+#### Git
 
-- `add` - Добавление нового функционала;
+- `feature` - Добавление нового функционала;
 - `fix` - Исправление какой-либо программной ошибки;
 - `refactor` - Изменения в коде, не исправляющие ошибок и не добавляющие новый функционал;
 - `test` - Добавление новых тестов или исправление существующих;
 - `core` - Любые другие изменения.
 
-> Пример названия ветки: `feature/VEES-330-short-description`
-> Пример сообщения коммита: `VEES-330 | Short description`
+> Пример названия ветки: `feature/VEES-330-short-description`. Пример сообщения коммита: `VEES-330 | Short description`
 
 ---
 
@@ -36,7 +35,7 @@
 
 Проект написан в соответствии с архитектурной методологией [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/tutorial) и [AppRouter](https://nextjs.org/docs/app) Next.js 15.
 
-- [app](/src/app/) - [AppRouter](https://nextjs.org/docs/app);
+- [app](/src/app/) - Все, что обеспечивает работу приложения. [AppRouter](https://nextjs.org/docs/app);
 - [widgets](/src/widgets/) - Большие, автономные блоки функциональности или пользовательского интерфейса;
 - [features](/src/features/) - Повторно используемые реализации целых функций продукта;
 - [entities](/src/entities/) - Бизнес сущности;
