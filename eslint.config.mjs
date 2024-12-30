@@ -40,13 +40,17 @@ const stylisticRules = {
 };
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'plugin:@stylistic/recommended-extends'),
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'plugin:@stylistic/recommended-extends'
+  ),
   {
     rules: {
       ...commonRules,
       ...stylisticRules,
-    }
-  }
+    },
+  },
 ];
 
 export default eslintConfig;

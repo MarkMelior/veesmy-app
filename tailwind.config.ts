@@ -1,10 +1,10 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
-      'base': {
+      base: {
         950: '#0F0F10',
         900: '#161618',
         800: '#232426',
