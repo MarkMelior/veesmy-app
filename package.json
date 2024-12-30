@@ -24,6 +24,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
+    "eslint-plugin-import": "^2.31.0",
     "postcss": "^8",
     "sass": "^1.83.0",
     "stylelint": "^16.12.0",
