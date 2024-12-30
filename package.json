@@ -25,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
     "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-perfectionist": "^4.4.0",
     "postcss": "^8",
     "sass": "^1.83.0",
     "stylelint": "^16.12.0",

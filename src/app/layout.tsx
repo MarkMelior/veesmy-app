@@ -1,23 +1,23 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 
-import './globals.scss';
-
 import type { Metadata } from 'next';
 
+import './globals.scss';
+
 const geistSans = Geist({
-  variable: '--font-geist-sans',
   subsets: ['latin'],
+  variable: '--font-geist-sans',
 });
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
+  variable: '--font-geist-mono',
 });
 
 export const metadata: Metadata = {
-  title: 'Veesmy App',
   description: 'Лучшее приложение для записи результатов тренировок',
+  title: 'Veesmy App',
 };
 
 interface IRootLayout {
