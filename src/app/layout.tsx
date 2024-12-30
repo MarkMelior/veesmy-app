@@ -1,7 +1,9 @@
-import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.scss';
 import { ThemeProvider } from 'next-themes';
+
+import './globals.scss';
+
+import type { Metadata } from 'next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,8 +25,8 @@ interface IRootLayout {
 }
 
 const RootLayout = ({ children }: Readonly<IRootLayout>) => (
-  <html lang="ru" suppressHydrationWarning>
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+  <html lang="ru" suppressHydrationWarning={true}>
+    <body className={`${geistSans.variable} ${geistMono.variable}`}>
       <ThemeProvider attribute="data-mode">{children}</ThemeProvider>
     </body>
   </html>
