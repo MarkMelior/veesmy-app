@@ -1,0 +1,18 @@
+.wrapper {
+  width: 100%;
+}
+
+.layout {
+  padding: 16px;
+  display: flex;
+}
+
+.title {
+  color: theme('colors.base.50');
+  font-weight: 600;
+}
+
+.description {
+  color: theme('colors.base.500');
+  font-size: 0.75rem;
+}

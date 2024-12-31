@@ -24,8 +24,8 @@ const eslintCommonRules = {
   'max-len': [
     'error',
     {
-      code: 120,
-      ignoreComments: false, // Применять правило к комментариям
+      code: 80,
+      ignoreComments: true, // Применять правило к комментариям
       ignoreStrings: false, // Применять правило к строкам
       ignoreTemplateLiterals: false, // Применять правило к шаблонным строкам
       ignoreUrls: true, // Игнорировать длинные ссылки
@@ -38,7 +38,11 @@ const eslintCommonRules = {
   'padding-line-between-statements': [
     'error',
     { blankLine: 'always', next: '*', prev: ['const', 'let', 'var'] },
-    { blankLine: 'any', next: ['const', 'let', 'var'], prev: ['const', 'let', 'var'] },
+    {
+      blankLine: 'any',
+      next: ['const', 'let', 'var'],
+      prev: ['const', 'let', 'var'],
+    },
     { blankLine: 'always', next: 'return', prev: '*' },
   ],
 };
@@ -46,6 +50,12 @@ const eslintCommonRules = {
 const eslintReactRules = {
   // Указывает пропсам значения true и false
   'react/jsx-boolean-value': ['error', 'always'],
+  // Запрет на пропсы-спред, если нужно
+  'react/jsx-props-no-spreading': 'error',
+  // Соответствие стандартным DOM-свойствам
+  'react/no-unknown-property': 'error',
+  // Компоненты должны быть закрыты
+  'react/self-closing-comp': 'error',
 };
 
 const eslintTypescriptRules = {
@@ -53,6 +63,13 @@ const eslintTypescriptRules = {
 };
 
 const eslintPerfectionistRules = {
+  'perfectionist/sort-exports': [
+    'error',
+    {
+      order: 'asc',
+      type: 'natural',
+    },
+  ],
   'perfectionist/sort-interfaces': [
     'error',
     {
@@ -85,6 +102,8 @@ const eslintStylisticRules = {
   '@stylistic/indent': ['error', 2],
   // Запрещает смешанные пробелы и табуляции для отступов.
   '@stylistic/no-mixed-spaces-and-tabs': 'error',
+  // Обеспечивает последовательное использование обратных, двойных или одинарных кавычек.
+  '@stylistic/quotes': ['error', 'single'],
   // Требует или запрещает точки с запятой.
   '@stylistic/semi': ['error', 'always'],
   // Обеспечивает одинаковый интервал после `//` или `/*` в комментарии.
@@ -117,6 +136,13 @@ const eslintImportRules = {
         'unknown', // Неизвестные импорты
       ],
       'newlines-between': 'always',
+      'pathGroups': [
+        {
+          group: 'sibling',
+          pattern: '.*/**/*.scss',
+          position: 'after',
+        },
+      ],
     },
   ],
 };
@@ -142,6 +168,10 @@ const eslintConfig = [
       ...eslintPerfectionistRules,
       'custom-rules/scss-import-name': 'error',
     },
+  },
+  {
+    files: ['**/src/shared/assets/icons/*.tsx'],
+    rules: { 'max-len': 'off' },
   },
 ];
 

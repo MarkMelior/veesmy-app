@@ -24,12 +24,16 @@ interface IRootLayout {
   children: React.ReactNode
 }
 
-const RootLayout = ({ children }: Readonly<IRootLayout>) => (
-  <html lang="ru" suppressHydrationWarning={true}>
-    <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <ThemeProvider attribute="data-mode">{children}</ThemeProvider>
-    </body>
-  </html>
+const RootLayout = ({ children }: IRootLayout) => (
+  (
+    <html lang="ru" suppressHydrationWarning={true}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <ThemeProvider attribute="data-mode">
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
 );
 
 export default RootLayout;

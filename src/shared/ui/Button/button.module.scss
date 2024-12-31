@@ -1,0 +1,14 @@
+.wrapper {
+  transition: all ease .3s;
+  border-radius: 0.5rem;
+  height: fit-content;
+  padding: 0.25rem 0.5rem;
+
+  &:hover {
+    background: red;
+  }
+}
+
+.iconOnly {
+  padding: 0.25rem;
+}

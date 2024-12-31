@@ -1,0 +1,39 @@
+.wrapper {
+  @apply bg-base-900
+}
+
+.radius-small {
+  @apply rounded-lg
+}
+
+.radius-medium {
+  @apply rounded-xl
+}
+
+.radius-large {
+  @apply rounded-2xl
+}
+
+.radius-full {
+  @apply rounded-full
+}
+
+.border-all {
+  @apply border border-base-400/15
+}
+
+.border-top {
+  @apply border-t border-base-400/15
+}
+
+.border-right {
+  @apply border-r border-base-400/15
+}
+
+.border-bottom {
+  @apply border-b border-base-400/15
+}
+
+.border-left {
+  @apply border-l border-base-400/15
+}
