@@ -2,21 +2,30 @@ import type { Config } from 'tailwindcss';
 
 export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
+    backdropBlur: {
+      '4xl': '128px',
+    },
     colors: {
       base: {
-        950: '#0F0F10',
-        900: '#161618',
-        800: '#232426',
-        700: '#3D4043',
-        600: '#62666A',
-        400: '#95999D',
-        300: '#BDBFC2',
-        200: '#e2e8f0',
-        100: '#f1f5f9',
         50: '#f8fafc',
+        100: '#f1f5f9',
+        200: '#e2e8f0',
+        300: '#cbd5e1',
+        400: '#BDBFC2',
+        500: '#95999D',
+        600: '#62666A',
+        700: '#3D4043',
+        800: '#232426',
+        900: '#161618',
+        950: '#0F0F10',
       },
-    }
+      primary: {
+        400: '#3F73A6',
+        500: '#1A80E5',
+        600: '#5AADF2',
+      },
+    },
   },
-  darkMode: ['selector', '[data-mode="dark"]'],
 } satisfies Config;

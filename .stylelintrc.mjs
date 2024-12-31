@@ -24,6 +24,7 @@ const config = {
       },
     ],
     'media-query-no-invalid': null,
+    'selector-class-pattern': null,
   },
 };
 

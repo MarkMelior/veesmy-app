@@ -1,0 +1,27 @@
+.wrapper {
+  width: 100%;
+  position: fixed;
+
+  @apply backdrop-blur-4xl
+}
+
+.layout {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  text-wrap: nowrap;
+}
+
+.actions {
+  min-width: 90px;
+  max-width: 90px;
+
+  &.leftActions {
+    justify-content: start;
+  }
+
+  &.rightActions {
+    justify-content: end;
+  }
+}
