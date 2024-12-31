@@ -24,7 +24,7 @@ const eslintCommonRules = {
   'max-len': [
     'error',
     {
-      code: 80,
+      code: 90,
       ignoreComments: true, // Применять правило к комментариям
       ignoreStrings: false, // Применять правило к строкам
       ignoreTemplateLiterals: false, // Применять правило к шаблонным строкам
@@ -100,6 +100,8 @@ const eslintStylisticRules = {
   '@stylistic/comma-dangle': ['error', 'only-multiline'],
   // Обеспечивает единообразие отступов.
   '@stylistic/indent': ['error', 2],
+  // Обеспечивает переводы строк между операндами троичных выражений.
+  '@stylistic/multiline-ternary': 'off',
   // Запрещает смешанные пробелы и табуляции для отступов.
   '@stylistic/no-mixed-spaces-and-tabs': 'error',
   // Обеспечивает последовательное использование обратных, двойных или одинарных кавычек.
@@ -170,7 +172,7 @@ const eslintConfig = [
     },
   },
   {
-    files: ['**/src/shared/assets/icons/*.tsx'],
+    files: ['**/src/shared/icons/*.tsx'],
     rules: { 'max-len': 'off' },
   },
 ];

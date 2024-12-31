@@ -4,6 +4,9 @@ export default {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
+    backdropBlur: {
+      '4xl': '128px',
+    },
     colors: {
       base: {
         50: '#f8fafc',
@@ -17,6 +20,11 @@ export default {
         800: '#232426',
         900: '#161618',
         950: '#0F0F10',
+      },
+      primary: {
+        400: '#3F73A6',
+        500: '#1A80E5',
+        600: '#5AADF2',
       },
     },
   },

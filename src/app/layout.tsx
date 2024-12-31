@@ -1,18 +1,13 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 
 import type { Metadata } from 'next';
 
 import './globals.scss';
 
-const geistSans = Geist({
-  subsets: ['latin'],
-  variable: '--font-geist-sans',
-});
-
-const geistMono = Geist_Mono({
-  subsets: ['latin'],
-  variable: '--font-geist-mono',
+const inter = Inter({
+  subsets: ['cyrillic', 'latin'],
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
@@ -27,7 +22,7 @@ interface IRootLayout {
 const RootLayout = ({ children }: IRootLayout) => (
   (
     <html lang="ru" suppressHydrationWarning={true}>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={inter.className}>
         <ThemeProvider attribute="data-mode">
           {children}
         </ThemeProvider>

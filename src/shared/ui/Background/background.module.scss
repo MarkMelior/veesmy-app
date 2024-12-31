@@ -2,6 +2,10 @@
   @apply bg-base-900
 }
 
+.opacity {
+  @apply bg-base-900/80
+}
+
 .radius-small {
   @apply rounded-lg
 }

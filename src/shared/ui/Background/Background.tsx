@@ -11,6 +11,7 @@ interface IBackground {
   border?: TBorder | boolean
   children: React.ReactNode
   className?: string
+  opacity?: boolean
   radius?: 'none' | 'small' | 'medium' | 'large' | 'full'
 }
 
@@ -19,6 +20,7 @@ export const Background = ({
   border = true,
   children,
   className,
+  opacity,
   radius = 'medium',
 }: IBackground) => (
   <Component
@@ -26,6 +28,7 @@ export const Background = ({
       styles.wrapper,
       styles[`radius-${radius}`],
       {
+        [styles.opacity]: opacity,
         [styles['border-all']]: border === true,
         [styles[`border-${border}`]]: border !== true && border,
       },

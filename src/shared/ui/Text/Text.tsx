@@ -1,23 +1,31 @@
 import { clsx } from 'clsx';
 
-import { TComponent } from '@/shared/types';
+import { TailwindColors, TailwindSize, TailwindWeight, TComponent } from '@/shared/types';
 
 interface IText {
   as?: TComponent
   children: React.ReactNode
   className?: string
-  color?: string
-  size?: 'small' | 'base' | 'large' | number
-  weight?: 'regular' | 'medium' | 'semibold' | 'bold' | number
+  color?: TailwindColors
+  size?: TailwindSize
+  weight?: TailwindWeight
 }
 
 export const Text = ({
   as: Component = 'span',
   children,
   className,
+  color,
+  size,
+  weight,
 }: IText) => (
   <Component
     className={clsx(
+      {
+        [`${color}`]: color,
+        [`${size}`]: size,
+        [`${weight}`]: weight,
+      },
       className,
     )}
   >

@@ -1,14 +1,21 @@
 .wrapper {
   transition: all ease .3s;
-  border-radius: 0.5rem;
+  border-radius: 0.625rem;
   height: fit-content;
   padding: 0.25rem 0.5rem;
 
+  @apply text-primary-500;
+
   &:hover {
-    background: red;
+    @apply text-primary-500/75;
+  }
+
+  &:active {
+    @apply text-primary-600;
+    @apply bg-primary-500/10;
   }
 }
 
 .iconOnly {
-  padding: 0.25rem;
+  padding: 0.325rem;
 }

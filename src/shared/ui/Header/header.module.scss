@@ -1,18 +1,27 @@
 .wrapper {
   width: 100%;
+  position: fixed;
+
+  @apply backdrop-blur-4xl
 }
 
 .layout {
-  padding: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   display: flex;
+  align-items: center;
+  text-wrap: nowrap;
 }
 
-.title {
-  color: theme('colors.base.50');
-  font-weight: 600;
-}
+.actions {
+  min-width: 90px;
+  max-width: 90px;
 
-.description {
-  color: theme('colors.base.500');
-  font-size: 0.75rem;
+  &.leftActions {
+    justify-content: start;
+  }
+
+  &.rightActions {
+    justify-content: end;
+  }
 }

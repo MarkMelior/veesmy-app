@@ -2,9 +2,9 @@ import React from 'react';
 
 import { Icon, IIcon } from '@/shared/ui';
 
-export const AddIcon = ({
+export const AddOutlineIcon = ({
   fill = 'currentColor',
-  height = 27,
+  height = 26,
   strokeWidth = 1.5,
   width = 26,
 }: IIcon) => (
@@ -16,10 +16,10 @@ export const AddIcon = ({
       strokeWidth={strokeWidth}
       width="21.5"
       x="2.75"
-      y="2.75"
+      y="2.25"
     />
     <path
-      d="M13.5 9V13.5M13.5 18V13.5M13.5 13.5H18M13.5 13.5H9"
+      d="M13.5 8.5V13M13.5 17.5V13M13.5 13H18M13.5 13H9"
       stroke={fill}
       strokeLinecap="round"
       strokeWidth={strokeWidth}
