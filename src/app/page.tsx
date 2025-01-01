@@ -2,6 +2,7 @@ import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { Chip, Flex, Layout, Text } from '@/shared/ui';
 import { Headers } from '@/widgets/Headers';
 import { IInfoBlockItem, InfoBlock } from '@/widgets/InfoBlock';
+import { VeesList } from '@/widgets/VeesList';
 
 const infoBlockItems: IInfoBlockItem[] = [
   {
@@ -19,6 +20,7 @@ const infoBlockItems: IInfoBlockItem[] = [
     title: 'Тренировка',
     value: (
       <Chip.Category
+        className="mt-1"
         color="text-red-500"
         isEditable={true}
         name="Вторник"
@@ -56,6 +58,7 @@ const Home = () => (
       <Layout>
         <InfoBlock items={infoBlockItems} />
       </Layout>
+      <VeesList />
     </main>
   </>
 );

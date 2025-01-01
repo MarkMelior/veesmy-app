@@ -33,6 +33,9 @@ export default {
       red: {
         500: '#FA4838',
       },
+      yellow: {
+        500: '#FAC938',
+      },
     },
   },
 } satisfies Config;
