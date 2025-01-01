@@ -38,7 +38,7 @@ export const Header = ({
             {leftActions}
           </Flex>
         ) : null}
-        <Flex align={placement} full={true} vertical={true}>
+        <Flex align={placement} vertical={true}>
           <Text as="h1" color="text-base-50" weight="font-semibold">
             {title}
           </Text>

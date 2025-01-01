@@ -7,6 +7,10 @@ export default {
     backdropBlur: {
       '4xl': '128px',
     },
+    blur: {
+      '3xl': '64px',
+      '4xl': '128px',
+    },
     colors: {
       base: {
         50: '#f8fafc',
@@ -25,6 +29,9 @@ export default {
         400: '#3F73A6',
         500: '#1A80E5',
         600: '#5AADF2',
+      },
+      red: {
+        500: '#FA4838',
       },
     },
   },
