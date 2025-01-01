@@ -146,6 +146,31 @@ const eslintImportRules = {
           pattern: '.*/**/*.scss',
           position: 'after',
         },
+        {
+          group: 'internal',
+          pattern: '@/widgets/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/shared/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/features/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/entities/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/app/**',
+          position: 'before',
+        },
       ],
     },
   ],
