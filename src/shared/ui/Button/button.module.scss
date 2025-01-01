@@ -1,9 +1,10 @@
 .wrapper {
   transition: all ease .3s;
-  border-radius: 0.625rem;
   height: fit-content;
-  padding: 0.25rem 0.5rem;
+  text-wrap: nowrap;
+}
 
+.variant-light {
   @apply text-primary-500;
 
   &:hover {
@@ -14,6 +15,30 @@
     @apply text-primary-600;
     @apply bg-primary-500/10;
   }
+}
+
+.variant-solid {
+  @apply bg-primary-500;
+
+  &:active {
+    @apply bg-primary-500/75;
+  }
+}
+
+.radius-full {
+  border-radius: 100px;
+}
+
+.radius-medium {
+  border-radius: 0.625rem;
+}
+
+.size-medium {
+  padding: 0.25rem 0.5rem;
+}
+
+.size-large {
+  padding: 0.75rem 1.125rem;
 }
 
 .iconOnly {

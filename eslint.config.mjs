@@ -34,6 +34,8 @@ const eslintCommonRules = {
   ],
   // https://eslint.org/docs/latest/rules/no-console
   'no-console': ['error', { allow: ['warn', 'info', 'error'] }],
+  // Форматирование объектов
+  'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
   // https://eslint.org/docs/latest/rules/padding-line-between-statements
   'padding-line-between-statements': [
     'error',
