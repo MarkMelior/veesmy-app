@@ -6,6 +6,7 @@ import styles from './button.module.scss';
 interface IButton {
   children?: React.ReactNode
   className?: string
+  full?: boolean
   iconOnly?: boolean
   onClick?: () => void
   to?: string
@@ -14,6 +15,7 @@ interface IButton {
 export const Button = ({
   children,
   className,
+  full,
   iconOnly,
   onClick,
   to,
@@ -22,7 +24,14 @@ export const Button = ({
 
   return (
     <Component
-      className={clsx(styles.wrapper, { [styles.iconOnly]: iconOnly }, className)}
+      className={clsx(
+        styles.wrapper,
+        {
+          [styles.full]: full,
+          [styles.iconOnly]: iconOnly,
+        },
+        className,
+      )}
       href={to ?? '#'}
       onClick={onClick}
     >

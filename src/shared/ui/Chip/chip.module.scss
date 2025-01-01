@@ -1,0 +1,16 @@
+.chip {
+  border-radius: 8px;
+  width: fit-content;
+  font-size: 0.813rem;
+
+  @apply bg-base-900;
+  @apply border border-base-800;
+}
+
+.size-small {
+  padding: 3px 7px;
+}
+
+.size-medium {
+  padding: 5px 10px;
+}

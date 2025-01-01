@@ -7,7 +7,7 @@ interface IText {
   children: React.ReactNode
   className?: string
   color?: TailwindColors
-  size?: TailwindSize
+  size?: TailwindSize | number
   weight?: TailwindWeight
 }
 
@@ -23,11 +23,15 @@ export const Text = ({
     className={clsx(
       {
         [`${color}`]: color,
-        [`${size}`]: size,
+        [`${size}`]: typeof size === 'string',
         [`${weight}`]: weight,
       },
       className,
     )}
+    style={{
+      fontSize: typeof size === 'number' ? `${size}rem` : undefined,
+      lineHeight: typeof size === 'number' ? `${size + 0.5}rem` : undefined,
+    }}
   >
     {children}
   </Component>

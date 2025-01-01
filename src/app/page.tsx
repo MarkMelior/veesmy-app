@@ -1,45 +1,54 @@
-/* eslint-disable max-len */
+import { Chip, Flex, Layout, Text } from '@/shared/ui';
 import { Headers } from '@/widgets/Headers';
+import { IInfoBlockItem, InfoBlock } from '@/widgets/InfoBlock';
 
-function Home() {
-  return (
-    <>
-      <Headers.ExercisesList />
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-            <li className="mb-2">
-              Get started by editing
-              {' '}
-              <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-                src/app/page.tsx
-              </code>
-              .
-            </li>
-            <li>Save and see your changes instantly.</li>
-          </ol>
-          <div className="flex gap-4 items-center flex-col sm:flex-row">
-            <a
-              className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Deploy now
-            </a>
-            <a
-              className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              Read our docs
-            </a>
-          </div>
-        </main>
-      </div>
-    </>
-  );
-}
+const infoBlockItems: IInfoBlockItem[] = [
+  {
+    icon: <></>,
+    title: 'Расчётное время',
+    value: (
+      <Flex justify="between">
+        <Text size={0.95}>~ 1 час 30 минут</Text>
+        <Text color="text-base-700" size={0.875}>~ конец в 18:36</Text>
+      </Flex>
+    ),
+  },
+  {
+    icon: <></>,
+    title: 'Тренировка',
+    value: <Chip size="medium">TODO</Chip>,
+  },
+  {
+    hideTitle: true,
+    title: 'Статистика',
+    value: (
+      <Flex>
+        <Flex align="center" vertical={true}>
+          <Text color="text-base-500" size={0.8}>Тренировка №</Text>
+          <Text weight="font-semibold">98</Text>
+        </Flex>
+        <Flex align="center" vertical={true}>
+          <Text color="text-base-500" size={0.8}>Начало</Text>
+          <Text weight="font-semibold">17:06</Text>
+        </Flex>
+        <Flex align="center" vertical={true}>
+          <Text color="text-base-500" size={0.8}>Упражнений</Text>
+          <Text weight="font-semibold">7</Text>
+        </Flex>
+      </Flex>
+    ),
+  },
+];
+
+const Home = () => (
+  <>
+    <Headers.ExercisesList />
+    <main>
+      <Layout>
+        <InfoBlock items={infoBlockItems} />
+      </Layout>
+    </main>
+  </>
+);
 
 export default Home;
