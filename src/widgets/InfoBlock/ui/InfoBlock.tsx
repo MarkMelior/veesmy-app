@@ -78,10 +78,12 @@ export const InfoBlock = ({
           <Fragment key={title}>
             <Flex className={styles.item} vertical={true}>
               {hideTitle ? null : (
-                <Flex align="center" gap={2}>
-                  {icon}
-                  <Text color="text-base-500" size={0.8}>{title}</Text>
-                </Flex>
+                <Text color="text-base-500" size={0.8}>
+                  <Flex align="center" gap={2}>
+                    {icon}
+                    {title}
+                  </Flex>
+                </Text>
               )}
               {value}
             </Flex>

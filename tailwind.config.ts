@@ -30,6 +30,9 @@ export default {
         500: '#1A80E5',
         600: '#5AADF2',
       },
+      red: {
+        500: '#FA4838',
+      },
     },
   },
 } satisfies Config;

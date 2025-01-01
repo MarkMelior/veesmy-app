@@ -1,10 +1,11 @@
+import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { Chip, Flex, Layout, Text } from '@/shared/ui';
 import { Headers } from '@/widgets/Headers';
 import { IInfoBlockItem, InfoBlock } from '@/widgets/InfoBlock';
 
 const infoBlockItems: IInfoBlockItem[] = [
   {
-    icon: <></>,
+    icon: <StopwatchOutlineIcon />,
     title: 'Расчётное время',
     value: (
       <Flex justify="between">
@@ -14,9 +15,17 @@ const infoBlockItems: IInfoBlockItem[] = [
     ),
   },
   {
-    icon: <></>,
+    icon: <PaperOutlineIcon />,
     title: 'Тренировка',
-    value: <Chip size="medium">TODO</Chip>,
+    value: (
+      <Chip.Category
+        color="text-red-500"
+        isEditable={true}
+        name="Вторник"
+        number={9}
+        size="medium"
+      />
+    ),
   },
   {
     hideTitle: true,
