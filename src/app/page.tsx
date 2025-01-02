@@ -1,7 +1,10 @@
-import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
-import { Chip, Flex, Layout, Text } from '@/shared/ui';
 import { Headers } from '@/widgets/Headers';
 import { IInfoBlockItem, InfoBlock } from '@/widgets/InfoBlock';
+
+import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
+import { Chip, Flex, Layout, Text } from '@/shared/ui';
+
+import { Timer } from '@/features/Timer';
 
 const infoBlockItems: IInfoBlockItem[] = [
   {
@@ -57,6 +60,7 @@ const Home = () => (
         <InfoBlock items={infoBlockItems} />
       </Layout>
     </main>
+    <Timer />
   </>
 );
 

@@ -12,6 +12,7 @@ type Shades =
   | '950';
 
 type Colors =
+  | 'primary'
   | 'base'
   | 'slate'
   | 'gray'
@@ -41,6 +42,7 @@ type ColorWithShades<T extends string> = `text-${T}-${Shades}`;
 export type TailwindColors = ColorWithShades<Colors>;
 
 export type TailwindWeight =
+  | 'font-extralight'
   | 'font-light'
   | 'font-normal'
   | 'font-medium'
