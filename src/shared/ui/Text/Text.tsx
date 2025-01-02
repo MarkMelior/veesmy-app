@@ -9,6 +9,8 @@ interface IText {
   children: React.ReactNode
   className?: string
   color?: TailwindColors
+  customColor?: string
+  decoration?: 'line-through'
   size?: TailwindSize | number
   weight?: TailwindWeight
 }
@@ -18,6 +20,8 @@ export const Text = ({
   children,
   className,
   color,
+  customColor: hexColor,
+  decoration,
   size,
   weight,
 }: IText) => (
@@ -26,12 +30,14 @@ export const Text = ({
       styles.text,
       {
         [`${color}`]: color,
+        [`${decoration}`]: decoration,
         [`${size}`]: typeof size === 'string',
         [`${weight}`]: weight,
       },
       className,
     )}
     style={{
+      color: hexColor,
       fontSize: typeof size === 'number' ? `${size}rem` : undefined,
       lineHeight: typeof size === 'number' ? `${size + 0.5}rem` : undefined,
     }}

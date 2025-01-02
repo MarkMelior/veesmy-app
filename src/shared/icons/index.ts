@@ -1,5 +1,6 @@
 export * from './add-outline';
 export * from './arrow-left';
+export * from './drag';
 export * from './finish-outline';
 export * from './message';
 export * from './paper-outline';

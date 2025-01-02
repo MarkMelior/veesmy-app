@@ -61,7 +61,9 @@ const Home = () => (
       <Layout>
         <InfoBlock items={infoBlockItems} />
       </Layout>
-      <VeesList />
+      <Layout padding={false}>
+        <VeesList />
+      </Layout>
     </main>
     <Timer />
   </>

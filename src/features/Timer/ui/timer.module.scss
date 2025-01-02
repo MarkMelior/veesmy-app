@@ -3,6 +3,7 @@
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: theme('zIndex.hud');
 }
 
 .background {
@@ -13,7 +14,7 @@
   animation: fade-in .7s ease-in-out;
 
   @apply bg-base-900/50;
-  @apply backdrop:blur-3xl;
+  @apply backdrop-blur-3xl;
 }
 
 .button {

@@ -24,6 +24,9 @@ export default {
         900: '#161618',
         950: '#0F0F10',
       },
+      green: {
+        500: '#00FF80',
+      },
       primary: {
         400: '#3F73A6',
         500: '#1A80E5',
@@ -32,9 +35,16 @@ export default {
       red: {
         500: '#FA4838',
       },
+      transparent: 'transparent',
       yellow: {
         500: '#FAC938',
       },
+    },
+    fontFamily: {
+      code: ['JetBrains Mono', 'monospace'],
+    },
+    zIndex: {
+      hud: '100',
     },
   },
 } satisfies Config;

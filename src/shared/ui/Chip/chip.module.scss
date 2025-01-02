@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   gap: 4;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: theme('fontFamily.code');
 
   @apply bg-base-900;
   @apply border border-base-800;

@@ -3,6 +3,7 @@
   position: sticky;
   top: 0;
   margin-bottom: 18px;
+  z-index: theme('zIndex.hud');
 
   @apply backdrop-blur-3xl;
 }

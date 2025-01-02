@@ -1,1 +1,1 @@
-export { VeesList } from './ui/VeesList';
+export { VeesList } from './ui/VeesList/VeesList';
