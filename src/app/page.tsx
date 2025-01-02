@@ -1,25 +1,23 @@
 import { Headers } from '@/widgets/Headers';
 import { InfoBlock } from '@/widgets/InfoBlock';
-import { mockInfoBlockItems } from '@/widgets/InfoBlock/model/mock';
-import { VeesList } from '@/widgets/VeesList';
-import { mockVeesListItems } from '@/widgets/VeesList/model/mock';
+import { mockInfoBlockExercisesItems } from '@/widgets/InfoBlock/model/mock-exercises';
+import { Navbar } from '@/widgets/Navbar';
 
 import { Layout } from '@/shared/ui';
 
-import { Timer } from '@/features/Timer';
-
 const Home = () => (
   <>
-    <Headers.ExercisesList />
+    <Headers.AllVees />
     <main>
       <Layout>
-        <InfoBlock items={mockInfoBlockItems} />
-      </Layout>
-      <Layout padding={false}>
-        <VeesList items={mockVeesListItems} />
+        <InfoBlock
+          items={mockInfoBlockExercisesItems}
+          showAllCountItems={2}
+          showAllText="Показать всю статистику"
+        />
       </Layout>
     </main>
-    <Timer />
+    <Navbar />
   </>
 );
 

@@ -1,3 +1,4 @@
+import { AllVees } from './ui/AllVees/AllVees';
 import { ExercisesList } from './ui/ExercisesList/ExercisesList';
 
 export const Headers = () => {
@@ -7,3 +8,4 @@ export const Headers = () => {
 };
 
 Headers.ExercisesList = ExercisesList;
+Headers.AllVees = AllVees;

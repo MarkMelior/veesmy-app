@@ -202,6 +202,10 @@ const eslintConfig = [
     files: ['**/src/shared/icons/*.tsx'],
     rules: { 'max-len': 'off' },
   },
+  {
+    files: ['**/config/**/*.js'],
+    rules: { '@typescript-eslint/no-require-imports': 'off' },
+  },
 ];
 
 export default eslintConfig;

@@ -2,16 +2,17 @@
   width: fit-content;
   margin: 0 auto;
   padding: 18px 36px;
+
   color: theme('colors.base.500');
-  border: 1.5px solid theme('colors.base.500');
-  border-radius: 20px;
   background: theme('colors.base.900');
+  border-radius: 20px;
+  border: 1.5px solid theme('colors.base.500');
 
   @apply text-sm;
 
   &:hover {
     color: theme('colors.base.50');
-    border: 1.5px solid theme('colors.base.50');
     background: theme('colors.base.800');
+    border: 1.5px solid theme('colors.base.50');
   }
 }

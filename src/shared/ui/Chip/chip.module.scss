@@ -1,13 +1,15 @@
 .chip {
-  border-radius: 8px;
-  width: fit-content;
-  font-size: 0.8rem;
   display: flex;
   align-items: center;
   gap: 4;
+  width: fit-content;
+
+  font-size: 0.8rem;
   font-family: theme('fontFamily.code');
 
-  @apply bg-base-900;
+  background: theme('colors.base.900');
+  border-radius: 8px;
+
   @apply border border-base-800;
 }
 
@@ -17,11 +19,12 @@
   gap: 4px;
 
   &::before {
-    content: '';
-    border-radius: 100%;
     width: 4px;
     height: 4px;
+
     background: currentcolor;
+    border-radius: 100%;
+    content: '';
   }
 }
 

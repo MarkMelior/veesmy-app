@@ -1,18 +1,17 @@
 .wrapper {
-  width: 100%;
   position: sticky;
   top: 0;
-  margin-bottom: 18px;
   z-index: theme('zIndex.hud');
-
-  @apply backdrop-blur-3xl;
+  width: 100%;
+  margin-bottom: 18px;
+  backdrop-filter: blur(theme('backdropBlur.3xl'));
 }
 
 .layout {
-  padding-top: 12px;
-  padding-bottom: 12px;
   display: flex;
   align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
   text-wrap: nowrap;
 }
 

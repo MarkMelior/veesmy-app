@@ -40,3 +40,14 @@
 - [features](/src/features/) - Повторно используемые реализации целых функций продукта;
 - [entities](/src/entities/) - Бизнес сущности;
 - [shared](/src/shared/) - Многократно-переиспользуемые компоненты и функции.
+
+---
+
+### Особенности написания кода в проекте
+
+##### SCSS
+
+1. [[custom-rules/restrict-apply](./config/stylelint/restrict-apply.js)] `@apply` можно использовать только для:  
+  - размера текста: `text-sm` | `text-base` и т.п.
+  - border: `border...` и т.п.
+2. [[custom-rules/scss-import-name](./config/eslint/scss-import-name.js)] Импорт стилей из `.module.scss` нужно называть `styles`

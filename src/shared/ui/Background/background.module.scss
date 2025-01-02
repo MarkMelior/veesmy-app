@@ -1,29 +1,29 @@
 .wrapper {
-  @apply bg-base-900
+  background: theme('colors.base.900');
 }
 
 .opacity {
-  @apply bg-base-900/80
+  background: theme('colors.base.900 / 80%');
 }
 
 .radius-small {
-  @apply rounded-lg
+  border-radius: theme('borderRadius.lg');
 }
 
 .radius-medium {
-  @apply rounded-xl
+  border-radius: theme('borderRadius.xl');
 }
 
 .radius-large {
-  @apply rounded-2xl
+  border-radius: theme('borderRadius.2xl');
 }
 
 .radius-full {
-  @apply rounded-full
+  border-radius: theme('borderRadius.full');
 }
 
 .border-all {
-  @apply border border-base-400/15
+  @apply border border-base-400/15;
 }
 
 .border-top {

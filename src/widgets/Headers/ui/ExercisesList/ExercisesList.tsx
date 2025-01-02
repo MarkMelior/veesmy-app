@@ -1,5 +1,3 @@
-'use client';
-
 import { AddOutlineIcon, ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';
 import { Button, Header } from '@/shared/ui';
 

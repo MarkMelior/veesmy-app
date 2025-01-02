@@ -3,7 +3,7 @@ import { IInfoBlockItem } from '@/widgets/InfoBlock';
 import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { Chip, Flex, Text } from '@/shared/ui';
 
-export const mockInfoBlockItems: IInfoBlockItem[] = [
+export const mockInfoBlockVeesItems: IInfoBlockItem[] = [
   {
     icon: <StopwatchOutlineIcon />,
     title: 'Расчётное время',

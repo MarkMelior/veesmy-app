@@ -13,38 +13,36 @@
 }
 
 @mixin variant-solid($color) {
-  @apply bg-#{$color}-500;
+  background: theme('colors.#{$color}.500');
 
   &:not(.disabled):hover {
-    @apply bg-#{$color}-500/75;
+    background: theme('colors.#{$color}.500 / 75%');
   }
 }
 
 @mixin variant-light($color) {
-  @apply text-#{$color}-500;
+  color: theme('colors.#{$color}.500');
 
   &:not(.disabled):hover {
-    @apply text-#{$color}-600;
-
-    @apply bg-#{$color}-500/10;
+    color: theme('colors.#{$color}.600');
+    background: theme('colors.#{$color}.500 / 10%');
   }
 }
 
 @mixin variant-flat($color) {
   @if $color == 'base' {
-    @apply text-#{$color}-400;
+    color: theme('colors.#{$color}.400');
   }
 
  @else {
-    @apply text-#{$color}-600;
+    color: theme('colors.#{$color}.600');
   }
 
-  @apply bg-#{$color}-600/35;
+  background: theme('colors.#{$color}.600 / 35%');
 
   &:not(.disabled):hover {
-    @apply text-base-50;
-
-    @apply bg-#{$color}-600/75;
+    color: theme('colors.base.50');
+    background: theme('colors.#{$color}.600 / 75%');
   }
 }
 

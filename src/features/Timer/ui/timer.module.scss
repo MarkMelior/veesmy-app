@@ -2,23 +2,26 @@
   position: fixed;
   bottom: 16px;
   left: 50%;
-  transform: translateX(-50%);
   z-index: theme('zIndex.hud');
+
+  transform: translateX(-50%);
 }
 
 .background {
   display: flex;
   align-items: center;
-  padding: 17px 36px 17px 17px;
   height: 84px;
-  animation: fade-in .7s ease-in-out;
+  padding: 17px 36px 17px 17px;
 
-  @apply bg-base-900/50;
-  @apply backdrop-blur-3xl;
+  background: theme('colors.base.900 / 50%');
+
+  animation: fade-in .7s ease-in-out;
+  backdrop-filter: blur(theme('backdropBlur.3xl'));
 }
 
 .button {
   height: 50px;
+
   animation: fade-in .4s ease-in-out;
 }
 
@@ -29,11 +32,13 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+
     transform: scale(0.9);
   }
 
   100% {
     opacity: 1;
+
     transform: scale(1);
   }
 }

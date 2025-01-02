@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+
   border-radius: .75rem 0 0 .75rem;
 }
 
@@ -11,17 +12,19 @@
 .chipList {
   position: absolute;
   top: -12px;
+
   color: theme('colors.base.600');
 }
 
 .buttonShow {
-  height: auto;
-  border-radius: .75rem 0 0 .75rem;
   width: 64px;
+  height: auto;
+
+  border-radius: .75rem 0 0 .75rem;
 
   &.collapsed {
-    background: theme('colors.base.800');
     color: theme('colors.base.600');
+    background: theme('colors.base.800');
 
     &:hover {
       background: theme('colors.base.700') !important;
@@ -30,43 +33,50 @@
 }
 
 .button {
-  border-radius: 0.5rem;
-  font-family: theme('fontFamily.code');
-  font-size: 0.8rem;
   gap: 2;
   min-width: 80px;
-  height: 29px;
-  padding-left: 0.4rem;
+  height: 32px;
   padding-right: 0.4rem;
+  padding-left: 0.4rem;
+
+  font-size: 0.8rem;
+  font-family: theme('fontFamily.code');
+
+  border-radius: 0.5rem;
 
   &.buttonResult {
-    @apply bg-base-800;
-    @apply border border-dashed border-transparent;
+    background: theme('colors.base.800');
+
+    @apply border border-base-700/50;
 
     &.better {
-      @apply border-green-500;
+      @apply border-dashed border-green-500;
     }
   
     &.worse {
-      @apply border-red-500;
+      @apply border-dashed border-red-500;
     }
   }
 
   &.buttonPreviousResult {
+    height: 28px;
+
     @apply border border-base-800;
   }
 
   &.buttonAdd {
-    @apply text-base-600;
-    @apply bg-base-800;
+    color: theme('colors.base.600');
+    background: theme('colors.base.800');
+
+    @apply border border-base-700/50;
   }
 }
 
 .drag {
-  cursor: grab;
   padding: 0 10px 0 12px;
 
-  @apply text-base-800;
+  color: theme('colors.base.800');
+  cursor: grab;
 
   &:active {
     cursor: grabbing;
@@ -82,11 +92,12 @@
 }
 
 .index {
-  font-size: 0.7rem;
-  top: 1px;
   position: relative;
+  top: 1px;
 
-  @apply text-base-600;
+  font-size: 0.7rem;
+
+  color: theme('colors.base.600')
 }
 
 .fadeUp {
@@ -98,10 +109,11 @@
 }
 
 .animation {
-  overflow: clip;
   z-index: 10;
   height: 0;
   max-height: fit-content;
+
+  overflow: clip;
 }
 
 @keyframes fade-up {
