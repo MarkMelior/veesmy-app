@@ -34,6 +34,8 @@ const eslintCommonRules = {
   ],
   // https://eslint.org/docs/latest/rules/no-console
   'no-console': ['error', { allow: ['warn', 'info', 'error'] }],
+  // Форматирование объектов
+  'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
   // https://eslint.org/docs/latest/rules/padding-line-between-statements
   'padding-line-between-statements': [
     'error',
@@ -143,6 +145,31 @@ const eslintImportRules = {
           group: 'sibling',
           pattern: '.*/**/*.scss',
           position: 'after',
+        },
+        {
+          group: 'internal',
+          pattern: '@/widgets/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/shared/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/features/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/entities/**',
+          position: 'before',
+        },
+        {
+          group: 'internal',
+          pattern: '@/app/**',
+          position: 'before',
         },
       ],
     },

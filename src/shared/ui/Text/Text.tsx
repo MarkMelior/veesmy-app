@@ -2,6 +2,8 @@ import { clsx } from 'clsx';
 
 import { TailwindColors, TailwindSize, TailwindWeight, TComponent } from '@/shared/types';
 
+import styles from './text.module.scss';
+
 interface IText {
   as?: TComponent
   children: React.ReactNode
@@ -21,6 +23,7 @@ export const Text = ({
 }: IText) => (
   <Component
     className={clsx(
+      styles.text,
       {
         [`${color}`]: color,
         [`${size}`]: typeof size === 'string',

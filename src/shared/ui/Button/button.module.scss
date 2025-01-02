@@ -1,23 +1,95 @@
+/* stylelint-disable */
 .wrapper {
-  transition: all ease .3s;
-  border-radius: 0.625rem;
+  transition: all ease .2s;
   height: fit-content;
-  padding: 0.25rem 0.5rem;
-
-  @apply text-primary-500;
-
-  &:hover {
-    @apply text-primary-500/75;
-  }
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 
   &:active {
-    @apply text-primary-600;
-    @apply bg-primary-500/10;
+    transform: scale(0.98);
   }
 }
 
-.iconOnly {
-  padding: 0.325rem;
+@mixin variant-solid($color) {
+  @apply bg-#{$color}-500;
+
+  &:not(.disabled):hover {
+    @apply bg-#{$color}-500/75;
+  }
+}
+
+@mixin variant-light($color) {
+  @apply text-#{$color}-500;
+
+  &:not(.disabled):hover {
+    @apply text-#{$color}-600;
+
+    @apply bg-#{$color}-500/10;
+  }
+}
+
+@mixin variant-flat($color) {
+  @if $color == 'base' {
+    @apply text-#{$color}-400;
+  } @else {
+    @apply text-#{$color}-600;
+  }
+
+  @apply bg-#{$color}-600/35;
+
+  &:not(.disabled):hover {
+    @apply text-base-50;
+
+    @apply bg-#{$color}-600/75;
+  }
+}
+
+@mixin variants($color) {
+  &.variant-solid {
+    @include variant-solid($color);
+  }
+
+  &.variant-light {
+    @include variant-light($color);
+  }
+
+  &.variant-flat {
+    @include variant-flat($color);
+  }
+}
+
+.color-primary {
+  @include variants('primary');
+}
+
+.color-base {
+  @include variants('base');
+}
+
+.radius-full {
+  border-radius: 100px;
+}
+
+.radius-medium {
+  border-radius: 0.625rem;
+}
+
+.size-medium {
+  padding: 0.25rem 0.5rem;
+
+  &.iconOnly {
+    padding: 0.325rem;
+  }
+}
+
+.size-large {
+  padding: 0.75rem 1.125rem;
+
+  &.iconOnly {
+    padding: 0.6rem;
+  }
 }
 
 .full {

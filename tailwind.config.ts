@@ -5,11 +5,10 @@ export default {
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
     backdropBlur: {
-      '4xl': '128px',
+      '3xl': '64px',
     },
     blur: {
       '3xl': '64px',
-      '4xl': '128px',
     },
     colors: {
       base: {
