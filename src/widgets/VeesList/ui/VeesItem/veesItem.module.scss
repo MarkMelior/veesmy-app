@@ -16,6 +16,14 @@
 .buttonShow {
   height: auto;
   width: 72px;
+
+  &.collapsed {
+    background: theme('colors.base.800');
+
+    &:hover {
+      background: theme('colors.base.700') !important;
+    }
+  }
 }
 
 .button {
