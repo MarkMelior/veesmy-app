@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import type { Metadata } from 'next';
 
 import './globals.scss';
+import '@/shared/styles/custom.scss';
 
 const inter = Inter({
   subsets: ['cyrillic', 'latin'],

@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import { useState } from 'react';
 
-import { DragIcon, MessageIcon } from '@/shared/icons';
+import { ArrowDropdownIcon, DragIcon, MessageIcon, PlusIcon } from '@/shared/icons';
 import { Background, Button, Chip, Flex, Text } from '@/shared/ui';
 
 import styles from './veesItem.module.scss';
@@ -96,8 +96,8 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
               </Button>
             );
           })}
-          <Button className={clsx(styles.button, styles.buttonResult)} variant="none">
-            <span className={styles.index}>+</span>
+          <Button className={clsx(styles.button, styles.buttonAdd)} variant="none">
+            <PlusIcon />
           </Button>
         </Flex>
         {previousResult?.length ? (
@@ -129,11 +129,14 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
         ) : null}
       </Flex>
       <Button
-        className={clsx(styles.buttonShow, { [styles.collapsed]: !isOpen })}
+        className={clsx(styles.buttonShow, {
+          ['dropdown-arrow']: isOpen,
+          [styles.collapsed]: !isOpen,
+        })}
         onClick={() => setIsOpen(previous => !previous)}
         variant="solid"
       >
-        ^
+        <ArrowDropdownIcon />
       </Button>
     </Background>
   );

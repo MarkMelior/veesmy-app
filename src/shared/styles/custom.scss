@@ -1,0 +1,15 @@
+path {
+  transition: 0.2s d ease-in-out;
+}
+
+.dropdown-arrow svg {
+  path {
+    d: path("M17 8L11 15L5 8");
+  }
+}
+
+@keyframes organic-arrow {
+	0%{ transform: translateY(0) scale(1); }
+	50%{ transform: translateY(0) scale(1.2); }
+	100%{ transform: translateY(0) scale(1); }
+}
