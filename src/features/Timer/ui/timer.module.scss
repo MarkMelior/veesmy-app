@@ -10,7 +10,7 @@
   align-items: center;
   padding: 17px 36px 17px 17px;
   height: 84px;
-  animation: fade-up-from-bottom .7s ease-in-out;
+  animation: fade-in .7s ease-in-out;
 
   @apply bg-base-900/50;
   @apply backdrop:blur-3xl;
@@ -18,16 +18,21 @@
 
 .button {
   height: 50px;
+  animation: fade-in .4s ease-in-out;
 }
 
-@keyframes fade-up-from-bottom {
+.buttonPause {
+  width: 50px;
+}
+
+@keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translateY(100%) scale(0.9);
+    transform: scale(0.9);
   }
 
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: scale(1);
   }
 }
