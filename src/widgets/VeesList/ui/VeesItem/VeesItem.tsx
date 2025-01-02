@@ -42,20 +42,22 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
       <button className={styles.drag}>
         <DragIcon />
       </button>
-      <Flex className={styles.content} gap="large" vertical={true}>
+      <Flex className={styles.content} vertical={true}>
         <Flex className={styles.chipList} gap="small">
           <Chip><Text customColor={groupColor}>{groupName}</Text></Chip>
           {comment ? <Chip><MessageIcon /></Chip> : null}
         </Flex>
-        <Flex gap={2} vertical={true}>
+        <Flex className={styles.info} gap={2} vertical={true}>
           <Text size="text-sm">{name}</Text>
-          <Text
-            color="text-base-500"
-            decoration="line-through"
-            size="text-sm"
-          >
-            {previousName}
-          </Text>
+          {previousName ? (
+            <Text
+              color="text-base-500"
+              decoration="line-through"
+              size="text-sm"
+            >
+              {previousName}
+            </Text>
+          ) : null}
           {comment ? (
             <Text
               className={clsx(animationStyle, styles.animation)}
@@ -76,6 +78,7 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
             const isWorse = weight < previousWeight || count < previousCount;
 
             return (
+              // TODO: Добавление подхода в VeesList - https://melior-app.atlassian.net/browse/VEES-12
               <Button
                 className={clsx(
                   styles.button,
@@ -103,7 +106,13 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
             gap="small"
             vertical={true}
           >
-            <Text color="text-base-600" size="text-sm">Прошлый результат:</Text>
+            <Text
+              className={styles.previous}
+              color="text-base-600"
+              size="text-sm"
+            >
+              Прошлый результат:
+            </Text>
             <Flex gap="small" wrap={true}>
               {previousResult.map(({ count, weight }, index) => (
                 <Button
