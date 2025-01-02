@@ -15,7 +15,7 @@ interface IButton {
   radius?: 'medium' | 'full'
   size?: 'medium' | 'large'
   to?: string
-  variant?: 'solid' | 'light' | 'flat'
+  variant?: 'solid' | 'light' | 'flat' | 'none'
 }
 
 export const Button = ({

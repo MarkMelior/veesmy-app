@@ -1,7 +1,10 @@
 .wrapper {
   max-width: theme('screens.sm');
   margin: auto;
+  width: 100%;
+}
+
+.padding {
   padding-left: 16px;
   padding-right: 16px;
-  width: 100%;
 }

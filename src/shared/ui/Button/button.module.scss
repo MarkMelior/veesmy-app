@@ -1,10 +1,10 @@
-/* stylelint-disable */
 .wrapper {
   transition: all ease .2s;
   height: fit-content;
   text-wrap: nowrap;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.25rem;
 
   &:active {
@@ -33,7 +33,9 @@
 @mixin variant-flat($color) {
   @if $color == 'base' {
     @apply text-#{$color}-400;
-  } @else {
+  }
+
+ @else {
     @apply text-#{$color}-600;
   }
 

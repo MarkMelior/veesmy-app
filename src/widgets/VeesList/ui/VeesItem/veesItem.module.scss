@@ -1,0 +1,125 @@
+.wrapper {
+  display: flex;
+  border-radius: .75rem 0 0 .75rem;
+}
+
+.content {
+  position: relative;
+  padding: 15px 10px 15px 0;
+}
+
+.chipList {
+  position: absolute;
+  top: -12px;
+  color: theme('colors.base.600');
+}
+
+.buttonShow {
+  height: auto;
+  border-radius: .75rem 0 0 .75rem;
+  width: 64px;
+
+  &.collapsed {
+    background: theme('colors.base.800');
+    color: theme('colors.base.600');
+
+    &:hover {
+      background: theme('colors.base.700') !important;
+    }
+  }
+}
+
+.button {
+  border-radius: 0.5rem;
+  font-family: theme('fontFamily.code');
+  font-size: 0.8rem;
+  gap: 2;
+  min-width: 80px;
+  height: 29px;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+
+  &.buttonResult {
+    @apply bg-base-800;
+    @apply border border-dashed border-transparent;
+
+    &.better {
+      @apply border-green-500;
+    }
+  
+    &.worse {
+      @apply border-red-500;
+    }
+  }
+
+  &.buttonPreviousResult {
+    @apply border border-base-800;
+  }
+
+  &.buttonAdd {
+    @apply text-base-600;
+    @apply bg-base-800;
+  }
+}
+
+.drag {
+  cursor: grab;
+  padding: 0 10px 0 12px;
+
+  @apply text-base-800;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.info {
+  margin-bottom: 8px;
+}
+
+.previous {
+  padding-top: 16px;
+}
+
+.index {
+  font-size: 0.7rem;
+  top: 1px;
+  position: relative;
+
+  @apply text-base-600;
+}
+
+.fadeUp {
+  animation: fade-up 0.2s linear forwards;
+}
+
+.fadeDown {
+  animation: fade-down 0.2s linear forwards;
+}
+
+.animation {
+  overflow: clip;
+  z-index: 10;
+  height: 0;
+  max-height: fit-content;
+}
+
+@keyframes fade-up {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 100px;
+  }
+}
+
+@keyframes fade-down {
+  0% {
+    height: 100px;
+  }
+
+  100% {
+    height: 0;
+  }
+}

@@ -8,14 +8,16 @@ interface ILayout {
   as?: TComponent
   children: React.ReactNode
   className?: string
+  padding?: boolean
 }
 
 export const Layout = ({
   as: Component = 'div',
   children,
   className,
+  padding = true,
 }: ILayout) => (
-  <Component className={clsx(styles.wrapper, className)}>
+  <Component className={clsx(styles.wrapper, { [styles.padding]: padding }, className)}>
     {children}
   </Component>
 );
