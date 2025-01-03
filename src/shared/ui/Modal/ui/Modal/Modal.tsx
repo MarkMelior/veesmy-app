@@ -23,22 +23,25 @@ export const Modal = ({
   onClickOverlay,
   onClose,
 }: IModal) => {
-  const [isOpen, setOpen] = useState(false);
   const [isMount, setMount] = useState(false);
 
+  const body = isClient() ? document.body : null;
+
   const openModal = useCallback(() => {
-    setOpen(true);
     setMount(true);
-  }, []);
+
+    body?.setAttribute('data-closing', 'false');
+  }, [body]);
 
   const closeModal = useCallback(() => {
-    setOpen(false);
     onClose?.();
+
+    body?.setAttribute('data-closing', 'true');
 
     setTimeout(() => {
       setMount(false);
     }, 150);
-  }, [onClose]);
+  }, [body, onClose]);
 
   const handleClickOverlay = useCallback(() => {
     onClickOverlay?.();
@@ -59,17 +62,13 @@ export const Modal = ({
       {buttonElement}
       {isMount && portalTarget ? createPortal(
         <>
-          <div
-            className={styles.overlay}
-            data-closing={!isOpen}
-            onClick={handleClickOverlay}
-          />
+          <div className={styles.overlay} onClick={handleClickOverlay} />
           <Flex
             align="center"
             className={styles.wrapper}
             justify="center"
           >
-            <div className={styles.modal} data-closing={!isOpen}>
+            <div className={styles.modal}>
               {children}
             </div>
           </Flex>

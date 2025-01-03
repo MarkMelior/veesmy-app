@@ -31,13 +31,16 @@ export const ModalBase = ({
     <Flex align="center" gap={56} vertical={true}>
       <Text
         align="text-center"
+        className={styles.title}
         color="text-base-400"
         size={2}
         weight="font-semibold"
       >
         {title}
       </Text>
-      {children}
+      <div className={styles.content}>
+        {children}
+      </div>
       <Button
         className={styles.action}
         color="base"
