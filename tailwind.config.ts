@@ -5,7 +5,9 @@ export default {
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
     backdropBlur: {
+      '2xl': '32px',
       '3xl': '64px',
+      'xl': '16px',
     },
     blur: {
       '3xl': '64px',
@@ -24,6 +26,7 @@ export default {
         900: '#161618',
         950: '#0F0F10',
       },
+      black: '#000000',
       green: {
         500: '#00FF80',
       },
@@ -45,6 +48,8 @@ export default {
     },
     zIndex: {
       hud: '100',
+      overlay: '200',
+      overlayChild: '300',
     },
   },
 } satisfies Config;

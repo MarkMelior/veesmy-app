@@ -1,0 +1,92 @@
+@mixin test {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.overlay {
+  z-index: theme('zIndex.overlay');
+
+  @include test;
+
+  background: theme('colors.black / 20%');
+
+  animation: fade-in .3s ease-out forwards;
+
+  backdrop-filter: blur(theme('backdropBlur.xl')) saturate(1.5);
+
+  &[data-closing="true"] {
+    animation: fade-out .1s linear forwards;
+  }
+}
+
+.wrapper {
+  z-index: theme('zIndex.overlayChild');
+  pointer-events: none;
+
+  @include test;
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: theme('screens.sm');
+  margin: 4rem 2rem;
+
+  animation: scale-in 0.15s ease-out forwards;
+  pointer-events: auto;
+
+  &[data-closing="true"] {
+    animation: scale-out 0.15s ease-in forwards;
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out {
+  0% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.15);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
