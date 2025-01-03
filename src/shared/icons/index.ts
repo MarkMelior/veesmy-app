@@ -8,4 +8,5 @@ export * from './paper-outline';
 export * from './pause';
 export * from './play';
 export * from './plus';
+export * from './setting-outline';
 export * from './stopwatch-outline';

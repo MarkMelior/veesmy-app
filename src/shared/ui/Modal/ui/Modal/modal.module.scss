@@ -39,7 +39,7 @@
   pointer-events: auto;
 
   &[data-closing="true"] {
-    animation: scale-out 0.15s ease-in forwards;
+    animation: scale-out 0.1s ease-in forwards;
   }
 }
 

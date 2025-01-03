@@ -12,8 +12,10 @@ const config = {
         ignoreAtRules: [
           'tailwind',
           'apply',
+          'include',
           'variants',
           'responsive',
+          'mixin',
           'screen',
         ],
       },

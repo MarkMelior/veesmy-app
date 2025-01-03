@@ -1,0 +1,7 @@
+.action {
+  color: theme('colors.base.600');
+
+  &:hover {
+    background: theme('colors.base.700 / 25%');
+  }
+}

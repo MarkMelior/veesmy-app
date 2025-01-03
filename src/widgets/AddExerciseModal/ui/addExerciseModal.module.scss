@@ -1,0 +1,37 @@
+.wrapper {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px 26px;
+
+  background: theme('colors.base.900 / 75%');
+  border-radius: 1.25rem;
+  overflow: clip;
+
+  @apply border border-base-400/15;
+
+  &:hover {
+    background: theme('colors.base.900 / 50%');
+  }
+}
+
+.name {
+  font-weight: theme('fontWeight.extralight');
+  font-family: theme('fontFamily.code');
+}
+
+.light {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+
+  opacity: 0.2;
+  filter: blur(theme('blur.3xl'));
+}

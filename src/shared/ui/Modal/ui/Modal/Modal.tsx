@@ -3,18 +3,25 @@
 import { cloneElement, isValidElement, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 
-import { Flex } from '../Flex';
+import { isClient } from '@/shared/lib/next';
+import { Flex } from '@/shared/ui';
 
 import styles from './modal.module.scss';
 
-interface IModal {
+export interface IModal {
   button: React.ReactElement<{ onClick?: () => void }>
   children: React.ReactNode
+  closeOnClickOverlay?: boolean
+  onClickOverlay?: () => void
+  onClose?: () => void
 }
 
 export const Modal = ({
   button,
   children,
+  closeOnClickOverlay = true,
+  onClickOverlay,
+  onClose,
 }: IModal) => {
   const [isOpen, setOpen] = useState(false);
   const [isMount, setMount] = useState(false);
@@ -26,17 +33,26 @@ export const Modal = ({
 
   const closeModal = useCallback(() => {
     setOpen(false);
+    onClose?.();
 
     setTimeout(() => {
       setMount(false);
     }, 150);
-  }, []);
+  }, [onClose]);
+
+  const handleClickOverlay = useCallback(() => {
+    onClickOverlay?.();
+
+    if (closeOnClickOverlay) {
+      closeModal();
+    }
+  }, [closeModal, closeOnClickOverlay, onClickOverlay]);
 
   const buttonElement = isValidElement(button)
     ? cloneElement(button, { onClick: openModal })
     : button;
 
-  const portalTarget = document.querySelector('#modal-root');
+  const portalTarget = isClient() ? document.querySelector('#modal-root') : null;
 
   return (
     <>
@@ -46,7 +62,7 @@ export const Modal = ({
           <div
             className={styles.overlay}
             data-closing={!isOpen}
-            onClick={closeModal}
+            onClick={handleClickOverlay}
           />
           <Flex
             align="center"
