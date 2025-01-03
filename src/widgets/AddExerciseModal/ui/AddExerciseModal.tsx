@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
-import { Button, Flex, Text, ModalBase } from '@/shared/ui';
+import { Button, Flex, Text, Background, Input, ModalBase } from '@/shared/ui';
 
 import styles from './addExerciseModal.module.scss';
 
@@ -52,7 +52,12 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
       >
         {selectedGroup
           ? (
-            <>{selectedGroup.name}</>
+            <Flex className={styles.groupWrapper} gap={10} vertical={true}>
+              <Background className={styles.group}>
+                {selectedGroup.name}
+              </Background>
+              <Input />
+            </Flex>
           )
           : items.map(item => (
             <Button
@@ -63,7 +68,9 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
               variant="none"
             >
               <span className={styles.light} style={{ backgroundColor: item.color }} />
-              <Text className={styles.name} customColor={item.color}>{item.name}</Text>
+              <Text className={styles.name} customColor={item.color}>
+                {item.name}
+              </Text>
               <Text
                 color="text-base-700"
                 size="text-sm"

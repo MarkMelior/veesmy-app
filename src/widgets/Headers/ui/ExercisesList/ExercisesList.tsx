@@ -1,4 +1,4 @@
-import { AddExerciseModal } from '@/widgets/AddExerciseModal';
+import { AddExerciseModal } from '@/widgets/AddExerciseModal/client';
 import { mockAddExerciseModal } from '@/widgets/AddExerciseModal/model/mock';
 
 import { ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';

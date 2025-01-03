@@ -35,3 +35,16 @@
   opacity: 0.2;
   filter: blur(theme('blur.3xl'));
 }
+
+.groupWrapper {
+  height: 100%;
+}
+
+.group {
+  height: 100%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
+  background: theme('colors.base.900 / 75%');
+  overflow-y: auto;
+}

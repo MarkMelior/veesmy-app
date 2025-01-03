@@ -5,6 +5,7 @@ export * from './Divider';
 export * from './Flex';
 export * from './Header';
 export * from './Icon';
+export * from './Input';
 export * from './Layout';
 export * from './Modal';
 export * from './Text';
