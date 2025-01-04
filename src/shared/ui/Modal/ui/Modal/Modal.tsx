@@ -8,6 +8,7 @@ import { isClient } from '@/shared/lib/next';
 import { Flex } from '@/shared/ui';
 
 import styles from './modal.module.scss';
+import './modal.global.scss';
 
 export interface IModal {
   button: React.ReactElement<{ onClick?: () => void }>

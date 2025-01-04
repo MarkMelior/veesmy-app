@@ -1,0 +1,11 @@
+.wrapper {
+  height: 100%;
+  max-height: calc(100vh - 100px);
+}
+
+.icon {
+  max-width: 64px;
+  max-height: 64px;
+  pointer-events: none;
+  user-select: none;
+}

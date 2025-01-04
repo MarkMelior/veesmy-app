@@ -1,0 +1,46 @@
+import Image from 'next/image';
+
+import { Flex } from '../Flex';
+import { Text } from '../Text';
+
+import styles from './empty.module.scss';
+
+interface IEmpty {
+  description?: string
+  icon?: React.ReactNode
+  title?: string
+}
+
+export const Empty = ({
+  description,
+  icon = (
+    <Image
+      alt="empty"
+      height={512}
+      src="/images/document.png"
+      width={512}
+    />
+  ),
+  title = 'Ничего не найдено...',
+}: IEmpty) => (
+  <Flex
+    align="center"
+    className={styles.wrapper}
+    full={true}
+    gap={8}
+    justify="center"
+    vertical={true}
+  >
+    <div className={styles.icon}>
+      {icon}
+    </div>
+    <Flex align="center" vertical={true}>
+      <Text align="text-center" color="text-base-400" size="text-sm">
+        {title}
+      </Text>
+      <Text align="text-center" color="text-base-600" size={0.7}>
+        {description}
+      </Text>
+    </Flex>
+  </Flex>
+);

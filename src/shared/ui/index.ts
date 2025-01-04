@@ -2,6 +2,7 @@ export * from './Background';
 export * from './Button';
 export * from './Chip';
 export * from './Divider';
+export * from './Empty';
 export * from './Flex';
 export * from './Header';
 export * from './Icon';

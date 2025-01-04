@@ -1,10 +1,11 @@
 'use client';
 
 import { clsx } from 'clsx';
+import Image from 'next/image';
 import { useState } from 'react';
 
 import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
-import { Button, Flex, Text, Background, Input, ModalBase, Chip } from '@/shared/ui';
+import { Button, Flex, Text, Background, Input, ModalBase, Chip, Empty } from '@/shared/ui';
 
 import styles from './addExerciseModal.module.scss';
 
@@ -55,72 +56,88 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
       )}
     >
       <Flex className={styles.wrapper} gap="medium" vertical={true}>
-        {selectedGroup
-          ? (
-            <Flex className={styles.groupWrapper} gap={10} vertical={true}>
-              <Background className={clsx(styles.group, styles.visible)}>
-                {selectedGroup.exercises.map((item, index) => (
-                  <Button
-                    align="start"
-                    className={styles.item}
-                    full={true}
-                    isActiveAnimation={false}
-                    key={item}
-                    radius="none"
-                    variant="none"
-                  >
-                    <Text className={styles.index} color="text-base-600" size={0.7}>
-                      {`${index + 1}.`}
-                    </Text>
-                    <Chip>
-                      <Text customColor={selectedGroup.color}>
-                        {selectedGroup.name}
+        {selectedGroup ? (
+          <Flex className={styles.groupWrapper} gap={10} vertical={true}>
+            <Background className={clsx(styles.group, styles.visible)}>
+              {selectedGroup.exercises.length > 0 ? (
+                <>
+                  {selectedGroup.exercises.map((item, index) => (
+                    <Button
+                      align="start"
+                      className={styles.item}
+                      full={true}
+                      isActiveAnimation={false}
+                      key={item}
+                      radius="none"
+                      variant="none"
+                    >
+                      <Text className={styles.index} color="text-base-600" size={0.7}>
+                        {`${index + 1}.`}
                       </Text>
-                    </Chip>
-                    <Text size="text-sm" weight="font-light">
-                      {item}
-                    </Text>
-                  </Button>
-                ))}
-                <Text
-                  align="text-center"
-                  className={styles.end}
-                  color="text-base-700"
-                  size="text-sm"
-                >
-                  Это конец списка
-                </Text>
-              </Background>
-              <Input
-                className={styles.visible}
-                rightAction={(
-                  <Button className={styles.buttonAdd} size="large" variant="solid">
-                    Добавить
-                  </Button>
-                )}
-              />
-            </Flex>
-          )
-          : items.map((item) => (
-            <Button
-              className={clsx(styles.button, styles.visible)}
-              full={true}
-              key={item.name}
-              onClick={() => setSelectedGroup(item)}
-              variant="none"
+                      <Chip>
+                        <Text customColor={selectedGroup.color}>
+                          {selectedGroup.name}
+                        </Text>
+                      </Chip>
+                      <Text size="text-sm" weight="font-light">
+                        {item}
+                      </Text>
+                    </Button>
+                  ))}
+                  <Text
+                    align="text-center"
+                    className={styles.end}
+                    color="text-base-700"
+                    size="text-sm"
+                  >
+                    Это конец списка
+                  </Text>
+                </>
+              ) : (
+                <Empty
+                  description="Добавьте первое упражнение!"
+                  icon={(
+                    <Image
+                      alt="empty"
+                      height={512}
+                      src="/images/weight.png"
+                      width={512}
+                    />
+                  )}
+                  title="Здесь пока нет упражнений..."
+                />
+              )}
+            </Background>
+            <Input
+              className={styles.visible}
+              placeholder="Название упражнения"
+              rightAction={(
+                <Button className={styles.buttonAdd} size="large" variant="solid">
+                  Добавить
+                </Button>
+              )}
+            />
+          </Flex>
+        ) : items.map((item) => (
+          <Button
+            className={clsx(styles.button, styles.visible)}
+            full={true}
+            key={item.name}
+            onClick={() => setSelectedGroup(item)}
+            variant="none"
+          >
+            <span className={styles.light} style={{ backgroundColor: item.color }} />
+            <Text className={styles.name} customColor={item.color}>
+              {item.name}
+            </Text>
+            <Text
+              color="text-base-700"
+              size="text-sm"
             >
-              <span className={styles.light} style={{ backgroundColor: item.color }} />
-              <Text className={styles.name} customColor={item.color}>
-                {item.name}
-              </Text>
-              <Text
-                color="text-base-700"
-                size="text-sm"
-              >
-                {getCountExerciseWord(item.exercises.length)}
-              </Text>
-            </Button>
-          ))}
+              {getCountExerciseWord(item.exercises.length)}
+            </Text>
+          </Button>
+        ))}
       </Flex>
     </ModalBase>
   );

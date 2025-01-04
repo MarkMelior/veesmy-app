@@ -23,7 +23,7 @@ export const mockAddExerciseModal: IGroupExercises[] = [
   },
   {
     color: '#9B693B',
-    exercises: ['1', '2', '3', '4'],
+    exercises: [],
     name: 'Квадрицепсы',
   },
 ];
