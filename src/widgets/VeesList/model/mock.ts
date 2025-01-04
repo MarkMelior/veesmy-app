@@ -2,7 +2,6 @@ import { IVeesItem } from '../ui/VeesItem/VeesItem';
 
 export const mockVeesListItems: IVeesItem[] = [
   {
-    // eslint-disable-next-line max-len
     comment: 'Это некая заметка к упражнению на будущее, а может просто по приколу. Я не знаю',
     groupColor: '#FAC938',
     groupName: 'Спина',

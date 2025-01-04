@@ -5,6 +5,7 @@ import { TailwindColors, TailwindSize, TailwindWeight, TComponent } from '@/shar
 import styles from './text.module.scss';
 
 interface IText {
+  align?: 'text-center'
   as?: TComponent
   children: React.ReactNode
   className?: string
@@ -16,6 +17,7 @@ interface IText {
 }
 
 export const Text = ({
+  align,
   as: Component = 'span',
   children,
   className,
@@ -29,6 +31,7 @@ export const Text = ({
     className={clsx(
       styles.text,
       {
+        [`${align}`]: align,
         [`${color}`]: color,
         [`${decoration}`]: decoration,
         [`${size}`]: typeof size === 'string',

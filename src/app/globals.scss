@@ -19,11 +19,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: theme('colors.base.900');
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: theme('colors.base.300');
+  background: theme('colors.base.400');
   border-radius: 10px;
 
   &:hover {

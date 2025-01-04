@@ -12,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  description: 'Лучшее приложение для записи результатов тренировок',
-  title: 'Veesmy App',
+  description: 'Самое удобное приложение для записи результатов тренировок.',
+  title: 'Vees My | Заметки тренировок',
 };
 
 interface IRootLayout {
@@ -26,6 +26,7 @@ const RootLayout = ({ children }: IRootLayout) => (
       <body className={inter.className}>
         <ThemeProvider attribute="data-mode">
           {children}
+          <div id="modal-root" />
         </ThemeProvider>
       </body>
     </html>

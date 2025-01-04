@@ -1,4 +1,7 @@
-import { AddOutlineIcon, ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';
+import { AddExerciseModal } from '@/widgets/AddExerciseModal/client';
+import { mockAddExerciseModal } from '@/widgets/AddExerciseModal/model/mock';
+
+import { ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';
 import { Button, Header } from '@/shared/ui';
 
 export const ExercisesList = () => (
@@ -13,11 +16,7 @@ export const ExercisesList = () => (
         </Button>
       </>
     )}
-    rightActions={(
-      <Button iconOnly={true}>
-        <AddOutlineIcon />
-      </Button>
-    )}
+    rightActions={<AddExerciseModal items={mockAddExerciseModal} />}
     title="Тренировка"
   />
 );

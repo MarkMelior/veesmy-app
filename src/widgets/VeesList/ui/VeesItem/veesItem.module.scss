@@ -1,7 +1,9 @@
 .wrapper {
   display: flex;
 
-  border-radius: .75rem 0 0 .75rem;
+  @media (max-width: theme('screens.sm')) {
+    border-radius: .75rem 0 0 .75rem;
+  }
 }
 
 .content {
@@ -20,8 +22,6 @@
   width: 64px;
   height: auto;
 
-  border-radius: .75rem 0 0 .75rem;
-
   &.collapsed {
     color: theme('colors.base.600');
     background: theme('colors.base.800');
@@ -29,6 +29,10 @@
     &:hover {
       background: theme('colors.base.700') !important;
     }
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    border-radius: .75rem 0 0 .75rem;
   }
 }
 

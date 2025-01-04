@@ -8,7 +8,13 @@
 
 ### Общие правила проекта
 
-- Оставлять комментарии к сложному функционалу.
+#### Архитектура
+
+- Необходимо оставлять комментарии к сложному функционалу;
+- Папки с компонентами, как и сами компоненты, должны быть в `PascalCase`. Утилиты, моки, типы и т.п. в `kebab-case`;
+- Наименование `.module.scss` должно начинаться с маленькой буквы, а компонента `.tsx` с большой;
+- Если в слайсе, кроме `Name.tsx`, `index.ts` и `name.module.scss` ничего нет, то не нужно создавать сегмент `ui/`;
+- Серверные компоненты и типы экспортируем как обычно, через `index.ts`. Клиентские компоненты (`'use client'`) экспортируем через `client.ts`.
 
 #### Git
 
@@ -19,6 +25,13 @@
 - `core` - Любые другие изменения.
 
 > Пример названия ветки: `feature/VEES-330-short-description`. Пример сообщения коммита: `VEES-330 | Short description`
+
+##### SCSS
+
+- [[custom-rules/restrict-apply](./config/stylelint/restrict-apply.js)] `@apply` можно использовать только для:  
+    - размера текста: `text-sm` | `text-base` и т.п.
+    - border: `border...` и т.п.
+- [[custom-rules/scss-import-name](./config/eslint/scss-import-name.js)] Импорт стилей из `.module.scss` нужно называть `styles`
 
 ---
 
@@ -40,14 +53,3 @@
 - [features](/src/features/) - Повторно используемые реализации целых функций продукта;
 - [entities](/src/entities/) - Бизнес сущности;
 - [shared](/src/shared/) - Многократно-переиспользуемые компоненты и функции.
-
----
-
-### Особенности написания кода в проекте
-
-##### SCSS
-
-1. [[custom-rules/restrict-apply](./config/stylelint/restrict-apply.js)] `@apply` можно использовать только для:  
-  - размера текста: `text-sm` | `text-base` и т.п.
-  - border: `border...` и т.п.
-2. [[custom-rules/scss-import-name](./config/eslint/scss-import-name.js)] Импорт стилей из `.module.scss` нужно называть `styles`
