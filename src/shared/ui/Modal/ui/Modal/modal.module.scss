@@ -1,27 +1,11 @@
-@mixin fixed {
+.wrapper {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: theme('zIndex.overlayChild');
   width: 100vw;
   height: 100vh;
-}
-
-.wrapper {
-  z-index: theme('zIndex.overlayChild');
   pointer-events: none;
-
-  @include fixed;
-}
-
-.overlay {
-  z-index: theme('zIndex.overlay');
-
-  @include fixed;
-
-  background: theme('colors.black / 20%');
-
-  animation: fade-in .3s ease-out forwards;
-  backdrop-filter: blur(theme('backdropBlur.xl')) saturate(1.5);
 }
 
 .modal {
@@ -32,37 +16,5 @@
 
   &.pointerEvents {
     pointer-events: auto;
-  }
-}
-
-body {
-  &[data-closing="false"] {
-    overflow: hidden;
-  }
-
-  &[data-closing="true"] {
-    .overlay {
-      animation: fade-out .1s linear forwards;
-    }
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }

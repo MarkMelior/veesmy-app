@@ -65,7 +65,7 @@ export const Modal = ({
       {buttonElement}
       {isMount && portalTarget ? createPortal(
         <>
-          <div className={styles.overlay} onClick={handleClickOverlay} />
+          <div className="overlay" onClick={handleClickOverlay} />
           <Flex
             align="center"
             className={styles.wrapper}
