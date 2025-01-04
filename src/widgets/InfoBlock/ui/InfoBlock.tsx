@@ -95,7 +95,8 @@ export const InfoBlock = ({
         <Button
           className={styles.button}
           full={true}
-          onClick={() => setShowAll(prev => !prev)}
+          isActiveAnimation={false}
+          onClick={() => setShowAll((prev) => !prev)}
         >
           {showAll ? 'Скрыть' : showAllText}
         </Button>

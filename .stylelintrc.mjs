@@ -3,23 +3,10 @@ const config = {
   extends: [
     'stylelint-config-tailwindcss',
     'stylelint-config-standard',
+    'stylelint-config-standard-scss',
   ],
   plugins: ['stylelint-order', './config/stylelint/restrict-apply.js'],
   rules: {
-    'at-rule-no-unknown': [
-      true,
-      {
-        ignoreAtRules: [
-          'tailwind',
-          'apply',
-          'include',
-          'variants',
-          'responsive',
-          'mixin',
-          'screen',
-        ],
-      },
-    ],
     'custom-rules/restrict-apply': [
       true, {
         allowedPatterns: [
@@ -110,6 +97,22 @@ const config = {
       ],
       {
         unspecified: 'bottomAlphabetical',
+      },
+    ],
+    'scss/at-rule-no-unknown': [
+      true,
+      {
+        ignoreAtRules: [
+          'tailwind',
+          'apply',
+          'include',
+          'variants',
+          'responsive',
+          'mixin',
+          'screen',
+          'if',
+          'else',
+        ],
       },
     ],
     'selector-class-pattern': null,

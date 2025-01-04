@@ -43,10 +43,6 @@
     background: theme('colors.primary.500');
   }
 
-  &:active {
-    transform: none;
-  }
-
   &::after {
     position: absolute;
     top: -10px;

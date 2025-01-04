@@ -1,5 +1,6 @@
 'use client';
 
+import { clsx } from 'clsx';
 import { cloneElement, isValidElement, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -14,6 +15,7 @@ export interface IModal {
   closeOnClickOverlay?: boolean
   onClickOverlay?: () => void
   onClose?: () => void
+  pointerEvents?: boolean
 }
 
 export const Modal = ({
@@ -22,6 +24,7 @@ export const Modal = ({
   closeOnClickOverlay = true,
   onClickOverlay,
   onClose,
+  pointerEvents = true,
 }: IModal) => {
   const [isMount, setMount] = useState(false);
 
@@ -68,7 +71,7 @@ export const Modal = ({
             className={styles.wrapper}
             justify="center"
           >
-            <div className={styles.modal}>
+            <div className={clsx(styles.modal, { [styles.pointerEvents]: pointerEvents })}>
               {children}
             </div>
           </Flex>

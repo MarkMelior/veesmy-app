@@ -1,0 +1,29 @@
+.wrapper {
+  background: theme('colors.base.900 / 75%');
+  border-radius: theme('borderRadius.xl');
+  overflow: clip;
+
+  transition: all ease .3s;
+
+  @apply border border-base-400/15;
+
+  &:has(.input:focus) {
+    @apply border-primary-400;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 14px 16px;
+
+  font-size: theme('fontSize.sm');
+
+  background: none;
+  border-radius: theme('borderRadius.xl');
+
+  &:focus {
+    outline: none;
+
+    @apply border-primary-400;
+  }
+}

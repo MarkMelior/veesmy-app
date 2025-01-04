@@ -1,5 +1,5 @@
 .wrapper {
-  height: 370px;
+  height: 365px;
   overflow-y: auto;
 }
 
@@ -20,6 +20,18 @@
   }
 }
 
+.visible {
+  opacity: 1;
+
+  transform: scale(1);
+  animation: fade-in .5s ease;
+  pointer-events: auto;
+}
+
+.hidden {
+  display: none;
+}
+
 .name {
   font-weight: theme('fontWeight.extralight');
   font-family: theme('fontFamily.code');
@@ -38,13 +50,62 @@
 
 .groupWrapper {
   height: 100%;
+
+  border-radius: theme('borderRadius.lg');
+  overflow: clip;
 }
 
 .group {
   height: 100%;
-  padding-top: 6px;
-  padding-bottom: 6px;
 
   background: theme('colors.base.900 / 75%');
   overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px;
+
+  transition: background 0.3s ease;
+  cursor: pointer;
+
+  @apply border-b border-base-800;
+
+  &:hover {
+    background: theme('colors.base.800 / 50%');
+  }
+}
+
+.index {
+  width: 18px;
+
+  text-align: center;
+}
+
+.end {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+
+.buttonAdd {
+  height: 100%;
+
+  font-size: theme('fontSize.sm');
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
 }

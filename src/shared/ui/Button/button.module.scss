@@ -1,16 +1,16 @@
 .wrapper {
-  transition: all ease .2s;
-  height: fit-content;
-  text-wrap: nowrap;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.25rem;
   width: fit-content;
+  height: fit-content;
 
-  &:active {
-    transform: scale(0.98);
-  }
+  transition: all ease .2s;
+  text-wrap: nowrap;
+}
+
+.activeAnimation:active {
+  transform: scale(0.98);
 }
 
 @mixin variant-solid($color) {
@@ -33,9 +33,7 @@
 @mixin variant-flat($color) {
   @if $color == 'base' {
     color: theme('colors.#{$color}.400');
-  }
-
- @else {
+  } @else {
     color: theme('colors.#{$color}.600');
   }
 
@@ -75,6 +73,18 @@
 
 .radius-medium {
   border-radius: 0.625rem;
+}
+
+.align-start {
+  justify-content: flex-start;
+}
+
+.align-center {
+  justify-content: center;
+}
+
+.align-end {
+  justify-content: flex-end;
 }
 
 .size-medium {

@@ -8,7 +8,7 @@ interface IModalBase extends IModal {
   iconAction?: React.ReactNode
   onClickAction?: () => void
   textAction?: string
-  title: string
+  title: React.ReactNode
 }
 
 export const ModalBase = ({
@@ -27,6 +27,7 @@ export const ModalBase = ({
     closeOnClickOverlay={closeOnClickOverlay}
     onClickOverlay={onClickOverlay}
     onClose={onClose}
+    pointerEvents={false}
   >
     <Flex align="center" gap={56} vertical={true}>
       <Text

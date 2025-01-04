@@ -1,5 +1,12 @@
+.title {
+  width: 100%;
+}
+
 .title, .action, .content {
-  animation: scale-in 0.15s ease-out forwards;
+  opacity: 1;
+
+  transform: scale(1);
+  animation: scale-in 0.15s ease-out;
 }
 
 .content {
@@ -8,15 +15,20 @@
 
 .action {
   color: theme('colors.base.600');
+  pointer-events: auto;
 
   &:hover {
+    color: theme('colors.base.400');
     background: theme('colors.base.700 / 25%');
   }
 }
 
 body[data-closing="true"] {
   .title, .action, .content {
-    animation: scale-out 0.1s ease-in forwards;
+    opacity: 0;
+
+    transform: scale(1.05);
+    animation: scale-out 0.1s ease-in;
   }
 }
 

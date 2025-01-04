@@ -30,7 +30,9 @@
   max-width: theme('screens.sm');
   margin: 4rem 2rem;
 
-  pointer-events: auto;
+  &.pointerEvents {
+    pointer-events: auto;
+  }
 }
 
 body {

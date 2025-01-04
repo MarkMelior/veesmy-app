@@ -24,7 +24,7 @@ const eslintCommonRules = {
   'max-len': [
     'error',
     {
-      code: 90,
+      code: 100,
       ignoreComments: true, // Применять правило к комментариям
       ignoreStrings: false, // Применять правило к строкам
       ignoreTemplateLiterals: false, // Применять правило к шаблонным строкам
@@ -98,6 +98,8 @@ const eslintPerfectionistRules = {
 const eslintStylisticRules = {
   // Применяет разрывы строк после открытия и перед закрытием скобок массива.
   '@stylistic/array-bracket-newline': ['error', { multiline: true }],
+  // Применяет скобки вокруг стрелочных функций.
+  '@stylistic/arrow-parens': ['error', 'always'],
   // Требует или запрещает конечные запятые.
   '@stylistic/comma-dangle': ['error', 'only-multiline'],
   // Обеспечивает единообразие отступов.

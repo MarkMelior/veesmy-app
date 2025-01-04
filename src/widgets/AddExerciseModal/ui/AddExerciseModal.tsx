@@ -1,9 +1,10 @@
 'use client';
 
+import { clsx } from 'clsx';
 import { useState } from 'react';
 
 import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
-import { Button, Flex, Text, Background, Input, ModalBase } from '@/shared/ui';
+import { Button, Flex, Text, Background, Input, ModalBase, Chip } from '@/shared/ui';
 
 import styles from './addExerciseModal.module.scss';
 
@@ -42,26 +43,67 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
       iconAction={<SettingsOutlineIcon />}
       onClickOverlay={() => setSelectedGroup(null)}
       textAction="Настроить"
-      title={selectedGroup ? 'Какое упражнение добавим?' : 'Выберите группу мышц'}
+      title={(
+        <>
+          <div className={selectedGroup ? styles.visible : styles.hidden}>
+            Какое упражнение добавим?
+          </div>
+          <div className={selectedGroup ? styles.hidden : styles.visible}>
+            Выбери группу мышц
+          </div>
+        </>
+      )}
     >
-      <Flex
-        className={styles.wrapper}
-        gap="medium"
-        justify="between"
-        vertical={true}
-      >
+      <Flex className={styles.wrapper} gap="medium" vertical={true}>
         {selectedGroup
           ? (
             <Flex className={styles.groupWrapper} gap={10} vertical={true}>
-              <Background className={styles.group}>
-                {selectedGroup.name}
+              <Background className={clsx(styles.group, styles.visible)}>
+                {selectedGroup.exercises.map((item, index) => (
+                  <Button
+                    align="start"
+                    className={styles.item}
+                    full={true}
+                    isActiveAnimation={false}
+                    key={item}
+                    radius="none"
+                    variant="none"
+                  >
+                    <Text className={styles.index} color="text-base-600" size={0.7}>
+                      {`${index + 1}.`}
+                    </Text>
+                    <Chip>
+                      <Text customColor={selectedGroup.color}>
+                        {selectedGroup.name}
+                      </Text>
+                    </Chip>
+                    <Text size="text-sm" weight="font-light">
+                      {item}
+                    </Text>
+                  </Button>
+                ))}
+                <Text
+                  align="text-center"
+                  className={styles.end}
+                  color="text-base-700"
+                  size="text-sm"
+                >
+                  Это конец списка
+                </Text>
               </Background>
-              <Input />
+              <Input
+                className={styles.visible}
+                rightAction={(
+                  <Button className={styles.buttonAdd} size="large" variant="solid">
+                    Добавить
+                  </Button>
+                )}
+              />
             </Flex>
           )
-          : items.map(item => (
+          : items.map((item) => (
             <Button
-              className={styles.button}
+              className={clsx(styles.button, styles.visible)}
               full={true}
               key={item.name}
               onClick={() => setSelectedGroup(item)}

@@ -133,7 +133,8 @@ export const VeesItem = ({ item }: { item: IVeesItem }) => {
           ['dropdown-arrow']: isOpen,
           [styles.collapsed]: !isOpen,
         })}
-        onClick={() => setIsOpen(previous => !previous)}
+        isActiveAnimation={false}
+        onClick={() => setIsOpen((previous) => !previous)}
         variant="solid"
       >
         <ArrowDropdownIcon />

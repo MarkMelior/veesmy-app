@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
 
-  @media (max-width: theme('screens.md')) {
+  @media (max-width: theme('screens.sm')) {
     border-radius: .75rem 0 0 .75rem;
   }
 }
@@ -22,10 +22,6 @@
   width: 64px;
   height: auto;
 
-  &:active {
-    transform: none;
-  }
-
   &.collapsed {
     color: theme('colors.base.600');
     background: theme('colors.base.800');
@@ -35,7 +31,7 @@
     }
   }
 
-  @media (max-width: theme('screens.md')) {
+  @media (max-width: theme('screens.sm')) {
     border-radius: .75rem 0 0 .75rem;
   }
 }

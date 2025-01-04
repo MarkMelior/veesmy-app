@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './button.module.scss';
 
 interface IButton {
+  align?: 'start' | 'center' | 'end'
   children?: React.ReactNode
   className?: string
   color?: 'base' | 'primary'
@@ -11,14 +12,16 @@ interface IButton {
   full?: boolean
   icon?: React.ReactNode
   iconOnly?: boolean
+  isActiveAnimation?: boolean
   onClick?: () => void
-  radius?: 'medium' | 'full'
+  radius?: 'none' | 'medium' | 'full'
   size?: 'medium' | 'large'
   to?: string
   variant?: 'solid' | 'light' | 'flat' | 'none'
 }
 
 export const Button = ({
+  align = 'center',
   children,
   className,
   color = 'primary',
@@ -26,6 +29,7 @@ export const Button = ({
   full,
   icon,
   iconOnly,
+  isActiveAnimation = true,
   onClick,
   radius = 'medium',
   size = 'medium',
@@ -42,7 +46,9 @@ export const Button = ({
         styles[`radius-${radius}`],
         styles[`color-${color}`],
         styles[`size-${size}`],
+        styles[`align-${align}`],
         {
+          [styles.activeAnimation]: isActiveAnimation,
           [styles.disabled]: disabled,
           [styles.full]: full,
           [styles.iconOnly]: iconOnly,
