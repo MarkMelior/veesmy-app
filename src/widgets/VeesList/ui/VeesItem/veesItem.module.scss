@@ -1,6 +1,8 @@
 .wrapper {
   display: flex;
 
+  animation: var(--anim-scale-fade-in);
+
   @media (max-width: theme('screens.sm')) {
     border-radius: .75rem 0 0 .75rem;
   }

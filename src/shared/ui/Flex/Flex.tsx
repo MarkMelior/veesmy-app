@@ -14,6 +14,7 @@ interface IFlex {
   full?: boolean
   gap?: 'small' | 'medium' | 'large' | number
   justify?: TAlign | 'between'
+  style?: React.CSSProperties
   vertical?: boolean
   wrap?: boolean
 }
@@ -26,6 +27,7 @@ export const Flex = ({
   full = true,
   gap,
   justify,
+  style,
   vertical,
   wrap,
 }: IFlex) => (
@@ -42,7 +44,7 @@ export const Flex = ({
       },
       className,
     )}
-    style={{ gap: typeof gap === 'number' ? `${gap}px` : undefined }}
+    style={{ gap: typeof gap === 'number' ? `${gap}px` : undefined, ...style }}
   >
     {children}
   </Component>

@@ -8,6 +8,8 @@
   border-radius: 20px;
   border: 1.5px solid theme('colors.base.500');
 
+  animation: var(--anim-scale-fade-in);
+
   @apply text-sm;
 
   &:hover {

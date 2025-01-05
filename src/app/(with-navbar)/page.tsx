@@ -1,7 +1,6 @@
 import { Headers } from '@/widgets/Headers';
 import { InfoBlock } from '@/widgets/InfoBlock/client';
 import { mockInfoBlockExercisesItems } from '@/widgets/InfoBlock/model/mock-exercises';
-import { Navbar } from '@/widgets/Navbar/client';
 
 import { Layout } from '@/shared/ui';
 
@@ -17,7 +16,6 @@ const Home = () => (
         />
       </Layout>
     </main>
-    <Navbar />
   </>
 );
 

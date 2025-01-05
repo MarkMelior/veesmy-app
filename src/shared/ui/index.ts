@@ -11,5 +11,6 @@ export * from './Layout';
 export * from './Light';
 export * from './Loading';
 export * from './Modal';
+export * from './Section';
 export * from './Skeleton';
 export * from './Text';

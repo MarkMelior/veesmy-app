@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation';
 
 import { AppRoutes } from '@/shared/constants';
 import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
+import { TLinkOrClick } from '@/shared/types';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
 import styles from './navbar.module.scss';
+
 import './navbar.global.scss';
 
 interface IBaseNavbarItem {
@@ -16,9 +18,7 @@ interface IBaseNavbarItem {
   title: string
 }
 
-type TNavbarItems =
-  | (IBaseNavbarItem & { href: AppRoutes, onClick?: never })
-  | (IBaseNavbarItem & { href?: never, onClick: () => void });
+type TNavbarItems = TLinkOrClick<IBaseNavbarItem>;
 
 const navbarItems: TNavbarItems[] = [
   {
