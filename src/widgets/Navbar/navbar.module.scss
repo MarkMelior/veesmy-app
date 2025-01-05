@@ -1,0 +1,43 @@
+.wrapper {
+  position: fixed;
+  bottom: 0;
+  z-index: theme('zIndex.hud');
+  backdrop-filter: blur(theme('backdropBlur.3xl'));
+}
+
+.layout {
+  display: flex;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-wrap: nowrap;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+
+  font-size: 0.625rem;
+
+  color: theme('colors.base.500');
+
+  &:hover {
+    color: theme('colors.base.300');
+  }
+
+  &.active {
+    color: theme('colors.primary.500');
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+}
+
