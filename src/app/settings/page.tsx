@@ -1,13 +1,24 @@
+import { Headers } from '@/widgets/Headers';
 import { Navbar } from '@/widgets/Navbar/client';
 
-const Home = () => (
+import { Layout } from '@/shared/ui';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Vees My | Настройки',
+};
+
+const Settings = () => (
   <>
-    {/* <Headers.Settings /> */}
+    <Headers.Settings />
     <main>
-      Настройки
+      <Layout>
+        Настройки
+      </Layout>
     </main>
     <Navbar />
   </>
 );
 
-export default Home;
+export default Settings;

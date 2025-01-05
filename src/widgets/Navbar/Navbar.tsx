@@ -8,6 +8,7 @@ import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
 import styles from './navbar.module.scss';
+import './navbar.global.scss';
 
 interface IBaseNavbarItem {
   disabled?: boolean
@@ -21,7 +22,7 @@ type TNavbarItems =
 
 const navbarItems: TNavbarItems[] = [
   {
-    href: AppRoutes.VEES,
+    href: AppRoutes.MAIN,
     icon: <VeesIcon />,
     title: 'Тренировки',
   },

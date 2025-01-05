@@ -10,6 +10,7 @@ interface IHeader {
   leftActions?: React.ReactNode
   placement?: 'center' | 'start'
   rightActions?: React.ReactNode
+  showLogo?: boolean
   title: string
 }
 
@@ -18,6 +19,7 @@ export const Header = ({
   leftActions,
   placement = 'center',
   rightActions,
+  showLogo,
   title,
 }: IHeader) => {
   const { dayOfMonth, dayOfWeek, monthNumber } = getCurrentDateInfo();
@@ -41,6 +43,9 @@ export const Header = ({
         <Flex align={placement} vertical={true}>
           <Text as="h1" color="text-base-50" weight="font-semibold">
             {title}
+            {showLogo ? (
+              <></>
+            ) : null}
           </Text>
           {description !== null && (
             <Text color="text-base-500" size="text-xs">

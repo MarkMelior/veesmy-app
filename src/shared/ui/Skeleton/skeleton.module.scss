@@ -1,0 +1,52 @@
+.skeleton {
+  position: relative;
+  width: 100%;
+  height: 32px;
+
+  background: theme('colors.base.800 / 75%');
+  border-radius: theme('borderRadius.lg');
+  overflow: hidden;
+
+  transition: all ease 1s;
+  animation: fade-in 0.2s ease-out forwards;
+
+  @apply border border-base-600/15;
+
+  &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+
+      background: linear-gradient(to right, transparent 0%, theme('colors.base.700 / 50%') 50%, transparent 100%);
+
+      animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      content: "";
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+@keyframes load {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

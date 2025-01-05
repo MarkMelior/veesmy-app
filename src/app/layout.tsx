@@ -1,6 +1,8 @@
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 
+import { Light } from '@/shared/ui';
+
 import type { Metadata } from 'next';
 
 import './globals.scss';
@@ -26,6 +28,7 @@ const RootLayout = ({ children }: IRootLayout) => (
       <body className={inter.className}>
         <ThemeProvider attribute="data-mode">
           {children}
+          <Light />
           <div id="modal-root" />
         </ThemeProvider>
       </body>

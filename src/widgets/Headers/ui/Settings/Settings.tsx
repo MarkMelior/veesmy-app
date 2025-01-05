@@ -1,6 +1,6 @@
 import { Button, Header } from '@/shared/ui';
 
-export const AllVees = () => (
+export const Settings = () => (
   <Header
     placement="start"
     rightActions={(
@@ -8,6 +8,7 @@ export const AllVees = () => (
         ^
       </Button>
     )}
-    title="Все тренировки"
+    showLogo={true}
+    title="Настройки"
   />
 );

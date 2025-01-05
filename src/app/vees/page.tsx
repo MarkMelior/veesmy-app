@@ -8,7 +8,7 @@ import { Layout } from '@/shared/ui';
 
 import { Timer } from '@/features/Timer/client';
 
-const Home = () => (
+const Vees = () => (
   <>
     <Headers.ExercisesList />
     <main>
@@ -23,4 +23,4 @@ const Home = () => (
   </>
 );
 
-export default Home;
+export default Vees;

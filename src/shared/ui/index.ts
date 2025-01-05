@@ -8,5 +8,8 @@ export * from './Header';
 export * from './Icon';
 export * from './Input';
 export * from './Layout';
+export * from './Light';
+export * from './Loading';
 export * from './Modal';
+export * from './Skeleton';
 export * from './Text';

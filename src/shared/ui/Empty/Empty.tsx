@@ -1,5 +1,4 @@
-import Image from 'next/image';
-
+import { Image } from '../client';
 import { Flex } from '../Flex';
 import { Text } from '../Text';
 

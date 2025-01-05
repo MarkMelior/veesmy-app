@@ -7,7 +7,7 @@ import { Layout } from '@/shared/ui';
 
 const Home = () => (
   <>
-    <Headers.AllVees />
+    <Headers.Main />
     <main>
       <Layout>
         <InfoBlock

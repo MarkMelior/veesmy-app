@@ -47,9 +47,10 @@ export default {
       code: ['JetBrains Mono', 'monospace'],
     },
     zIndex: {
-      hud: '100',
-      overlay: '200',
-      overlayChild: '300',
+      hud: '10',
+      light: '35',
+      overlay: '20',
+      overlayChild: '30',
     },
   },
 } satisfies Config;
