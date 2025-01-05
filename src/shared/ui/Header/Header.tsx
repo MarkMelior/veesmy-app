@@ -1,5 +1,6 @@
 import { clsx } from 'clsx';
 
+import { LogoIcon } from '@/shared/icons';
 import { getCurrentDateInfo } from '@/shared/lib/utils';
 import { Background, Flex, Layout, Text } from '@/shared/ui';
 
@@ -42,10 +43,10 @@ export const Header = ({
         ) : null}
         <Flex align={placement} vertical={true}>
           <Text as="h1" color="text-base-50" weight="font-semibold">
-            {title}
-            {showLogo ? (
-              <></>
-            ) : null}
+            <Flex align="center" gap={4}>
+              {title}
+              {showLogo ? <LogoIcon className={styles.logo} /> : null}
+            </Flex>
           </Text>
           {description !== null && (
             <Text color="text-base-500" size="text-xs">

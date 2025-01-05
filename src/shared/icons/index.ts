@@ -3,6 +3,7 @@ export * from './arrow-dropdown';
 export * from './arrow-left';
 export * from './drag';
 export * from './finish-outline';
+export * from './logo';
 export * from './message';
 export * from './paper-outline';
 export * from './pause';

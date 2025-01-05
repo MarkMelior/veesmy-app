@@ -1,6 +1,8 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { AppRoutes } from '@/shared/constants';
+
 import styles from './button.module.scss';
 
 interface IButton {
@@ -16,7 +18,7 @@ interface IButton {
   onClick?: () => void
   radius?: 'none' | 'medium' | 'full'
   size?: 'none' | 'medium' | 'large'
-  to?: string
+  to?: AppRoutes
   variant?: 'solid' | 'light' | 'flat' | 'none'
 }
 

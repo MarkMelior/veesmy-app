@@ -1,8 +1,6 @@
 .wrapper {
   display: block;
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
 }
 
 .item {
@@ -13,8 +11,9 @@
   height: 100%;
 
   border-radius: 50%;
-  border: 2px solid transparent;
+  border-color: transparent;
   border-bottom-color: currentcolor;
+  border-style: solid;
 
   &.first {
     animation: 0.8s ease 0s infinite normal none running rotate-360;
@@ -35,5 +34,32 @@
 
   100% {
       transform: rotate(360deg);
+  }
+}
+
+.size-small {
+  width: 1.5rem;
+  height: 1.5rem;
+
+  .item {
+    border-width: 2px;
+  }
+}
+
+.size-medium {
+  width: 2.5rem;
+  height: 2.5rem;
+
+  .item {
+    border-width: 3px;
+  }
+}
+
+.size-large {
+  width: 4rem;
+  height: 4rem;
+
+  .item {
+    border-width: 4px;
   }
 }
