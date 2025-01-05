@@ -9,8 +9,13 @@
   text-wrap: nowrap;
 }
 
-.activeAnimation:active {
+.activeAnimation:not(.disabled):active {
   transform: scale(0.98);
+}
+
+.disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
 }
 
 @mixin variant-solid($color) {

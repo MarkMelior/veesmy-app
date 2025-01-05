@@ -15,7 +15,7 @@ interface IButton {
   isActiveAnimation?: boolean
   onClick?: () => void
   radius?: 'none' | 'medium' | 'full'
-  size?: 'medium' | 'large'
+  size?: 'none' | 'medium' | 'large'
   to?: string
   variant?: 'solid' | 'light' | 'flat' | 'none'
 }
@@ -36,7 +36,7 @@ export const Button = ({
   to,
   variant = 'light',
 }: IButton) => {
-  const Component = to ? Link : 'button';
+  const Component = !disabled && to ? Link : 'button';
 
   return (
     <Component

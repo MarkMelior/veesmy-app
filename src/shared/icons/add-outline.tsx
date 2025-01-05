@@ -8,7 +8,7 @@ export const AddOutlineIcon = ({
   strokeWidth = 1.5,
   width = 26,
 }: IIcon) => (
-  <Icon height={height} width={width}>
+  <Icon height={height} viewBox="0 0 26 26" width={width}>
     <rect
       height="21.5"
       rx="7.25"
