@@ -37,6 +37,7 @@ export default {
       },
       red: {
         500: '#FA4838',
+        600: '#dc2626',
       },
       transparent: 'transparent',
       yellow: {

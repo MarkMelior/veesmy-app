@@ -28,7 +28,7 @@ const navbarItems: TNavbarItems[] = [
   },
   {
     icon: <AddOutlineIcon height={28} width={28} />,
-    onClick: () => {},
+    onClick: () => { /* void */ },
     title: 'Добавить',
   },
   {

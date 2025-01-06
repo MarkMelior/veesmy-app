@@ -17,4 +17,5 @@ export * from './plus';
 export * from './setting-outline';
 export * from './stopwatch-outline';
 export * from './theme';
+export * from './user';
 export * from './vees';
