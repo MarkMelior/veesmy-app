@@ -2,6 +2,9 @@
   position: fixed;
   bottom: 0;
   z-index: theme('zIndex.hud');
+}
+
+.navbar {
   backdrop-filter: blur(theme('backdropBlur.3xl'));
 }
 

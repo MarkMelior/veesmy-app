@@ -1,6 +1,7 @@
 export * from './add-outline';
 export * from './arrow-dropdown';
 export * from './arrow-left';
+export * from './cross';
 export * from './drag';
 export * from './export-outline';
 export * from './finish-outline';

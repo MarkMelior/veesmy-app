@@ -15,30 +15,16 @@
 
   background: theme('colors.base.900 / 50%');
 
-  animation: fade-in .7s ease-in-out;
+  animation: var(--anim-scale-fade-in);
   backdrop-filter: blur(theme('backdropBlur.3xl'));
 }
 
 .button {
   height: 50px;
 
-  animation: fade-in .4s ease-in-out;
+  animation: var(--anim-scale-fade-in);
 }
 
 .buttonPause {
   width: 50px;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-
-    transform: scale(0.9);
-  }
-
-  100% {
-    opacity: 1;
-
-    transform: scale(1);
-  }
 }

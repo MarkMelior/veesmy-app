@@ -175,7 +175,7 @@ export const Timer = () => {
           disabled={isRunning}
         >
           <Text
-            color={isRunning ? 'text-primary-600' : 'text-base-500'}
+            color={isRunning ? 'text-primary-400' : 'text-base-500'}
             size={isRunning ? 3 : 2.25}
             weight={isRunning ? 'font-light' : 'font-extralight'}
           >

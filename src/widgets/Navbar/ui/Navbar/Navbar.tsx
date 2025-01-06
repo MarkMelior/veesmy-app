@@ -8,6 +8,8 @@ import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
 import { TLinkOrClick } from '@/shared/types';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
+import { BackActiveVees } from '../BackActiveVees/BackActiveVees';
+
 import styles from './navbar.module.scss';
 
 import './navbar.global.scss';
@@ -43,9 +45,11 @@ export const Navbar = () => {
 
   return (
     <Flex className={styles.wrapper} gap={16} vertical={true}>
+      <BackActiveVees />
       <Background
         as="nav"
         border="top"
+        className={styles.navbar}
         opacity={true}
         radius="none"
       >

@@ -8,7 +8,7 @@
   @apply border border-base-400/15;
 
   &:has(.input:focus) {
-    @apply border-primary-400;
+    @apply border-primary-600;
   }
 }
 
@@ -24,6 +24,6 @@
   &:focus {
     outline: none;
 
-    @apply border-primary-400;
+    @apply border-primary-600;
   }
 }
