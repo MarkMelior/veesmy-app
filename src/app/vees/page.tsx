@@ -4,7 +4,7 @@ import { mockInfoBlockVeesItems } from '@/widgets/InfoBlock/model/mock-vees';
 import { VeesList } from '@/widgets/VeesList/client';
 import { mockVeesListItems } from '@/widgets/VeesList/model/mock';
 
-import { Layout } from '@/shared/ui';
+import { Layout, Separator } from '@/shared/ui';
 
 import { Timer } from '@/features/Timer/client';
 
@@ -15,6 +15,7 @@ const Vees = () => (
       <Layout>
         <InfoBlock items={mockInfoBlockVeesItems} />
       </Layout>
+      <Separator size={32} />
       <Layout padding={false}>
         <VeesList items={mockVeesListItems} />
       </Layout>

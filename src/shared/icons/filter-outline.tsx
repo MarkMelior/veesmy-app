@@ -2,23 +2,15 @@ import React from 'react';
 
 import { Icon, IIcon } from '@/shared/ui';
 
-export const ArrowLeftIcon = ({
-  className,
+export const FilterOutlineIcon = ({
   fill = 'currentColor',
   height = 26,
   strokeWidth = 1.5,
   width = 26,
 }: IIcon) => (
-  <Icon className={className} height={height} width={width}>
+  <Icon height={height} viewBox="0 0 26 26" width={width}>
     <path
-      d="M22.5 13L3.5 13"
-      stroke={fill}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={strokeWidth}
-    />
-    <path
-      d="M10.5 6L3.5 13L10.5 20"
+      d="M5 3.5H21L15.2857 11.2188V22.5L10.7143 17.75V11.2188L5 3.5Z"
       stroke={fill}
       strokeLinecap="round"
       strokeLinejoin="round"

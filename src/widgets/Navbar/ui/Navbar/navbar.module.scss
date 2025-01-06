@@ -2,10 +2,12 @@
   position: fixed;
   bottom: 0;
   z-index: theme('zIndex.hud');
+  pointer-events: none;
 }
 
 .navbar {
   backdrop-filter: blur(theme('backdropBlur.3xl'));
+  pointer-events: auto;
 }
 
 .layout {

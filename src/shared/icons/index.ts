@@ -4,6 +4,7 @@ export * from './arrow-left';
 export * from './cross';
 export * from './drag';
 export * from './export-outline';
+export * from './filter-outline';
 export * from './finish-outline';
 export * from './flash-outline';
 export * from './folder-outline';

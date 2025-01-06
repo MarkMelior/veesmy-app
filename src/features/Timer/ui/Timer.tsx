@@ -170,9 +170,8 @@ export const Timer = () => {
         {RenderButtons}
         {/* TODO: Добавить выбор времени в таймере - https://melior-app.atlassian.net/browse/VEES-9 */}
         <Button
-          className={clsx(styles.button, 'ml-auto')}
+          className={clsx(styles.button, { [styles.active]: isRunning }, 'ml-auto')}
           color="base"
-          disabled={isRunning}
         >
           <Text
             color={isRunning ? 'text-primary-400' : 'text-base-500'}

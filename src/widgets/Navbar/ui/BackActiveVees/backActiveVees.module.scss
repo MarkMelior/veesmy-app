@@ -11,6 +11,7 @@
 
   animation: var(--anim-scale-fade-in);
   backdrop-filter: blur(theme('backdropBlur.3xl'));
+  pointer-events: auto;
 
   &:has(.content:active) {
     transform: scale(0.98);
