@@ -37,6 +37,7 @@ export default {
       },
       red: {
         500: '#FA4838',
+        600: '#dc2626',
       },
       transparent: 'transparent',
       yellow: {
@@ -47,9 +48,10 @@ export default {
       code: ['JetBrains Mono', 'monospace'],
     },
     zIndex: {
-      hud: '100',
-      overlay: '200',
-      overlayChild: '300',
+      hud: '10',
+      light: '35',
+      overlay: '20',
+      overlayChild: '30',
     },
   },
 } satisfies Config;

@@ -4,6 +4,8 @@
 
   overflow: clip;
 
+  animation: var(--anim-scale-fade-in);
+
   &.isShowAll {
     padding-bottom: 0;
   }
@@ -16,7 +18,6 @@
   overflow: clip;
 
   transition: all 0.3s ease;
-  animation: fade-in 1s ease;
 }
 
 .item {
@@ -56,15 +57,5 @@
     content: '';
     filter: blur(64px);
     filter: theme('blur.3xl');
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
   }
 }

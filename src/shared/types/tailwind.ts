@@ -37,9 +37,7 @@ type Colors =
   | 'pink'
   | 'rose';
 
-type ColorWithShades<T extends string> = `text-${T}-${Shades}`;
-
-export type TailwindColors = ColorWithShades<Colors>;
+export type TailwindColors = `text-${Colors}-${Shades}`;
 
 export type TailwindWeight =
   | 'font-extralight'

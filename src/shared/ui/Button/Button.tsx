@@ -1,23 +1,26 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
+import { AppRoutes } from '@/shared/constants';
+
 import styles from './button.module.scss';
 
 interface IButton {
   align?: 'start' | 'center' | 'end'
   children?: React.ReactNode
   className?: string
-  color?: 'base' | 'primary'
+  color?: 'base' | 'primary' | 'red'
   disabled?: boolean
   full?: boolean
   icon?: React.ReactNode
   iconOnly?: boolean
+  iconRight?: React.ReactNode
   isActiveAnimation?: boolean
   onClick?: () => void
   radius?: 'none' | 'medium' | 'full'
   size?: 'none' | 'medium' | 'large'
-  to?: string
-  variant?: 'solid' | 'light' | 'flat' | 'none'
+  to?: AppRoutes
+  variant?: 'solid' | 'light' | 'flat' | 'bordered' | 'none'
 }
 
 export const Button = ({
@@ -29,6 +32,7 @@ export const Button = ({
   full,
   icon,
   iconOnly,
+  iconRight,
   isActiveAnimation = true,
   onClick,
   radius = 'medium',
@@ -61,6 +65,7 @@ export const Button = ({
     >
       {icon}
       {children}
+      {iconRight}
     </Component>
   );
 };

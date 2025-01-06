@@ -10,8 +10,7 @@
 .layout {
   display: flex;
   align-items: center;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  height: 64px;
   text-wrap: nowrap;
 }
 
@@ -26,4 +25,9 @@
   &.rightActions {
     justify-content: end;
   }
+}
+
+.logo path {
+  fill: theme('colors.primary.500  / 25%');
+  stroke: theme('colors.primary.500');
 }

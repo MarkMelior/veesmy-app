@@ -1,7 +1,9 @@
 .divider {
-  margin-top: 6px;
-  margin-bottom: 6px;
-
   color: theme('colors.base.500 / 15%');
   border-top: dashed 1px;
+}
+
+.size-small {
+  margin-top: 6px;
+  margin-bottom: 6px;
 }

@@ -50,6 +50,18 @@
   }
 }
 
+@mixin variant-bordered($color) {
+  color: theme('colors.#{$color}.500');
+  background: theme('colors.#{$color}.500 / 10%');
+  border: 1px solid theme('colors.#{$color}.500');
+
+  &:not(.disabled):hover {
+    color: theme('colors.#{$color}.600');
+    background: theme('colors.#{$color}.500 / 20%');
+    border-color: theme('colors.#{$color}.600');
+  }
+}
+
 @mixin variants($color) {
   &.variant-solid {
     @include variant-solid($color);
@@ -62,6 +74,10 @@
   &.variant-flat {
     @include variant-flat($color);
   }
+  
+  &.variant-bordered {
+    @include variant-bordered($color);
+  }
 }
 
 .color-primary {
@@ -70,6 +86,10 @@
 
 .color-base {
   @include variants('base');
+}
+
+.color-red {
+  @include variants('red');
 }
 
 .radius-full {

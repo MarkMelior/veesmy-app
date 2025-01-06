@@ -1,0 +1,32 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: theme('zIndex.light');
+
+	overflow: clip;
+
+	animation: fade-in 1s ease-in-out;
+	pointer-events: none;
+	user-select: none;
+}
+
+.content {
+	width: 108rem;
+
+	opacity: .25;
+	flex: none;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

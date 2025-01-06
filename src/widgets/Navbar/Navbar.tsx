@@ -5,9 +5,12 @@ import { usePathname } from 'next/navigation';
 
 import { AppRoutes } from '@/shared/constants';
 import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
+import { TLinkOrClick } from '@/shared/types';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
 import styles from './navbar.module.scss';
+
+import './navbar.global.scss';
 
 interface IBaseNavbarItem {
   disabled?: boolean
@@ -15,19 +18,17 @@ interface IBaseNavbarItem {
   title: string
 }
 
-type TNavbarItems =
-  | (IBaseNavbarItem & { href: AppRoutes, onClick?: never })
-  | (IBaseNavbarItem & { href?: never, onClick: () => void });
+type TNavbarItems = TLinkOrClick<IBaseNavbarItem>;
 
 const navbarItems: TNavbarItems[] = [
   {
-    href: AppRoutes.VEES,
+    href: AppRoutes.MAIN,
     icon: <VeesIcon />,
     title: 'Тренировки',
   },
   {
     icon: <AddOutlineIcon height={28} width={28} />,
-    onClick: () => {},
+    onClick: () => { /* void */ },
     title: 'Добавить',
   },
   {

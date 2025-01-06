@@ -13,3 +13,43 @@ path {
 	50%{ transform: translateY(0) scale(1.2); }
 	100%{ transform: translateY(0) scale(1); }
 }
+
+:root {
+  --anim-scale-fade-in: scale-fade-in .3s ease-out;
+  --anim-fade-in: fade-in .3s ease-out;
+  --anim-scale-in: scale-in .3s ease-out;
+}
+
+@keyframes scale-fade-in {
+  0% {
+    opacity: 0;
+
+    transform: scale(0.95);
+  }
+  
+  100% {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-in {
+  0% {
+    transform: scale(0.95);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}

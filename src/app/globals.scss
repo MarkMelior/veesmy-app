@@ -30,3 +30,7 @@ body {
     background: theme('colors.base.100');
   }
 }
+
+:disabled {
+  cursor: not-allowed;
+}

@@ -1,0 +1,24 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+  height: 100vh;
+}
+
+.animation {
+	animation: var(--anim-scale-fade-in);
+}
+
+.content {
+	position: relative;
+}
+
+.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	transform: translate(-50%, -50%);
+}

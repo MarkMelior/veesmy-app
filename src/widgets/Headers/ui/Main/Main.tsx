@@ -1,6 +1,6 @@
 import { Button, Header } from '@/shared/ui';
 
-export const AllVees = () => (
+export const Main = () => (
   <Header
     placement="start"
     rightActions={(

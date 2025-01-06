@@ -1,5 +1,5 @@
 export enum AppRoutes {
-  ALL_VEES = '/all-vees',
+  MAIN = '/',
   VEES = '/vees',
   SETTINGS = '/settings',
   // last

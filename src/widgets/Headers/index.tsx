@@ -1,5 +1,6 @@
-import { AllVees } from './ui/AllVees/AllVees';
 import { ExercisesList } from './ui/ExercisesList/ExercisesList';
+import { Main } from './ui/Main/Main';
+import { Settings } from './ui/Settings/Settings';
 
 export const Headers = () => {
   throw new Error(
@@ -8,4 +9,5 @@ export const Headers = () => {
 };
 
 Headers.ExercisesList = ExercisesList;
-Headers.AllVees = AllVees;
+Headers.Main = Main;
+Headers.Settings = Settings;
