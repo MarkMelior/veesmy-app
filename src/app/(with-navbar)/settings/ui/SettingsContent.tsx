@@ -78,6 +78,7 @@ export const SettingsContent = () => (
       color="red"
       disabled={true}
       full={true}
+      radius="large"
       size="large"
       variant="bordered"
     >

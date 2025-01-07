@@ -1,5 +1,6 @@
 .title {
   width: 100%;
+  pointer-events: auto;
 }
 
 .title, .action, .content {
@@ -8,6 +9,9 @@
 
 .content {
   width: 100%;
+  max-height: theme('height.modalBaseContent');
+  overflow-y: auto;
+  pointer-events: auto;
 }
 
 .action {

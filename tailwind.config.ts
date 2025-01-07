@@ -10,6 +10,7 @@ export default {
       'xl': '16px',
     },
     blur: {
+      '2xl': '32px',
       '3xl': '64px',
     },
     colors: {
@@ -47,6 +48,9 @@ export default {
     },
     fontFamily: {
       code: ['JetBrains Mono', 'monospace'],
+    },
+    height: {
+      modalBaseContent: '365px',
     },
     zIndex: {
       hud: '10',

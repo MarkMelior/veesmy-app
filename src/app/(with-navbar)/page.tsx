@@ -5,6 +5,9 @@ import { mockInfoBlockExercisesItems } from '@/widgets/InfoBlock/model/mock-exer
 import { ArrowLeftIcon, FilterOutlineIcon } from '@/shared/icons';
 import { Badge, Button, Flex, Layout, Separator } from '@/shared/ui';
 
+import { FiltersModal } from '@/features/FiltersModal';
+import { SortModal } from '@/features/SortModal';
+
 import styles from './page.module.scss';
 
 const Home = () => (
@@ -19,30 +22,35 @@ const Home = () => (
         />
         <Separator size={18} />
         <Flex gap={10}>
-          <Button
-            className={styles.button}
-            full={true}
-            iconRight={(
-              <Badge>
-                <FilterOutlineIcon />
-              </Badge>
-            )}
-            size="large"
-          >
-            Фильтры
-          </Button>
-          <Button
-            className={styles.button}
-            full={true}
-            iconRight={(
-              <Badge>
-                <ArrowLeftIcon className="rotate-90" />
-              </Badge>
-            )}
-            size="large"
-          >
-            Сортировка
-          </Button>
+
+          <FiltersModal>
+            <Button
+              className={styles.button}
+              full={true}
+              iconRight={(
+                <Badge show={true}>
+                  <FilterOutlineIcon />
+                </Badge>
+              )}
+              size="large"
+            >
+              Фильтры
+            </Button>
+          </FiltersModal>
+          <SortModal>
+            <Button
+              className={styles.button}
+              full={true}
+              iconRight={(
+                <Badge show={false}>
+                  <ArrowLeftIcon className="rotate-90" />
+                </Badge>
+              )}
+              size="large"
+            >
+              Сортировка
+            </Button>
+          </SortModal>
         </Flex>
       </Layout>
     </main>

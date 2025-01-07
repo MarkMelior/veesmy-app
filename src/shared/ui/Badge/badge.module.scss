@@ -1,0 +1,20 @@
+.badge {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8px;
+    height: 8px;
+  
+    background: theme('colors.red.500');
+    border-radius: 50%;
+    content: '';
+  }
+}
+
+.mask {
+  mask-image: radial-gradient(circle at calc(100% - 4px) 4px, transparent 0%, transparent 8px, black 8px);
+  mask-repeat: no-repeat;
+}

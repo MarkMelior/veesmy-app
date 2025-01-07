@@ -1,6 +1,5 @@
 .wrapper {
-  height: 365px;
-  overflow-y: auto;
+  height: theme('height.modalBaseContent');
 }
 
 .button {
@@ -22,7 +21,6 @@
 
 .visible {
   animation: var(--anim-scale-fade-in);
-  pointer-events: auto;
 }
 
 .hidden {
@@ -53,10 +51,26 @@
 }
 
 .group {
+  position: relative;
   height: 100%;
 
   background: theme('colors.base.900 / 75%');
   overflow-y: auto;
+
+  &::before {
+    position: absolute;
+    top: 5%;
+    left: -15%;
+    width: 150px;
+    height: 200px;
+
+    background: var(--color-selected-group);
+    opacity: 0.03;
+    border-radius: 25%;
+    content: '';
+
+    filter: blur(theme('blur.2xl'));
+  }
 }
 
 .item {
