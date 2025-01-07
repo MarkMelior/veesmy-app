@@ -13,6 +13,7 @@ interface IFlex {
   className?: string
   full?: boolean
   gap?: 'small' | 'medium' | 'large' | number
+  id?: string
   justify?: TAlign | 'between'
   style?: React.CSSProperties
   vertical?: boolean
@@ -26,6 +27,7 @@ export const Flex = ({
   className,
   full = true,
   gap,
+  id,
   justify,
   style,
   vertical,
@@ -44,6 +46,7 @@ export const Flex = ({
       },
       className,
     )}
+    id={id}
     style={{ gap: typeof gap === 'number' ? `${gap}px` : undefined, ...style }}
   >
     {children}

@@ -15,6 +15,6 @@ export const SortModal = ({ children }: ISortModal) => (
     textAction="Сбросить сортировку"
     title="Выберите сортировку"
   >
-    HI
+    Здесь будет сортировка
   </ModalBase>
 );

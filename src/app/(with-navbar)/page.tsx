@@ -21,8 +21,7 @@ const Home = () => (
           showAllText="Показать всю статистику"
         />
         <Separator size={18} />
-        <Flex gap={10}>
-
+        <Flex gap={10} id="home-filters-buttons">
           <FiltersModal>
             <Button
               className={styles.button}

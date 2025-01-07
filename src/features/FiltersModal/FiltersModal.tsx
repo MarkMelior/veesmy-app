@@ -15,6 +15,6 @@ export const FiltersModal = ({ children }: IFiltersModal) => (
     textAction="Сбросить фильтры"
     title="Настройте фильтры"
   >
-    HI
+    Здесь будут фильтры
   </ModalBase>
 );
