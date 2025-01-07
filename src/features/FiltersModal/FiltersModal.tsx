@@ -13,7 +13,7 @@ export const FiltersModal = ({ children }: IFiltersModal) => (
     iconAction={<ResetIcon />}
     onClickOverlay={() => { /* Применить фильтры */ }}
     textAction="Сбросить фильтры"
-    title="Настройте фильтры"
+    title="Настрой фильтры"
   >
     Здесь будут фильтры
   </ModalBase>

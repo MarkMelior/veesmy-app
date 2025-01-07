@@ -13,7 +13,7 @@ export const SortModal = ({ children }: ISortModal) => (
     iconAction={<ResetIcon />}
     onClickOverlay={() => { /* Применить сортировку */ }}
     textAction="Сбросить сортировку"
-    title="Выберите сортировку"
+    title="Выбери сортировку"
   >
     Здесь будет сортировка
   </ModalBase>

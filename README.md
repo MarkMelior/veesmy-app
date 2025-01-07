@@ -1,12 +1,38 @@
-# Veesmy App
+# Vees My
 
-> Лучшее приложение для записи результатов тренировок
+> Самое удобное приложение для записи результатов тренировок (:
 
-Продемонстрировать свои навыки, это не про "усложнить проект" (ручная настройка webpack, всевозможные самописные утилиты, размазывание не переиспользуемого функционала по всей архитектуре, тесты на всё). Настоящее мастерство находится в простоте
+- ✨🎨 Разработан [дизайн в Figma](https://www.figma.com/design/l7WmZZ7WKEr3YnVNdibxGD/Mobile-App?node-id=250-793&t=7fycS0Obh0DIcwXF-1)
+- Собственный [UI Kit](/src/shared/ui/)
+- Серверный рендеринг и [AppRouter](https://nextjs.org/docs/app)
+- Архитектурная методология [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)
+- 🤍🖤 Темная и светлая тема
+- Полная типизация проекта
+
+[![](/docs/preview.png/)](https://www.figma.com/design/l7WmZZ7WKEr3YnVNdibxGD/Mobile-App?node-id=250-793&t=7fycS0Obh0DIcwXF-1)
 
 ---
 
-### Общие правила проекта
+![Next.js 15](https://img.shields.io/badge/Next.js_15-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
+![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript 5](https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Module SCSS](https://img.shields.io/badge/module_scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![GIT](https://img.shields.io/badge/CI_/_CD-000000?style=for-the-badge&logo=github&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white)
+![stylelint](https://img.shields.io/badge/stylelint-263238?style=for-the-badge&logo=stylelint&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+
+⠀
+
+> Продемонстрировать свои навыки, это не про «усложнить проект»... 
+> *(всевозможные самописные утилиты, хуки, размазывание не переиспользуемого функционала по всей архитектуре, тесты на всё подряд)*.
+> ⠀
+> Настоящее мастерство находится в простоте `^-^`
+
+⠀
+
+### 🫡 Общие правила проекта
 
 #### Архитектура
 
@@ -24,7 +50,8 @@
 - `test` - Добавление новых тестов или исправление существующих;
 - `core` - Любые другие изменения.
 
-> Пример названия ветки: `feature/VEES-330-short-description`. Пример сообщения коммита: `VEES-330 | Short description`
+> Пример названия ветки: `feature/VEES-330-short-description`. 
+> Пример сообщения коммита: `VEES-330 | Short description`
 
 ##### SCSS
 
@@ -35,7 +62,7 @@
 
 ---
 
-### Скрипты
+### 👾 Скрипты
 
 - `yarn dev` - Запуск в Development режиме;
 - `yarn build` - Production сборка;
@@ -44,11 +71,11 @@
 
 ---
 
-### Архитектура проекта
+### ⚡️ Архитектура проекта
 
 Проект написан в соответствии с архитектурной методологией [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/tutorial) и [AppRouter](https://nextjs.org/docs/app) Next.js 15.
 
-- [app](/src/app/) - Все, что обеспечивает работу приложения. [AppRouter](https://nextjs.org/docs/app);
+- [app](/src/app/) - [AppRouter](https://nextjs.org/docs/app);
 - [widgets](/src/widgets/) - Большие, автономные блоки функциональности или пользовательского интерфейса;
 - [features](/src/features/) - Повторно используемые реализации целых функций продукта;
 - [entities](/src/entities/) - Бизнес сущности;
