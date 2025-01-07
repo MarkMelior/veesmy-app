@@ -133,10 +133,7 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
             <Text className={styles.name} customColor={item.color}>
               {item.name}
             </Text>
-            <Text
-              color="text-base-700"
-              size="text-sm"
-            >
+            <Text color="text-base-700" size="text-sm">
               {getCountExerciseWord(item.exercises.length)}
             </Text>
           </Button>

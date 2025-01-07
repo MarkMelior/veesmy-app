@@ -1,12 +1,10 @@
+import { getErrorGroupDirectly } from '@/shared/constants';
+
 import { ExercisesList } from './ui/ExercisesList/ExercisesList';
 import { Main } from './ui/Main/Main';
 import { Settings } from './ui/Settings/Settings';
 
-export const Headers = () => {
-  throw new Error(
-    'The \'Headers\' component is a group and cannot be used directly.',
-  );
-};
+export const Headers = () => getErrorGroupDirectly('Headers');
 
 Headers.ExercisesList = ExercisesList;
 Headers.Main = Main;

@@ -12,8 +12,6 @@ import { BackActiveVees } from '../BackActiveVees/BackActiveVees';
 
 import styles from './navbar.module.scss';
 
-import './navbar.global.scss';
-
 interface IBaseNavbarItem {
   disabled?: boolean
   icon: React.ReactNode

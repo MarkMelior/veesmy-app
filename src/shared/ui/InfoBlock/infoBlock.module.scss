@@ -6,7 +6,7 @@
 
   animation: var(--anim-scale-fade-in);
 
-  &.isShowAll {
+  &.showButton {
     padding-bottom: 0;
   }
 }
@@ -14,19 +14,13 @@
 .wrapper {
   --info-block-height: 125px;
   height: var(--info-block-height);
+  max-height: fit-content;
+  padding-right: 16px;
+  padding-left: 16px;
 
   overflow: clip;
 
   transition: all 0.3s ease;
-}
-
-.item {
-  padding: 6px 16px;
-}
-
-.divider {
-  margin-right: 16px;
-  margin-left: 16px;
 }
 
 .button {
