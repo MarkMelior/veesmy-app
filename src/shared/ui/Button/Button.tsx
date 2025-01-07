@@ -17,7 +17,7 @@ interface IButton {
   iconRight?: React.ReactNode
   isActiveAnimation?: boolean
   onClick?: () => void
-  radius?: 'none' | 'medium' | 'full'
+  radius?: 'none' | 'medium' | 'large' | 'full'
   size?: 'none' | 'medium' | 'large'
   to?: AppRoutes
   variant?: 'solid' | 'light' | 'flat' | 'bordered' | 'none'

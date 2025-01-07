@@ -1,5 +1,6 @@
 export * from './Avatar';
 export * from './Background';
+export * from './Badge';
 export * from './Button';
 export * from './Chip';
 export * from './Divider';
@@ -13,5 +14,6 @@ export * from './Light';
 export * from './Loading';
 export * from './Modal';
 export * from './Section';
+export * from './Separator';
 export * from './Skeleton';
 export * from './Text';

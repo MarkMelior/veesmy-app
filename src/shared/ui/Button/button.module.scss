@@ -30,19 +30,19 @@
   color: theme('colors.#{$color}.500');
 
   &:not(.disabled):hover {
-    color: theme('colors.#{$color}.600');
+    color: theme('colors.#{$color}.400');
     background: theme('colors.#{$color}.500 / 10%');
   }
 }
 
 @mixin variant-flat($color) {
   @if $color == 'base' {
-    color: theme('colors.#{$color}.400');
+    background: theme('colors.#{$color}.600 / 35%');
   } @else {
-    color: theme('colors.#{$color}.600');
+    background: theme('colors.#{$color}.400 / 35%');
   }
 
-  background: theme('colors.#{$color}.600 / 35%');
+  color: theme('colors.#{$color}.400');
 
   &:not(.disabled):hover {
     color: theme('colors.base.50');
@@ -100,6 +100,10 @@
   border-radius: 0.625rem;
 }
 
+.radius-large {
+  border-radius: theme('borderRadius.2xl');
+}
+
 .align-start {
   justify-content: flex-start;
 }
@@ -121,7 +125,7 @@
 }
 
 .size-large {
-  padding: 0.75rem 1.125rem;
+  padding: 0.9rem 1.125rem;
 
   &.iconOnly {
     padding: 0.6rem;

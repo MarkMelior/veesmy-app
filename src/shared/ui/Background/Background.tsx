@@ -13,6 +13,7 @@ interface IBackground {
   className?: string
   opacity?: boolean
   radius?: 'none' | 'small' | 'medium' | 'large' | 'full'
+  style?: React.CSSProperties
 }
 
 export const Background = ({
@@ -22,6 +23,7 @@ export const Background = ({
   className,
   opacity,
   radius = 'medium',
+  style,
 }: IBackground) => (
   <Component
     className={clsx(
@@ -34,6 +36,7 @@ export const Background = ({
       },
       className,
     )}
+    style={style}
   >
     {children}
   </Component>

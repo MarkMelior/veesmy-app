@@ -1,5 +1,4 @@
 import { Headers } from '@/widgets/Headers';
-import { Navbar } from '@/widgets/Navbar/client';
 
 import { Layout } from '@/shared/ui';
 
@@ -21,7 +20,6 @@ const Settings = () => (
         <SettingsContent />
       </Layout>
     </main>
-    <Navbar />
   </>
 );
 

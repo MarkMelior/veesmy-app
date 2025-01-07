@@ -12,7 +12,7 @@ interface IVeesList {
 }
 
 export const VeesList = ({ items }: IVeesList) => (
-  <Flex className="mt-8 pb-32" gap={22} vertical={true}>
+  <Flex gap={22} vertical={true}>
     {items.map((item, index) => (
       <VeesItem item={item} key={`${index}${item.name}`} />
     ))}

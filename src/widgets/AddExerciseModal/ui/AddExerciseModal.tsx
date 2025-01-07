@@ -58,7 +58,10 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
       <Flex className={styles.wrapper} gap="medium" vertical={true}>
         {selectedGroup ? (
           <Flex className={styles.groupWrapper} gap={10} vertical={true}>
-            <Background className={clsx(styles.group, styles.visible)}>
+            <Background
+              className={clsx(styles.group, styles.visible)}
+              style={{ '--color-selected-group': selectedGroup.color } as React.CSSProperties}
+            >
               {selectedGroup.exercises.length > 0 ? (
                 <>
                   {selectedGroup.exercises.map((item, index) => (

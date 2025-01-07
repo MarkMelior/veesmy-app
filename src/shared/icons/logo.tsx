@@ -6,7 +6,7 @@ export const LogoIcon = ({
   className,
   fill = 'currentColor',
   height = 24,
-  strokeWidth = 1.5,
+  strokeWidth = 1,
   width = 24,
 }: IIcon) => (
   <Icon className={className} height={height} viewBox="0 0 48 24" width={width}>

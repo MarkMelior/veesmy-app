@@ -2,7 +2,13 @@ import { Headers } from '@/widgets/Headers';
 import { InfoBlock } from '@/widgets/InfoBlock/client';
 import { mockInfoBlockExercisesItems } from '@/widgets/InfoBlock/model/mock-exercises';
 
-import { Layout } from '@/shared/ui';
+import { ArrowLeftIcon, FilterOutlineIcon } from '@/shared/icons';
+import { Badge, Button, Flex, Layout, Separator } from '@/shared/ui';
+
+import { FiltersModal } from '@/features/FiltersModal';
+import { SortModal } from '@/features/SortModal';
+
+import styles from './page.module.scss';
 
 const Home = () => (
   <>
@@ -14,6 +20,37 @@ const Home = () => (
           showAllCountItems={2}
           showAllText="Показать всю статистику"
         />
+        <Separator size={18} />
+        <Flex gap={10} id="home-filters-buttons">
+          <FiltersModal>
+            <Button
+              className={styles.button}
+              full={true}
+              iconRight={(
+                <Badge show={true}>
+                  <FilterOutlineIcon />
+                </Badge>
+              )}
+              size="large"
+            >
+              Фильтры
+            </Button>
+          </FiltersModal>
+          <SortModal>
+            <Button
+              className={styles.button}
+              full={true}
+              iconRight={(
+                <Badge show={false}>
+                  <ArrowLeftIcon className="rotate-90" />
+                </Badge>
+              )}
+              size="large"
+            >
+              Сортировка
+            </Button>
+          </SortModal>
+        </Flex>
       </Layout>
     </main>
   </>

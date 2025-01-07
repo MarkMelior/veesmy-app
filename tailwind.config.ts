@@ -10,6 +10,7 @@ export default {
       'xl': '16px',
     },
     blur: {
+      '2xl': '32px',
       '3xl': '64px',
     },
     colors: {
@@ -31,11 +32,12 @@ export default {
         500: '#00FF80',
       },
       primary: {
-        400: '#3F73A6',
+        400: '#5AADF2',
         500: '#1A80E5',
-        600: '#5AADF2',
+        600: '#3F73A6',
       },
       red: {
+        400: '#FF4D4F',
         500: '#FA4838',
         600: '#dc2626',
       },
@@ -46,6 +48,9 @@ export default {
     },
     fontFamily: {
       code: ['JetBrains Mono', 'monospace'],
+    },
+    height: {
+      modalBaseContent: '365px',
     },
     zIndex: {
       hud: '10',
