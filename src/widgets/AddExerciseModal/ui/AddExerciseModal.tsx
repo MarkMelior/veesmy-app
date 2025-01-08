@@ -35,15 +35,18 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
 
   return (
     <ModalBase
+      action={{
+        icon: <SettingsOutlineIcon />,
+        onClick: () => { /* Redirect в настройки */ },
+        text: 'Настроить',
+      }}
       button={(
         <Button iconOnly={true}>
           <AddOutlineIcon />
         </Button>
       )}
       closeOnClickOverlay={!selectedGroup}
-      iconAction={<SettingsOutlineIcon />}
       onClickOverlay={() => setSelectedGroup(null)}
-      textAction="Настроить"
       title={(
         <>
           <div className={selectedGroup ? styles.visible : styles.hidden}>

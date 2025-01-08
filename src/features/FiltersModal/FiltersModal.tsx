@@ -9,10 +9,12 @@ interface IFiltersModal {
 
 export const FiltersModal = ({ children }: IFiltersModal) => (
   <ModalBase
+    action={{
+      icon: <ResetIcon />,
+      onClick: () => { /* Применить фильтры */ },
+      text: 'Сбросить фильтры',
+    }}
     button={children}
-    iconAction={<ResetIcon />}
-    onClickOverlay={() => { /* Применить фильтры */ }}
-    textAction="Сбросить фильтры"
     title="Настрой фильтры"
   >
     Здесь будут фильтры

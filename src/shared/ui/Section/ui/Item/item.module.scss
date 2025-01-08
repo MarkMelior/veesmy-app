@@ -1,10 +1,5 @@
-.wrapper {
-  overflow: clip;
-
-  animation: var(--anim-scale-fade-in);
-}
-
 .item {
+  position: relative;
   padding: 12px 16px;
 
   &:hover {
@@ -22,9 +17,10 @@
 }
 
 .divider {
+  position: absolute;
+  right: 0;
+  bottom: -0.5px;
   width: calc(100% - 56px);
-  margin-top: -0.5px;
-  margin-left: auto;
 }
 
 .title {

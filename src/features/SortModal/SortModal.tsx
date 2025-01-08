@@ -9,10 +9,12 @@ interface ISortModal {
 
 export const SortModal = ({ children }: ISortModal) => (
   <ModalBase
+    action={{
+      icon: <ResetIcon />,
+      onClick: () => { /* Применить сортировку */ },
+      text: 'Сбросить сортировку',
+    }}
     button={children}
-    iconAction={<ResetIcon />}
-    onClickOverlay={() => { /* Применить сортировку */ }}
-    textAction="Сбросить сортировку"
     title="Выбери сортировку"
   >
     Здесь будет сортировка

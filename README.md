@@ -2,6 +2,8 @@
 
 > Самое удобное приложение для записи результатов тренировок (:
 
+⠀
+
 - ✨🎨 Разработан [дизайн в Figma](https://www.figma.com/design/l7WmZZ7WKEr3YnVNdibxGD/Mobile-App?node-id=250-793&t=7fycS0Obh0DIcwXF-1)
 - Собственный [UI Kit](/src/shared/ui/)
 - Серверный рендеринг и [AppRouter](https://nextjs.org/docs/app)
@@ -16,6 +18,7 @@
 ![Next.js 15](https://img.shields.io/badge/Next.js_15-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
 ![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript 5](https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Feature-Sliced Design](https://img.shields.io/badge/FSD-3481FE?style=for-the-badge&logo=flat&logoColor=white)
 ![Module SCSS](https://img.shields.io/badge/module_scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![GIT](https://img.shields.io/badge/CI_/_CD-000000?style=for-the-badge&logo=github&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white)
@@ -27,7 +30,7 @@
 
 > Продемонстрировать свои навыки, это не про «усложнить проект»... 
 > *(всевозможные самописные утилиты, хуки, размазывание не переиспользуемого функционала по всей архитектуре, тесты на всё подряд)*.
-> ⠀
+> ~
 > Настоящее мастерство находится в простоте `^-^`
 
 ⠀
