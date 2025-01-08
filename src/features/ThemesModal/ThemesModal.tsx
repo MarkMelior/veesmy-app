@@ -1,6 +1,8 @@
 'use client';
 
-import { ModalBase } from '@/shared/ui';
+import { Button, Flex, ModalBase } from '@/shared/ui';
+
+import styles from './themesModal.module.scss';
 
 interface IThemesModal {
   children: React.ReactElement<{ onClick?: () => void }>
@@ -11,6 +13,28 @@ export const ThemesModal = ({ children }: IThemesModal) => (
     button={children}
     title="Выбери тему"
   >
-    Здесь будет список тем
+    <Flex gap="medium" vertical={true}>
+      <Button
+        className={styles.button}
+        full={true}
+        variant="none"
+      >
+        Как в системе
+      </Button>
+      <Button
+        className={styles.button}
+        full={true}
+        variant="none"
+      >
+        Темная тема
+      </Button>
+      <Button
+        className={styles.button}
+        full={true}
+        variant="none"
+      >
+        Светлая тема
+      </Button>
+    </Flex>
   </ModalBase>
 );

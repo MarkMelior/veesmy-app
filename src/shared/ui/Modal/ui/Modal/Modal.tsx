@@ -15,6 +15,7 @@ export interface IModal {
   closeOnClickOverlay?: boolean
   onClickOverlay?: () => void
   onClose?: () => void
+  placement?: 'start' | 'center' | 'end'
 }
 
 export const Modal = ({
@@ -23,6 +24,7 @@ export const Modal = ({
   closeOnClickOverlay = true,
   onClickOverlay,
   onClose,
+  placement = 'start',
 }: IModal) => {
   const [isMount, setMount] = useState(false);
 
@@ -64,11 +66,7 @@ export const Modal = ({
       {isMount && portalTarget ? createPortal(
         <>
           <div className="overlay" onClick={handleClickOverlay} />
-          <Flex
-            align="center"
-            className={styles.wrapper}
-            justify="center"
-          >
+          <Flex align={placement} className={styles.wrapper} justify="center">
             <div className={styles.modal}>
               {children}
             </div>

@@ -1,9 +1,9 @@
-import { AddExerciseModal } from '@/widgets/AddExerciseModal/client';
-import { mockAddExerciseModal } from '@/widgets/AddExerciseModal/model/mock';
-
 import { AppRoutes } from '@/shared/constants';
 import { ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';
 import { Button, Header } from '@/shared/ui';
+
+import { AddExerciseModal } from '@/features/AddExerciseModal/client';
+import { mockAddExerciseModal } from '@/features/AddExerciseModal/model/mock';
 
 export const ExercisesList = () => (
   <Header
