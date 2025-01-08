@@ -1,14 +1,14 @@
-'use client';
-
 import { FinishOutlineIcon } from '@/shared/icons';
 import { Button, Flex } from '@/shared/ui';
 
-import { IVeesItem, VeesItem } from '../VeesItem/VeesItem';
+import { VeesItem } from '../VeesItem/VeesItem';
 
 import styles from './veesList.module.scss';
 
+import type { ICardVeesItem } from '../VeesItem/VeesItem';
+
 interface IVeesList {
-  items: IVeesItem[]
+  items: ICardVeesItem[]
 }
 
 export const VeesList = ({ items }: IVeesList) => (
@@ -16,6 +16,7 @@ export const VeesList = ({ items }: IVeesList) => (
     {items.map((item, index) => (
       <VeesItem item={item} key={`${index}${item.name}`} />
     ))}
+    {/* TODO: Вынести кнопку в features */}
     <Button
       className={styles.button}
       icon={<FinishOutlineIcon height={22} width={22} />}

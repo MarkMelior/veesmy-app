@@ -34,3 +34,7 @@ body {
 :disabled {
   cursor: not-allowed;
 }
+
+main > *:last-child {
+  padding-bottom: 180px;
+}

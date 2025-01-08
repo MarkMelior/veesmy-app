@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import { TailwindColors } from '@/shared/types';
+import type { TailwindColors } from '@/shared/types';
 
 import styles from './loading.module.scss';
 

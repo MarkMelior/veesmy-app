@@ -11,6 +11,7 @@ export * from './Icon';
 export * from './Input';
 export * from './Layout';
 export * from './Light';
+export * from './List';
 export * from './Loading';
 export * from './Modal';
 export * from './Section';

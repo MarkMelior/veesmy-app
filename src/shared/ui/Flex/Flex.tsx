@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import { TComponent } from '@/shared/types';
+import type { TComponent } from '@/shared/types';
 
 import styles from './flex.module.scss';
 

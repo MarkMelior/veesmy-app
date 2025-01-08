@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import { ArrowDropdownIcon } from '@/shared/icons';
-import { TLinkOrClick } from '@/shared/types';
+import type { TLinkOrClick } from '@/shared/types';
 import { Button, Divider, Flex, Text } from '@/shared/ui';
 
 import { Background } from '../Background';

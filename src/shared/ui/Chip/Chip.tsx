@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import { TailwindColors } from '@/shared/types';
+import type { TailwindColors } from '@/shared/types';
 import { Text } from '@/shared/ui';
 
 import styles from './chip.module.scss';
@@ -8,18 +8,25 @@ import styles from './chip.module.scss';
 interface IChip {
   children?: React.ReactNode
   className?: string
+  hidden?: boolean
   size?: 'small' | 'medium'
 }
 
-export const Chip = ({ children, className, size = 'small' }: IChip) => (
-  <span className={clsx(styles.chip, styles[`size-${size}`], className)}>
-    {children}
-  </span>
-);
+export const Chip = ({ children, className, hidden, size = 'small' }: IChip) => {
+  if (hidden) {
+    return null;
+  }
+
+  return (
+    <span className={clsx(styles.chip, styles[`size-${size}`], className)}>
+      {children}
+    </span>
+  );
+};
 
 interface ICategory extends IChip {
   color?: TailwindColors
-  isEditable?: boolean
+  isEdited?: boolean
   name: string
   number?: number
 }
@@ -27,7 +34,7 @@ interface ICategory extends IChip {
 const Category = ({
   className,
   color,
-  isEditable,
+  isEdited,
   name,
   number,
   size,
@@ -35,7 +42,7 @@ const Category = ({
   <Chip className={className} size={size}>
     {number && <Text color="text-base-700" size={0.8}>{`${number}.`}</Text>}
     <Text className={styles.name} color={color} size={0.8}>{name}</Text>
-    {isEditable && <Text color="text-base-700" size={0.8}>(изм.)</Text>}
+    {isEdited && <Text color="text-base-700" size={0.8}>(изм.)</Text>}
   </Chip>
 );
 

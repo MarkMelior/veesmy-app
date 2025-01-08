@@ -1,6 +1,6 @@
 'use client';
 
-import { getCurrentDateInfo } from '@/shared/lib/utils';
+import { getCurrentDateInfo } from '@/shared/lib/date';
 
 export const CurrentDate = () => {
   const { dayOfMonth, dayOfWeek, monthNumber } = getCurrentDateInfo();

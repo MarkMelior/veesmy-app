@@ -1,0 +1,12 @@
+.container {
+  height: 58px;
+  max-height: fit-content;
+
+  overflow: clip;
+
+  transition: all 0.15s linear;
+}
+
+.open {
+  height: 210px;
+}

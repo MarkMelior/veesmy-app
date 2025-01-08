@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import { TailwindColors, TailwindSize, TailwindWeight, TComponent } from '@/shared/types';
+import type { TComponent, TailwindColors, TailwindSize, TailwindWeight } from '@/shared/types';
 
 import styles from './text.module.scss';
 

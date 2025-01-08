@@ -12,6 +12,7 @@ export const ExercisesList = () => (
         <Button iconOnly={true} to={AppRoutes.MAIN}>
           <ArrowLeftIcon />
         </Button>
+        {/* TODO: Вынести кнопку в features */}
         <Button iconOnly={true}>
           <FinishOutlineIcon />
         </Button>
