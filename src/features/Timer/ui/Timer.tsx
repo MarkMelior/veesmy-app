@@ -1,7 +1,7 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { PauseIcon, PlayIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { Background, Button, Flex, Layout, Text } from '@/shared/ui';

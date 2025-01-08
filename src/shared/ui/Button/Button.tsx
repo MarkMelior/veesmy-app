@@ -1,7 +1,7 @@
 import { clsx } from 'clsx';
 import Link from 'next/link';
 
-import { AppRoutes } from '@/shared/constants';
+import type { AppRoutes } from '@/shared/constants';
 
 import styles from './button.module.scss';
 

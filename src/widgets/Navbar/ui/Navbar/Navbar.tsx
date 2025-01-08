@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import { AppRoutes } from '@/shared/constants';
 import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
-import { TLinkOrClick } from '@/shared/types';
+import type { TLinkOrClick } from '@/shared/types';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
 import { BackActiveVees } from '../BackActiveVees/BackActiveVees';

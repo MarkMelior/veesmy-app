@@ -49,6 +49,14 @@ const eslintCommonRules = {
     },
     { blankLine: 'always', next: 'return', prev: '*' },
   ],
+  'sort-imports': [
+    'error',
+    {
+      ignoreCase: false,
+      ignoreDeclarationSort: true,
+      ignoreMemberSort: false,
+    },
+  ],
 };
 
 const eslintReactRules = {
@@ -63,6 +71,13 @@ const eslintReactRules = {
 };
 
 const eslintTypescriptRules = {
+  '@typescript-eslint/consistent-type-imports': [
+    'error',
+    {
+      disallowTypeAnnotations: false, // Позволяет аннотации через `import type`
+      prefer: 'type-imports', // Всегда использовать "import type" для типов
+    },
+  ],
   '@typescript-eslint/no-unused-vars': 'error',
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Icon, IIcon } from '@/shared/ui';
+import { Icon } from '@/shared/ui';
+import type { IIcon } from '@/shared/ui';
 
 export const ThemeIcon = ({
   fill = 'currentColor',

@@ -39,7 +39,12 @@
 }
 
 .drag {
-  padding: 0 10px 0 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-left: 4px;
 
   color: theme('colors.base.800');
   cursor: grab;

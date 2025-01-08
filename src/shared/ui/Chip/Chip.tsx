@@ -1,6 +1,6 @@
 import { clsx } from 'clsx';
 
-import { TailwindColors } from '@/shared/types';
+import type { TailwindColors } from '@/shared/types';
 import { Text } from '@/shared/ui';
 
 import styles from './chip.module.scss';
@@ -8,14 +8,21 @@ import styles from './chip.module.scss';
 interface IChip {
   children?: React.ReactNode
   className?: string
+  hidden?: boolean
   size?: 'small' | 'medium'
 }
 
-export const Chip = ({ children, className, size = 'small' }: IChip) => (
-  <span className={clsx(styles.chip, styles[`size-${size}`], className)}>
-    {children}
-  </span>
-);
+export const Chip = ({ children, className, hidden, size = 'small' }: IChip) => {
+  if (hidden) {
+    return null;
+  }
+
+  return (
+    <span className={clsx(styles.chip, styles[`size-${size}`], className)}>
+      {children}
+    </span>
+  );
+};
 
 interface ICategory extends IChip {
   color?: TailwindColors

@@ -2,3 +2,5 @@
 - All Vees — Все тренировки
 - Exercise — Упражнение
 - Muscle — Группа мышц
+- Vees Template - Шаблон тренировки
+- Approach - Подход

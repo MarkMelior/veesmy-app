@@ -1,10 +1,11 @@
 import { clsx } from 'clsx';
-import { Dispatch, SetStateAction } from 'react';
 
 import { ArrowDropdownIcon } from '@/shared/icons';
 import { Background, Button, Flex } from '@/shared/ui';
 
 import styles from './card.module.scss';
+
+import type { Dispatch, SetStateAction } from 'react';
 
 interface ICard {
   children: React.ReactNode
@@ -22,7 +23,9 @@ export const Card = ({
   setIsOpen,
 }: ICard) => (
   <Background border={false} className={styles.wrapper}>
-    {leftAction}
+    <Flex align="center" className={styles.leftAction} full={false} justify="center">
+      {leftAction}
+    </Flex>
     <Flex className={styles.content} vertical={true}>
       <Flex className={styles.chipList} gap="small">
         {chipList}

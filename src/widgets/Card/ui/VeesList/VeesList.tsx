@@ -1,9 +1,11 @@
 import { FinishOutlineIcon } from '@/shared/icons';
 import { Button, Flex } from '@/shared/ui';
 
-import { ICardVeesItem, VeesItem } from '../VeesItem/VeesItem';
+import { VeesItem } from '../VeesItem/VeesItem';
 
 import styles from './veesList.module.scss';
+
+import type { ICardVeesItem } from '../VeesItem/VeesItem';
 
 interface IVeesList {
   items: ICardVeesItem[]

@@ -4,7 +4,7 @@ import styles from './horizontal.module.scss';
 
 export interface IListHorizontalItem {
   title: string
-  value: string
+  value: React.ReactNode
 }
 
 interface IListHorizontal {

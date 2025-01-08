@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { useState } from 'react';
 
 import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
-import { Button, Flex, Text, Background, Input, ModalBase, Chip, Empty } from '@/shared/ui';
+import { Background, Button, Chip, Empty, Flex, Input, ModalBase, Text } from '@/shared/ui';
 import { Image } from '@/shared/ui/client';
 
 import styles from './addExerciseModal.module.scss';

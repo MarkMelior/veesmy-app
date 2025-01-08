@@ -1,6 +1,5 @@
-import { JSX } from 'react';
-
-import { AppRoutes } from '../constants';
+import type { AppRoutes } from '../constants';
+import type { JSX } from 'react';
 
 export type * from './tailwind';
 

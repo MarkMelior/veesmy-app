@@ -1,8 +1,10 @@
 import { Button, Flex, Text } from '@/shared/ui';
 
-import { IModal, Modal } from '../Modal/Modal';
+import { Modal } from '../Modal/Modal';
 
 import styles from './base.module.scss';
+
+import type { IModal } from '../Modal/Modal';
 
 interface IModalBase extends IModal {
   iconAction?: React.ReactNode

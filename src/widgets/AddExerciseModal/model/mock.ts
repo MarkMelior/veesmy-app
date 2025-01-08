@@ -1,4 +1,4 @@
-import { IGroupExercises } from '../ui/AddExerciseModal';
+import type { IGroupExercises } from '../ui/AddExerciseModal';
 
 export const mockAddExerciseModal: IGroupExercises[] = [
   {
