@@ -1,0 +1,20 @@
+.checkbox {
+  width: fit-content;
+  width: 20px;
+  height: 20px;
+
+  border-radius: 6px;
+  border: 1px solid theme('colors.base.700');
+
+  transition: background ease .3s, border-color ease .1s;
+}
+
+.full {
+  width: 100%;
+}
+
+.checked {
+  background: theme('colors.primary.500');
+  border-color: theme('colors.primary.400');
+  border-width: 2px;
+}

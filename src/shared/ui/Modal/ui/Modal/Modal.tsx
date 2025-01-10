@@ -1,6 +1,5 @@
 'use client';
 
-import { clsx } from 'clsx';
 import { cloneElement, isValidElement, useCallback, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -16,7 +15,7 @@ export interface IModal {
   closeOnClickOverlay?: boolean
   onClickOverlay?: () => void
   onClose?: () => void
-  pointerEvents?: boolean
+  placement?: 'start' | 'center' | 'end'
 }
 
 export const Modal = ({
@@ -25,7 +24,7 @@ export const Modal = ({
   closeOnClickOverlay = true,
   onClickOverlay,
   onClose,
-  pointerEvents = true,
+  placement = 'start',
 }: IModal) => {
   const [isMount, setMount] = useState(false);
 
@@ -67,12 +66,8 @@ export const Modal = ({
       {isMount && portalTarget ? createPortal(
         <>
           <div className="overlay" onClick={handleClickOverlay} />
-          <Flex
-            align="center"
-            className={styles.wrapper}
-            justify="center"
-          >
-            <div className={clsx(styles.modal, { [styles.pointerEvents]: pointerEvents })}>
+          <Flex align={placement} className={styles.wrapper} justify="center">
+            <div className={styles.modal}>
               {children}
             </div>
           </Flex>

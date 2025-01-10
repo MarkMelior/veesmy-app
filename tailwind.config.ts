@@ -1,3 +1,5 @@
+import { withOpacity } from './config/tailwind/colors';
+
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -15,17 +17,17 @@ export default {
     },
     colors: {
       base: {
-        50: '#f8fafc',
-        100: '#f1f5f9',
-        200: '#e2e8f0',
-        300: '#cbd5e1',
-        400: '#BDBFC2',
-        500: '#95999D',
-        600: '#62666A',
-        700: '#3D4043',
-        800: '#232426',
-        900: '#161618',
-        950: '#0F0F10',
+        50: withOpacity('base-50'),
+        100: withOpacity('base-100'),
+        200: withOpacity('base-200'),
+        300: withOpacity('base-300'),
+        400: withOpacity('base-400'),
+        500: withOpacity('base-500'),
+        600: withOpacity('base-600'),
+        700: withOpacity('base-700'),
+        800: withOpacity('base-800'),
+        900: withOpacity('base-900'),
+        950: withOpacity('base-950'),
       },
       black: '#000000',
       green: {

@@ -7,6 +7,7 @@ import type { Metadata } from 'next';
 
 import './globals.scss';
 import '@/shared/styles/custom.scss';
+import '@/shared/styles/theme.scss';
 
 const inter = Inter({
   subsets: ['cyrillic', 'latin'],
@@ -26,7 +27,7 @@ const RootLayout = ({ children }: IRootLayout) => (
   (
     <html lang="ru" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <ThemeProvider attribute="data-mode">
+        <ThemeProvider attribute="data-mode" defaultTheme="dark">
           {children}
           <Light />
           <div id="modal-root" />

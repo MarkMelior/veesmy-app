@@ -7,21 +7,21 @@ import styles from './base.module.scss';
 import type { IModal } from '../Modal/Modal';
 
 interface IModalBase extends IModal {
-  iconAction?: React.ReactNode
-  onClickAction?: () => void
-  textAction?: string
+  action?: {
+    text: string
+    onClick: () => void
+    icon?: React.ReactNode
+  }
   title: React.ReactNode
 }
 
 export const ModalBase = ({
+  action,
   button,
   children,
   closeOnClickOverlay,
-  iconAction,
-  onClickAction,
   onClickOverlay,
   onClose,
-  textAction,
   title,
 }: IModalBase) => (
   <Modal
@@ -29,7 +29,6 @@ export const ModalBase = ({
     closeOnClickOverlay={closeOnClickOverlay}
     onClickOverlay={onClickOverlay}
     onClose={onClose}
-    pointerEvents={false}
   >
     <Flex align="center" gap={56} vertical={true}>
       <Text
@@ -44,16 +43,18 @@ export const ModalBase = ({
       <div className={styles.content}>
         {children}
       </div>
-      <Button
-        className={styles.action}
-        color="base"
-        icon={iconAction}
-        onClick={onClickAction}
-        size="large"
-        variant="none"
-      >
-        {textAction}
-      </Button>
+      {action ? (
+        <Button
+          className={styles.action}
+          color="base"
+          icon={action.icon}
+          onClick={action.onClick}
+          size="large"
+          variant="none"
+        >
+          {action.text}
+        </Button>
+      ) : null}
     </Flex>
   </Modal>
 );

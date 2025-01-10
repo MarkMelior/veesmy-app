@@ -1,10 +1,14 @@
+.title, .action, .content {
+  animation: scale-in 0.15s ease-out;
+}
+
 .title {
   width: 100%;
   pointer-events: auto;
-}
 
-.title, .action, .content {
-  animation: scale-in 0.15s ease-out;
+  [data-mode="light"] & {
+    color: theme('colors.base.100');
+  }
 }
 
 .content {
@@ -22,9 +26,19 @@
     color: theme('colors.base.400');
     background: theme('colors.base.700 / 25%');
   }
+
+  [data-mode="light"] & {
+    color: theme('colors.base.400');
+
+    &:hover {
+      color: theme('colors.base.100');
+      background: theme('colors.base.500 / 25%');
+    }
+  }
 }
 
 body[data-closing="true"] {
+  /* stylelint-disable-next-line no-descending-specificity */
   .title, .action {
     opacity: 0;
 

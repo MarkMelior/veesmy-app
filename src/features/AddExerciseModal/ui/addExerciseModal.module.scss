@@ -10,9 +10,8 @@
 
   background: theme('colors.base.900 / 75%');
   border-radius: 1.25rem;
+  border: 1px solid theme('colors.base.400 / 15%');
   overflow: clip;
-
-  @apply border border-base-400/15;
 
   &:hover {
     background: theme('colors.base.900 / 50%');
@@ -80,9 +79,8 @@
   padding: 10px;
 
   transition: background 0.3s ease;
+  border-bottom: 1px solid theme('colors.base.800');
   cursor: pointer;
-
-  @apply border-b border-base-800;
 
   &:hover {
     background: theme('colors.base.800 / 50%');

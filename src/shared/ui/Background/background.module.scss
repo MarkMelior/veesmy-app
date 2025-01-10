@@ -22,22 +22,27 @@
   border-radius: theme('borderRadius.full');
 }
 
+.border {
+  border-color: theme('colors.base.400 / 15%');
+  border-style: solid;
+}
+
 .border-all {
-  @apply border border-base-400/15;
+  border-width: 1px;
 }
 
 .border-top {
-  @apply border-t border-base-400/15
+  border-top-width: 1px;
 }
 
 .border-right {
-  @apply border-r border-base-400/15
+  border-right-width: 1px;
 }
 
 .border-bottom {
-  @apply border-b border-base-400/15
+  border-bottom-width: 1px;
 }
 
 .border-left {
-  @apply border-l border-base-400/15
+  border-left-width: 1px;
 }

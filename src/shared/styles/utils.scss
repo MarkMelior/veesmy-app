@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "sass:list";
+
+// Функция для инверсии цветов
+@function invert-colors($colors) {
+  $keys: map.keys($colors); // Извлекаем ключи (50, 100, ...)
+  $values: map.values($colors); // Извлекаем значения
+  $inverted: ();
+
+  @for $i from 1 through list.length($keys) {
+    $key: list.nth($keys, $i);
+    $value: list.nth($values, list.length($values) - $i + 1);
+    $inverted: map.merge($inverted, ($key: $value));
+  }
+
+  @return $inverted;
+}
+
+// Миксин для применения цветов
+@mixin define-colors($colors, $prefix: 'base') {
+  @each $key, $value in $colors {
+    --color-#{$prefix}-#{$key}: #{$value};
+  }
+}

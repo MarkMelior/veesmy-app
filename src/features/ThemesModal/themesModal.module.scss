@@ -1,0 +1,18 @@
+.button {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  position: relative;
+  padding: 20px 26px;
+
+  background: theme('colors.base.900 / 75%');
+  border-radius: 1.25rem;
+  border: 1px solid theme('colors.base.400 / 15%');
+  overflow: clip;
+
+  animation: var(--anim-scale-fade-in);
+
+  &:hover {
+    background: theme('colors.base.900 / 50%');
+  }
+}

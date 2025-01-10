@@ -7,14 +7,7 @@ const config = {
   ],
   plugins: ['stylelint-order', './config/stylelint/restrict-apply.js'],
   rules: {
-    'custom-rules/restrict-apply': [
-      true, {
-        allowedPatterns: [
-          '^text-(sm|base|lg|xl|\\d+)$',
-          '^border',
-        ],
-      },
-    ],
+    'custom-rules/restrict-apply': [true, { allowedPatterns: [] }],
     'declaration-empty-line-before': null,
     'function-no-unknown': [
       true,
@@ -104,7 +97,6 @@ const config = {
       {
         ignoreAtRules: [
           'tailwind',
-          'apply',
           'include',
           'variants',
           'responsive',

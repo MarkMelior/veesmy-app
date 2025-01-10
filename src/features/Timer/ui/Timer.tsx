@@ -137,7 +137,7 @@ export const Timer = () => {
 
     return (
       <Button
-        className={styles.button}
+        className={clsx(styles.button, styles.buttonStart)}
         icon={(
           <StopwatchOutlineIcon
             height={24}

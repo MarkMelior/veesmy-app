@@ -12,29 +12,31 @@
 
   &.buttonResult {
     background: theme('colors.base.800');
-
-    @apply border border-base-700/50;
+    border-color: theme('colors.base.700 / 50%');
+    border-style: solid;
+    border-width: 1px;
 
     &.better {
-      @apply border-dashed border-green-500;
+      border-color: theme('colors.green.500');
+      border-style: dashed;
     }
   
     &.worse {
-      @apply border-dashed border-red-500;
+      border-color: theme('colors.red.500');
+      border-style: dashed;
     }
   }
 
   &.buttonPreviousResult {
     height: 28px;
 
-    @apply border border-base-800;
+    border: 1px solid theme('colors.base.800');
   }
 
   &.buttonAdd {
     color: theme('colors.base.600');
     background: theme('colors.base.800');
-
-    @apply border border-base-700/50;
+    border: 1px solid theme('colors.base.700 / 50%');
   }
 }
 

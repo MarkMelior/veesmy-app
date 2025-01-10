@@ -19,6 +19,10 @@
 
 	opacity: .25;
 	flex: none;
+
+	[data-mode="light"] & {
+		opacity: .5;
+	}
 }
 
 @keyframes fade-in {
