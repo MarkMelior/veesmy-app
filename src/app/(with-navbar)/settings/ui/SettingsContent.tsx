@@ -26,7 +26,7 @@ const getThemeName = (theme: string | undefined) => {
     case 'light':
       return 'Светлая тема';
     default:
-      return 'Тема не выбрана';
+      return 'Как в системе';
   }
 };
 

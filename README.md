@@ -2,8 +2,6 @@
 
 > Самое удобное приложение для записи результатов тренировок (:
 
-⠀
-
 - ✨🎨 Разработан [дизайн в Figma](https://www.figma.com/design/l7WmZZ7WKEr3YnVNdibxGD/Mobile-App?node-id=250-793&t=7fycS0Obh0DIcwXF-1)
 - Собственный [UI Kit](/src/shared/ui/)
 - Серверный рендеринг и [AppRouter](https://nextjs.org/docs/app)
