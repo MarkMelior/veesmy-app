@@ -14,6 +14,10 @@
   max-height: 28px;
 
   border-radius: theme('borderRadius.md');
+
+  [data-mode="light"] & {
+    color: theme('colors.base.950');
+  }
 }
 
 .divider {

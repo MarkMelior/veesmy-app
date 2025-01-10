@@ -21,6 +21,10 @@
 @mixin variant-solid($color) {
   background: theme('colors.#{$color}.500');
 
+  [data-mode="light"] & {
+    color: theme('colors.base.950');
+  }
+
   &:not(.disabled):hover {
     background: theme('colors.#{$color}.500 / 75%');
   }

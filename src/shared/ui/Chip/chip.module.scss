@@ -9,8 +9,7 @@
 
   background: theme('colors.base.900');
   border-radius: 8px;
-
-  @apply border border-base-800;
+  border: 1px solid theme('colors.base.800');
 }
 
 .name {

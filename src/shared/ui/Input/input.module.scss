@@ -1,14 +1,13 @@
 .wrapper {
   background: theme('colors.base.900 / 75%');
   border-radius: theme('borderRadius.xl');
+  border: 1px solid theme('colors.base.400 / 15%');
   overflow: clip;
 
   transition: all ease .3s;
 
-  @apply border border-base-400/15;
-
   &:has(.input:focus) {
-    @apply border-primary-600;
+    border-color: theme('colors.primary.600');
   }
 }
 
@@ -22,8 +21,7 @@
   border-radius: theme('borderRadius.xl');
 
   &:focus {
+    border-color: theme('colors.primary.600');
     outline: none;
-
-    @apply border-primary-600;
   }
 }

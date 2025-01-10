@@ -22,7 +22,7 @@ export const Text = ({
   children,
   className,
   color,
-  customColor: hexColor,
+  customColor,
   decoration,
   size,
   weight,
@@ -40,7 +40,7 @@ export const Text = ({
       className,
     )}
     style={{
-      color: hexColor,
+      color: customColor,
       fontSize: typeof size === 'number' ? `${size}rem` : undefined,
       lineHeight: typeof size === 'number' ? `${size + 0.5}rem` : undefined,
     }}

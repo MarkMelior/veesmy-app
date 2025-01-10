@@ -3,7 +3,7 @@ const stylelint = require('stylelint');
 const ruleName = 'custom-rules/restrict-apply';
 
 const messages = stylelint.utils.ruleMessages(ruleName, {
-  invalid: value => `The class "${value}" is not allowed in @apply.`,
+  invalid: (value) => `The class "${value}" is not allowed in @apply.`,
 });
 
 module.exports = stylelint.createPlugin(
@@ -21,7 +21,7 @@ module.exports = stylelint.createPlugin(
 
         classes.forEach((className) => {
           const isAllowed = allowedPatterns.some(
-            pattern => new RegExp(pattern).test(className),
+            (pattern) => new RegExp(pattern).test(className),
           );
 
           if (!isAllowed) {

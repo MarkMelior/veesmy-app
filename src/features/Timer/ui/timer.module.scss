@@ -23,12 +23,17 @@
   height: 50px;
 
   animation: var(--anim-scale-fade-in);
-}
 
-.buttonPause {
-  width: 50px;
-}
+  &.buttonPause {
+    width: 50px;
 
-.active:hover {
-  background: transparent !important;
+    [data-mode="light"] &:hover {
+      color: theme('colors.base.950');
+      background: theme('colors.primary.500');
+    }
+  }
+
+  &.active:hover {
+    background: transparent !important;
+  }
 }

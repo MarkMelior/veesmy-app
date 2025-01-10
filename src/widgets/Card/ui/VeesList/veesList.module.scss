@@ -3,14 +3,15 @@
   margin: 0 auto;
   padding: 18px 36px;
 
+  font-size: theme('fontSize.sm');
+  line-height: theme('lineHeight.5');
+
   color: theme('colors.base.500');
   background: theme('colors.base.900');
   border-radius: 20px;
   border: 1.5px solid theme('colors.base.500');
 
   animation: var(--anim-scale-fade-in);
-
-  @apply text-sm;
 
   &:hover {
     color: theme('colors.base.50');

@@ -222,8 +222,11 @@ const eslintConfig = [
     rules: { 'max-len': 'off' },
   },
   {
-    files: ['**/config/**/*.js'],
-    rules: { '@typescript-eslint/no-require-imports': 'off' },
+    files: ['**/config/**/*.{js,ts}'],
+    rules: {
+      '@typescript-eslint/ban-ts-comment': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
+    },
   },
 ];
 

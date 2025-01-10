@@ -18,8 +18,8 @@
 ![Next.js 15](https://img.shields.io/badge/Next.js_15-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
 ![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript 5](https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![Feature-Sliced Design](https://img.shields.io/badge/FSD-3481FE?style=for-the-badge&logo=flat&logoColor=white)
 ![Module SCSS](https://img.shields.io/badge/module_scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Feature-Sliced Design](https://img.shields.io/badge/FSD-3481FE?style=for-the-badge&logo=flat&logoColor=white)
 ![GIT](https://img.shields.io/badge/CI_/_CD-000000?style=for-the-badge&logo=github&logoColor=white)
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white)
 ![stylelint](https://img.shields.io/badge/stylelint-263238?style=for-the-badge&logo=stylelint&logoColor=white)
@@ -58,10 +58,13 @@
 
 ##### SCSS
 
-- [[custom-rules/restrict-apply](./config/stylelint/restrict-apply.js)] `@apply` можно использовать только для:  
-    - размера текста: `text-sm` | `text-base` и т.п.
-    - border: `border...` и т.п.
-- [[custom-rules/scss-import-name](./config/eslint/scss-import-name.js)] Импорт стилей из `.module.scss` нужно называть `styles`
+- [[custom-rules/restrict-apply](./config/stylelint/restrict-apply.js)] `@apply` запрещено использовать;
+- [[custom-rules/scss-import-name](./config/eslint/scss-import-name.js)] Импорт стилей из `.module.scss` нужно называть `styles`.
+
+##### Tailwind
+
+- Добавлять пользовательские цвета нужно в `/shared/theme.scss` формата RGB! Далее нужно добавить этот цвет в `/tailwind.config.ts`.
+    - Использовать переменную цвета нужно строго через `theme('colors.base.{50-950}')`. Через `var(--color-base-{50-950})` использовать запрещено!
 
 ---
 

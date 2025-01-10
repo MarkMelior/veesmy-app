@@ -30,6 +30,7 @@ export const Background = ({
       styles.wrapper,
       styles[`radius-${radius}`],
       {
+        [styles.border]: border,
         [styles.opacity]: opacity,
         [styles['border-all']]: border === true,
         [styles[`border-${border}`]]: border !== true && border,
