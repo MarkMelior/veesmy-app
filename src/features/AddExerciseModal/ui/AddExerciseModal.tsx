@@ -7,6 +7,8 @@ import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
 import { Background, Button, Chip, Empty, Flex, Input, ModalBase, Text } from '@/shared/ui';
 import { Image } from '@/shared/ui/client';
 
+import type { TExerciseGroupResponse } from '@/entities/exercise-group';
+
 import styles from './addExerciseModal.module.scss';
 
 export interface IGroupExercises {
@@ -16,7 +18,7 @@ export interface IGroupExercises {
 }
 
 interface IAddExerciseModal {
-  items: IGroupExercises[]
+  items: TExerciseGroupResponse[]
 }
 
 const getCountExerciseWord = (count: number) => {
@@ -30,8 +32,9 @@ const getCountExerciseWord = (count: number) => {
   return `${count} упражнений`;
 };
 
+// TODO: Сделать компонент серверным
 export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
-  const [selectedGroup, setSelectedGroup] = useState<IGroupExercises | null>(null);
+  const [selectedGroup, setSelectedGroup] = useState<TExerciseGroupResponse | null>(null);
 
   return (
     <ModalBase
@@ -73,7 +76,7 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
                       className={styles.item}
                       full={true}
                       isActiveAnimation={false}
-                      key={item}
+                      key={item.id}
                       radius="none"
                       variant="none"
                     >
@@ -86,7 +89,7 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
                         </Text>
                       </Chip>
                       <Text size="text-sm" weight="font-light">
-                        {item}
+                        {item.name}
                       </Text>
                     </Button>
                   ))}
