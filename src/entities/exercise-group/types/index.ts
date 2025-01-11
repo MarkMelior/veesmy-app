@@ -2,7 +2,8 @@
 
 // * AddExerciseModal - страница `/vees`
 // GET exercise-group/get-list - Получение списка всех групп и упражнений
-export type IExerciseGroupPayload = {};
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export type IExerciseGroupPayload = { /* TODO */ };
 
 export interface IExerciseGroupResponse {
   color: string // Цвет группы
