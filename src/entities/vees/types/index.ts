@@ -1,10 +1,7 @@
 // Активная тренировка
 // Список всех тренировок
 
-interface IResult {
-  count: number
-  weight: number
-}
+import type { IResult } from '@/shared/types';
 
 export interface IVeesPayload {
   duration: {
@@ -37,6 +34,27 @@ export interface IVeesResponse {
     id: string
     name: string
     color: string
+    number: number
   }
   number: number // Номер тренировки
+}
+
+export interface IVeesListResponse {
+  approachCount: number
+  commentCount: number
+  duration: {
+    from: string
+    to: string
+  }
+  exerciseCount: number
+  exerciseTemplate?: {
+    id: string
+    name: string
+    color: string
+    number: number
+    isEdited?: boolean
+  }
+  number: number // Номер тренировки
+  resultDownCount: number
+  resultUpCount: number
 }

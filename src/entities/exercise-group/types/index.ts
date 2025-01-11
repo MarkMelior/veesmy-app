@@ -4,7 +4,7 @@
 // GET exercise-group/get-list - Получение списка всех групп и упражнений
 export type IExerciseGroupPayload = {};
 
-export type TExerciseGroupResponse = {
+export interface IExerciseGroupResponse {
   color: string // Цвет группы
   exercises: {
     id: string // id упражнения

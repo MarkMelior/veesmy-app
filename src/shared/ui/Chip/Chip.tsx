@@ -26,6 +26,7 @@ export const Chip = ({ children, className, hidden, size = 'small' }: IChip) => 
 
 interface ICategory extends IChip {
   color?: TailwindColors
+  customColor?: string
   isEdited?: boolean
   name: string
   number?: number
@@ -34,14 +35,26 @@ interface ICategory extends IChip {
 const Category = ({
   className,
   color,
+  customColor,
   isEdited,
   name,
   number,
   size,
 }: ICategory) => (
   <Chip className={className} size={size}>
-    {number && <Text color="text-base-700" size={0.8}>{`${number}.`}</Text>}
-    <Text className={styles.name} color={color} size={0.8}>{name}</Text>
+    {number && (
+      <Text color="text-base-700" size={0.8}>
+        {`${number}.`}
+      </Text>
+    )}
+    <Text
+      className={styles.name}
+      color={color}
+      customColor={customColor}
+      size={0.8}
+    >
+      {name}
+    </Text>
     {isEdited && <Text color="text-base-700" size={0.8}>(изм.)</Text>}
   </Chip>
 );

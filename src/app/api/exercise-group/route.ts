@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
-import type { TExerciseGroupResponse } from '@/entities/exercise-group';
+import type { IExerciseGroupResponse } from '@/entities/exercise-group';
 
 export async function GET(): Promise<NextResponse> {
-  const mockData: TExerciseGroupResponse[] = [
+  const mockData: IExerciseGroupResponse[] = [
     {
       color: '#FAC938',
       exercises: [

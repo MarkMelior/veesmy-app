@@ -1,2 +1,2 @@
 export { getExerciseGroup } from './api';
-export type { IExerciseGroupPayload, TExerciseGroupResponse } from './types';
+export type { IExerciseGroupPayload, IExerciseGroupResponse } from './types';

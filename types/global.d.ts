@@ -12,3 +12,5 @@ type SecondParameter<T extends (...args: any) => any> = T extends (
 ) => any
   ? P
   : never;
+
+type NotArray<T> = T extends Array<infer U> ? U : T;

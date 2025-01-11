@@ -6,27 +6,14 @@ import { useState } from 'react';
 import { DragIcon, MessageIcon, PlusIcon } from '@/shared/icons';
 import { Button, Chip, Flex, Text } from '@/shared/ui';
 
+import type { IVeesResponse } from '@/entities/vees';
+
 import { Card } from '../Card/Card';
 
 import styles from './veesItem.module.scss';
 
-interface IVeesRecord {
-  count: number
-  weight: number
-}
-
-export interface ICardVeesItem {
-  comment?: string
-  groupColor?: string
-  groupName?: string
-  name: string
-  previousName?: string
-  previousResult?: IVeesRecord[]
-  result?: IVeesRecord[]
-}
-
 interface IVeesItem {
-  item: ICardVeesItem
+  item: NotArray<IVeesResponse['exercises']>
 }
 
 export const VeesItem = ({ item }: IVeesItem) => {

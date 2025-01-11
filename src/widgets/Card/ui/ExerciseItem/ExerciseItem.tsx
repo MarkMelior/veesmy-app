@@ -12,31 +12,14 @@ import {
 import { getDateInfo, getDateRangeDuration } from '@/shared/lib/date';
 import { Chip, Flex, List, Text } from '@/shared/ui';
 
+import type { IVeesListResponse } from '@/entities/vees';
+
 import { Card } from '../Card/Card';
 
 import styles from './exerciseItem.module.scss';
 
-export interface ICardExerciseItem {
-  approachCount?: number
-  commentCount?: number
-  duration: {
-    from: string
-    to: string
-  }
-  exerciseCount?: number
-  number: number
-  resultDownCount?: number
-  resultUpCount?: number
-  veesTemplate?: {
-    name: string
-    color: string
-    number: number
-    isEdited?: boolean
-  }
-}
-
 interface IExerciseItem {
-  item: ICardExerciseItem
+  item: IVeesListResponse
 }
 
 export const ExerciseItem = ({ item }: IExerciseItem) => {
@@ -47,10 +30,10 @@ export const ExerciseItem = ({ item }: IExerciseItem) => {
     commentCount,
     duration,
     exerciseCount,
+    exerciseTemplate,
     number,
     resultDownCount,
     resultUpCount,
-    veesTemplate,
   } = item;
 
   const { hours: hoursFrom, minutes: minutesFrom } = getDateInfo(duration.from);
@@ -106,9 +89,9 @@ export const ExerciseItem = ({ item }: IExerciseItem) => {
             <Chip.Category
               className="mt-1"
               color="text-red-500"
-              isEdited={veesTemplate?.isEdited}
-              name={veesTemplate?.name ?? 'Пользовательская'}
-              number={veesTemplate?.number}
+              isEdited={exerciseTemplate?.isEdited}
+              name={exerciseTemplate?.name ?? 'Пользовательская'}
+              number={exerciseTemplate?.number}
               size="medium"
             />
           )}

@@ -2,7 +2,7 @@
 
 // GET stats
 export interface IStatsResponse {
-  approachCount: number // Подходов
+  approachCount: number // Кол-во подходов
   betterCount: number // Кол-во прогресса
   dateFirstVees: string // Дата первой тренировки
   exercisesAvg: number // Среднее количество упражнений

@@ -18,7 +18,7 @@ export const createInstance = <T>(
 ): Promise<T> => apiInstance({
   ...config,
   ...options,
-}).then((r) => r.data);
+}).then((res) => res.data);
 
 export type BodyType<Data> = Data;
 

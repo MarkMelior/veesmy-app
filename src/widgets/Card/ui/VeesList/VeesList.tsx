@@ -1,20 +1,20 @@
 import { FinishOutlineIcon } from '@/shared/icons';
 import { Button, Flex } from '@/shared/ui';
 
+import type { IVeesResponse } from '@/entities/vees';
+
 import { VeesItem } from '../VeesItem/VeesItem';
 
 import styles from './veesList.module.scss';
 
-import type { ICardVeesItem } from '../VeesItem/VeesItem';
-
 interface IVeesList {
-  items: ICardVeesItem[]
+  items: IVeesResponse['exercises']
 }
 
 export const VeesList = ({ items }: IVeesList) => (
   <Flex gap={22} vertical={true}>
-    {items.map((item, index) => (
-      <VeesItem item={item} key={`${index}${item.name}`} />
+    {items.map((item) => (
+      <VeesItem item={item} key={item.id} />
     ))}
     {/* TODO: Вынести кнопку в features */}
     <Button
