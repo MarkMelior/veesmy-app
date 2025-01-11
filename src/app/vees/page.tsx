@@ -71,3 +71,6 @@ const Vees = async () => {
 };
 
 export default Vees;
+
+// ! TODO: Убрать в будущем
+export const dynamic = 'force-dynamic';

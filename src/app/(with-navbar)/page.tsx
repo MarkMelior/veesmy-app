@@ -103,3 +103,6 @@ const Home = async () => {
 };
 
 export default Home;
+
+// ! TODO: Убрать в будущем
+export const dynamic = 'force-dynamic';
