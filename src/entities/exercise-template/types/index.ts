@@ -1,7 +1,11 @@
 // Шаблоны тренировок. Будут содержать id упражнений
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export type IExerciseTemplatePayload = { /* TODO */ };
+export type IExerciseTemplateDto = {
+  id: string
+  name: string
+  exercisesIds: string[]
+  color: string
+};
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 export type IExerciseTemplateResponse = { /* TODO */ };

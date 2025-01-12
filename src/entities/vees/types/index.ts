@@ -3,12 +3,14 @@
 
 import type { IResult } from '@/shared/types';
 
-export interface IVeesPayload {
+export interface IVeesDto {
   duration: {
     from: string // Начало
     to: string // Конец (добавляется при сохранении тренировки. Расчётное время будет производиться в коде)
   }
   exercises: {
+    id: string
+    previousId?: string
     result: IResult[]
     comment?: string
   }[] // Если изменён порядок или удалено/добавлено новое упражнение, то шаблон упражнений isEdited

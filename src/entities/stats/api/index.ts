@@ -1,10 +1,6 @@
-import { createInstance } from '@/shared/api';
+import { statsResponse } from '@/persist-storage/stats-response';
 
-import type { IStatsResponse } from '../types';
-
-export const getStats = (
-  options?: SecondParameter<typeof createInstance>,
-) => createInstance<IStatsResponse>(
-  { method: 'get', url: '/stats' },
-  options,
+export const getStats = async () => (
+  // GET /stats
+  await statsResponse()
 );

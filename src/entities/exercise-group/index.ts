@@ -1,2 +1,2 @@
-export { getExerciseGroup } from './api';
-export type { IExerciseGroupPayload, IExerciseGroupResponse } from './types';
+export { useExerciseGroup } from './store';
+export type { IExerciseGroupDto, IExerciseGroupResponse } from './types';

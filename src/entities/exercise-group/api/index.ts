@@ -1,10 +1,10 @@
-import { createInstance } from '@/shared/api';
+import localforage from 'localforage';
 
-import type { IExerciseGroupResponse } from '../types';
+import { StorageKey } from '@/shared/constants';
 
-export const getExerciseGroup = (
-  options?: SecondParameter<typeof createInstance>,
-) => createInstance<IExerciseGroupResponse[]>(
-  { method: 'get', url: '/exercise-group' },
-  options,
+import type { IExerciseGroupDto, IExerciseGroupResponse } from '../types';
+
+export const getExerciseGroup = async (): Promise<IExerciseGroupResponse[] | null> => (
+  // GET /exercise/get-group
+  await localforage.getItem<IExerciseGroupDto[]>(StorageKey.EXERCISE_GROUP)
 );

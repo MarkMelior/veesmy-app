@@ -15,6 +15,7 @@
 
 ![Next.js 15](https://img.shields.io/badge/Next.js_15-000?logo=nextdotjs&logoColor=fff&style=for-the-badge)
 ![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Zustand](https://img.shields.io/badge/Zustand-FFB441?style=for-the-badge&logo=ziggo&logoColor=white)
 ![TypeScript 5](https://img.shields.io/badge/TypeScript_5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Module SCSS](https://img.shields.io/badge/module_scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 ![Feature-Sliced Design](https://img.shields.io/badge/FSD-3481FE?style=for-the-badge&logo=flat&logoColor=white)
@@ -42,7 +43,7 @@
 - Наименование `.module.scss` должно начинаться с маленькой буквы, а компонента `.tsx` с большой;
 - Если в слайсе, кроме `Name.tsx`, `index.ts` и `name.module.scss` ничего нет, то не нужно создавать сегмент `ui/`;
 - Серверные компоненты и типы экспортируем как обычно, через `index.ts`. Клиентские компоненты (`'use client'`) экспортируем через `client.ts`;
-- Наименование типов. Данные получаемые с сервера: `Response`. Данные отправляемые на сервер: `Payload`.
+- Наименование типов. Данные получаемые с сервера: `Response`. Данные отправляемые на сервер: `Dto`.
 
 #### Git
 
@@ -81,6 +82,8 @@
 ⠀
 
 ### 📂⚡️ Архитектура проекта
+
+`!` Сейчас большая часть компонентов - клиентские. Это связано с тем, что серверные компоненты не имеют доступа к хранилищу браузера. На этапе MVP мы всё храним в IndexedDB. В будущем, с появлением полноценной базы данных, мы перейдём на полноценный серверный рендеринг.
 
 Проект написан в соответствии с архитектурной методологией [Feature-Sliced Design](https://feature-sliced.design/docs/get-started/tutorial) и [AppRouter](https://nextjs.org/docs/app) Next.js 15.
 
