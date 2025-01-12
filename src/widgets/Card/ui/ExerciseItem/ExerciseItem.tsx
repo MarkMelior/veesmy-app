@@ -88,7 +88,7 @@ export const ExerciseItem = ({ item }: IExerciseItem) => {
           value={(
             <Chip.Category
               className="mt-1"
-              color="text-red-500"
+              customColor={exerciseTemplate?.color}
               isEdited={exerciseTemplate?.isEdited}
               name={exerciseTemplate?.name ?? 'Пользовательская'}
               number={exerciseTemplate?.number}

@@ -1,6 +1,6 @@
 import type { IVeesListResponse, IVeesResponse } from '@/entities/vees';
 
-import { veesResponse } from './vees-response';
+import { veesResponse } from './vees.response';
 
 const mapVeesResponseToList = (data: IVeesResponse): IVeesListResponse => ({
   approachCount: data.exercises.reduce((sum, exercise) => sum + exercise.result.length, 0), // Общее количество подходов

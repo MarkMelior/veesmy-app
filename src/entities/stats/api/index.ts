@@ -1,4 +1,4 @@
-import { statsResponse } from '@/persist-storage/stats-response';
+import { statsResponse } from '@/persist-storage/stats.response';
 
 export const getStats = async () => (
   // GET /stats

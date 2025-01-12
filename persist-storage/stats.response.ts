@@ -1,6 +1,6 @@
 import type { IStatsResponse } from '@/entities/stats';
 
-import { veesResponse } from './vees-response';
+import { veesResponse } from './vees.response';
 
 export const statsResponse = async (): Promise<IStatsResponse | null> => {
   const dataVeesList = await veesResponse();

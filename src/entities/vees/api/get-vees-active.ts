@@ -1,11 +1,6 @@
-import localforage from 'localforage';
+import { veesActiveResponse } from '@/persist-storage/vees-active.response';
 
-import { StorageKey } from '@/shared/constants';
-
-import type { IVeesResponse } from '../types';
-
-// TODO
-export const getVeesActive = async (): Promise<IVeesResponse | null> => (
+export const getVeesActive = async () => (
   // GET /vees/get-active
-  await localforage.getItem<IVeesResponse>(StorageKey.VEES_ACTIVE)
+  await veesActiveResponse()
 );
