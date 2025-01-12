@@ -39,8 +39,10 @@ export const getCurrentDateInfo = () => {
   };
 };
 
-export const getDateInfo = (date: Date | string) => {
-  const parsedDate = typeof date === 'string' ? new Date(date) : date;
+export const getDateInfo = (date: Date | string | number) => {
+  const parsedDate = typeof date === 'string' || typeof date === 'number'
+    ? new Date(date)
+    : date;
 
   if (isNaN(parsedDate.getTime())) {
     throw new Error('Invalid date');
@@ -94,8 +96,35 @@ export const getDateRangeDuration = (startDate: Date | string, endDate: Date | s
   const hours = Math.floor(durationMs / (1000 * 60 * 60)) % 24;
   const minutes = Math.floor(durationMs / (1000 * 60)) % 60;
 
-  const hoursText = `${hours} ${getDeclension(hours, ['час', 'часа', 'часов'])}`;
+  const hoursText = hours ? `${hours} ${getDeclension(hours, ['час', 'часа', 'часов'])} ` : '';
   const minutesText = `${minutes} ${getDeclension(minutes, ['минута', 'минуты', 'минут'])}`;
 
-  return `${hoursText} ${minutesText}`.trim();
+  return `${hoursText}${minutesText}`.trim();
+};
+
+export const getDateDifference = (
+  startDate: Date | string | number,
+  endDate: Date | string | number,
+) => {
+  const start = typeof startDate === 'string' || typeof startDate === 'number'
+    ? new Date(startDate)
+    : startDate;
+
+  const end = typeof endDate === 'string' || typeof endDate === 'number'
+    ? new Date(endDate)
+    : endDate;
+
+  if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+    throw new Error('Invalid date');
+  }
+
+  const totalMilliseconds = end.getTime() - start.getTime();
+
+  // Вычисляем компоненты разницы
+  const totalDays = Math.floor(totalMilliseconds / (1000 * 60 * 60 * 24));
+  const years = Math.floor(totalDays / 365);
+  const months = Math.floor((totalDays % 365) / 30);
+  const days = totalDays % 30;
+
+  return { days, months, years };
 };

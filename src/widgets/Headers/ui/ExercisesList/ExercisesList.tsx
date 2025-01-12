@@ -2,8 +2,7 @@ import { AppRoutes } from '@/shared/constants';
 import { ArrowLeftIcon, FinishOutlineIcon } from '@/shared/icons';
 import { Button, Header } from '@/shared/ui';
 
-import { AddExerciseModal } from '@/features/AddExerciseModal/client';
-import { mockAddExerciseModal } from '@/features/AddExerciseModal/model/mock';
+import { ClientRender } from './client';
 
 export const ExercisesList = () => (
   <Header
@@ -18,7 +17,7 @@ export const ExercisesList = () => (
         </Button>
       </>
     )}
-    rightActions={<AddExerciseModal items={mockAddExerciseModal} />}
+    rightActions={<ClientRender />}
     title="Тренировка"
   />
 );

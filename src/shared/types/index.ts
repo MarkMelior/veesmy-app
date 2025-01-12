@@ -8,3 +8,8 @@ export type TComponent = keyof JSX.IntrinsicElements | React.ElementType;
 export type TLinkOrClick<T> =
   | (T & { href: AppRoutes, onClick?: never })
   | (T & { href?: never, onClick: () => void });
+
+export interface IResult {
+  count: number
+  weight: number
+}
