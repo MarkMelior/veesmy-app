@@ -1,3 +1,5 @@
+import { compareResults } from '@/shared/lib/compare-results';
+
 import type { IStatsResponse } from '@/entities/stats';
 
 import { veesResponse } from './vees.response';
@@ -34,14 +36,12 @@ export const statsResponse = async (): Promise<IStatsResponse | null> => {
 
   const betterCount = dataVeesList.reduce(
     (sum, vees) =>
-      sum
-      + vees.exercises.reduce(
+      sum + vees.exercises.reduce(
         (innerSum, ex) =>
-          innerSum
-          + ex.result.filter((res, index) => {
+          innerSum + ex.result.filter((res, index) => {
             const prev = ex.previousResult?.[index];
 
-            return prev ? res.weight > prev.weight : false;
+            return prev ? compareResults(res, prev, 'better') : false;
           }).length,
         0,
       ),
@@ -50,14 +50,12 @@ export const statsResponse = async (): Promise<IStatsResponse | null> => {
 
   const worseCount = dataVeesList.reduce(
     (sum, vees) =>
-      sum
-      + vees.exercises.reduce(
+      sum + vees.exercises.reduce(
         (innerSum, ex) =>
-          innerSum
-          + ex.result.filter((res, index) => {
+          innerSum + ex.result.filter((res, index) => {
             const prev = ex.previousResult?.[index];
 
-            return prev ? res.weight < prev.weight : false;
+            return prev ? compareResults(res, prev, 'worse') : false;
           }).length,
         0,
       ),

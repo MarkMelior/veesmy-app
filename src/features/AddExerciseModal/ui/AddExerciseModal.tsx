@@ -7,7 +7,7 @@ import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
 import { Background, Button, Chip, Empty, Flex, Input, ModalBase, Text } from '@/shared/ui';
 import { Image } from '@/shared/ui/client';
 
-import type { IExerciseGroupResponse } from '@/entities/exercise-group';
+import type { IExerciseGroupsResponse } from '@/entities/exercise-groups';
 
 import styles from './addExerciseModal.module.scss';
 
@@ -18,7 +18,7 @@ export interface IGroupExercises {
 }
 
 interface IAddExerciseModal {
-  items: IExerciseGroupResponse[]
+  items: IExerciseGroupsResponse[]
 }
 
 const getCountExerciseWord = (count: number) => {
@@ -34,7 +34,7 @@ const getCountExerciseWord = (count: number) => {
 
 // TODO: Сделать компонент серверным
 export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
-  const [selectedGroup, setSelectedGroup] = useState<IExerciseGroupResponse | null>(null);
+  const [selectedGroup, setSelectedGroup] = useState<IExerciseGroupsResponse | null>(null);
 
   return (
     <ModalBase

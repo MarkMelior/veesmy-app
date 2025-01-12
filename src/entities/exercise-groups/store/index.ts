@@ -1,24 +1,24 @@
 import { create } from 'zustand';
 
-import { getExerciseGroup } from '../api';
+import { getExerciseGroups } from '../api';
 
-import type { IExerciseGroupResponse } from '../types';
+import type { IExerciseGroupsResponse } from '../types';
 
-interface IExerciseGroupStore {
-  dataExerciseGroup: IExerciseGroupResponse[] | null
+interface IExerciseGroupsStore {
+  dataExerciseGroup: IExerciseGroupsResponse[] | null
   errorExerciseGroup: string | null
   loadExerciseGroup: () => Promise<void>
   loadingExerciseGroup: boolean
 };
 
-export const useExerciseGroup = create<IExerciseGroupStore>((set) => ({
+export const useExerciseGroups = create<IExerciseGroupsStore>((set) => ({
   dataExerciseGroup: null,
   errorExerciseGroup: null,
   loadExerciseGroup: async () => {
     set({ errorExerciseGroup: null, loadingExerciseGroup: true });
 
     try {
-      const dataExerciseGroup = await getExerciseGroup();
+      const dataExerciseGroup = await getExerciseGroups();
 
       set({ dataExerciseGroup });
     }

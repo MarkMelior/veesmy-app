@@ -1,6 +1,6 @@
-import type { IExerciseTemplateDto } from '@/entities/exercise-template';
+import type { IExerciseTemplatesDto } from '@/entities/exercise-templates';
 
-export const EXERCISE_TEMPLATE: IExerciseTemplateDto[] = [
+export const EXERCISE_TEMPLATE: IExerciseTemplatesDto[] = [
   {
     color: '#FA4838',
     exercisesIds: [

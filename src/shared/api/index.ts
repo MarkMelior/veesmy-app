@@ -1,11 +1,9 @@
 import axios from 'axios';
 
-import { isClient } from '../lib/next';
-
 import type { AxiosError, AxiosRequestConfig } from 'axios';
 
 export const apiInstance = axios.create({
-  baseURL: isClient() ? '/api' : process.env.BASE_API_URL + '/api',
+  baseURL: '/api',
   headers: {
     'Content-Type': 'application/json',
   },

@@ -1,6 +1,6 @@
 // Шаблоны тренировок. Будут содержать id упражнений
 
-export type IExerciseTemplateDto = {
+export type IExerciseTemplatesDto = {
   id: string
   name: string
   exercisesIds: string[]
@@ -8,4 +8,4 @@ export type IExerciseTemplateDto = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-export type IExerciseTemplateResponse = { /* TODO */ };
+export type IExerciseTemplatesResponse = { /* TODO */ };

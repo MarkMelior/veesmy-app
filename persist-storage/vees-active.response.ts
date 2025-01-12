@@ -2,8 +2,8 @@ import localforage from 'localforage';
 
 import { StorageKey } from '@/shared/constants';
 
-import type { IExerciseGroupDto } from '@/entities/exercise-group';
-import type { IExerciseTemplateDto } from '@/entities/exercise-template';
+import type { IExerciseGroupsDto } from '@/entities/exercise-groups';
+import type { IExerciseTemplatesDto } from '@/entities/exercise-templates';
 import type { IVeesDto, IVeesResponse } from '@/entities/vees';
 
 import {
@@ -19,9 +19,9 @@ export const veesActiveResponse = async (): Promise<IVeesResponse | null> => {
   const veesList
     = await localforage.getItem<IVeesDto[]>(StorageKey.VEES_LIST);
   const exerciseGroups
-    = await localforage.getItem<IExerciseGroupDto[]>(StorageKey.EXERCISE_GROUP);
+    = await localforage.getItem<IExerciseGroupsDto[]>(StorageKey.EXERCISE_GROUP);
   const exerciseTemplates
-    = await localforage.getItem<IExerciseTemplateDto[]>(StorageKey.EXERCISE_TEMPLATE);
+    = await localforage.getItem<IExerciseTemplatesDto[]>(StorageKey.EXERCISE_TEMPLATE);
 
   if (!veesActive || !exerciseGroups || !exerciseTemplates || !veesList) {
     return null;

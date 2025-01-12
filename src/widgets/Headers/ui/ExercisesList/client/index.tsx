@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 
 import { AddExerciseModal } from '@/features/AddExerciseModal/client';
 
-import { useExerciseGroup } from '@/entities/exercise-group';
+import { useExerciseGroups } from '@/entities/exercise-groups';
 
 export const ClientRender = () => {
-  const { dataExerciseGroup, loadExerciseGroup } = useExerciseGroup();
+  const { dataExerciseGroup, loadExerciseGroup } = useExerciseGroups();
 
   useEffect(() => {
     loadExerciseGroup();

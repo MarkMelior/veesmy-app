@@ -1,9 +1,9 @@
-import type { IExerciseGroupDto } from '@/entities/exercise-group';
-import type { IExerciseTemplateDto } from '@/entities/exercise-template';
+import type { IExerciseGroupsDto } from '@/entities/exercise-groups';
+import type { IExerciseTemplatesDto } from '@/entities/exercise-templates';
 import type { IVeesDto, IVeesResponse } from '@/entities/vees';
 
 export const createExerciseGroupsMap = (
-  exerciseGroups: IExerciseGroupDto[],
+  exerciseGroups: IExerciseGroupsDto[],
 ): Map<string, { id: string, name: string, groupColor: string, groupName: string }> => (
   new Map(
     exerciseGroups.flatMap((group) =>
@@ -14,8 +14,8 @@ export const createExerciseGroupsMap = (
 );
 
 export const createExerciseTemplatesMap = (
-  exerciseTemplates: IExerciseTemplateDto[],
-): Map<string, IExerciseTemplateDto> => (
+  exerciseTemplates: IExerciseTemplatesDto[],
+): Map<string, IExerciseTemplatesDto> => (
   new Map(
     exerciseTemplates.map((template) => [template.id, template]),
   )
@@ -57,7 +57,7 @@ export const transformExercises = (
 
 export const transformExerciseTemplate = (
   exerciseTemplateId: string | undefined,
-  exerciseTemplatesMap: Map<string, IExerciseTemplateDto>,
+  exerciseTemplatesMap: Map<string, IExerciseTemplatesDto>,
   exerciseGroupsMap: Map<string, IExercise>,
   index: number,
 ): IVeesResponse['exerciseTemplate'] | undefined => {

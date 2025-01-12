@@ -2,7 +2,7 @@
 
 // * AddExerciseModal - страница `/vees`
 // GET exercise-group/get-list - Получение списка всех групп и упражнений
-export type IExerciseGroupDto = {
+export type IExerciseGroupsDto = {
   color: string // Цвет группы
   exercises: {
     id: string // id упражнения
@@ -12,7 +12,7 @@ export type IExerciseGroupDto = {
   name: string // Название группы
 };
 
-export interface IExerciseGroupResponse {
+export interface IExerciseGroupsResponse {
   color: string // Цвет группы
   exercises: {
     id: string // id упражнения

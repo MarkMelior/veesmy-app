@@ -1,6 +1,6 @@
-import type { IExerciseGroupDto } from '@/entities/exercise-group';
+import type { IExerciseGroupsDto } from '@/entities/exercise-groups';
 
-export const EXERCISE_GROUP: IExerciseGroupDto[] = [
+export const EXERCISE_GROUP: IExerciseGroupsDto[] = [
   {
     color: '#FAC938',
     exercises: [
