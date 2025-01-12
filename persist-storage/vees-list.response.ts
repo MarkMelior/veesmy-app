@@ -1,3 +1,5 @@
+import { compareResults } from '@/shared/lib/compare-results';
+
 import type { IVeesListResponse, IVeesResponse } from '@/entities/vees';
 
 import { veesResponse } from './vees.response';
@@ -14,7 +16,7 @@ const mapVeesResponseToList = (data: IVeesResponse): IVeesListResponse => ({
       sum + exercise.result.filter((result, index) => {
         const previous = exercise.previousResult?.[index];
 
-        return previous ? result.weight < previous.weight : false;
+        return previous ? compareResults(result, previous, 'worse') : false;
       }).length,
     0,
   ), // Количество результатов, где вес ниже предыдущего
@@ -23,7 +25,7 @@ const mapVeesResponseToList = (data: IVeesResponse): IVeesListResponse => ({
       sum + exercise.result.filter((result, index) => {
         const previous = exercise.previousResult?.[index];
 
-        return previous ? result.weight > previous.weight : false;
+        return previous ? compareResults(result, previous, 'better') : false;
       }).length,
     0,
   ), // Количество результатов, где вес выше предыдущего

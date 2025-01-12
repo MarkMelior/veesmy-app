@@ -9,11 +9,34 @@ export const VEES_LIST: IVeesDto[] = [
     exercises: [
       {
         id: '147244e6-ab19-4bd2-bb2f-28e6d4145127', // Разведения в кроссовере на одну руку
-        result: [{ count: 8, weight: 15 }],
+        result: [
+          { count: 20, weight: 10 },
+          { count: 10, weight: 20 },
+        ],
       },
       {
         id: '9ae9be94-3514-487a-920f-802d2a76f804', // Французский жим лёжа
         result: [{ count: 12, weight: 10 }],
+      },
+    ],
+    exerciseTemplateId: 'template-tuesday',
+  },
+  {
+    duration: {
+      from: '2025-01-10T15:00:00',
+      to: '2025-01-10T16:34:00',
+    },
+    exercises: [
+      {
+        id: '147244e6-ab19-4bd2-bb2f-28e6d4145127', // Разведения в кроссовере на одну руку
+        result: [
+          { count: 10, weight: 20 },
+          { count: 20, weight: 10 },
+        ],
+      },
+      {
+        id: '9ae9be94-3514-487a-920f-802d2a76f804', // Французский жим лёжа
+        result: [{ count: 10, weight: 10 }],
       },
     ],
     exerciseTemplateId: 'template-tuesday',

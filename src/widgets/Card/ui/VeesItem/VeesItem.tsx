@@ -4,6 +4,7 @@ import { clsx } from 'clsx';
 import { useState } from 'react';
 
 import { DragIcon, MessageIcon, PlusIcon } from '@/shared/icons';
+import { compareResults } from '@/shared/lib/compare-results';
 import { Button, Chip, Flex, Text } from '@/shared/ui';
 
 import type { IVeesResponse } from '@/entities/vees';
@@ -74,9 +75,16 @@ export const VeesItem = ({ item }: IVeesItem) => {
           const previousWeight = previousResult?.[index]?.weight ?? 0;
           const previousCount = previousResult?.[index]?.count ?? 0;
 
-          const isBetter = weight > previousWeight
-            || (weight === previousWeight && count > previousCount);
-          const isWorse = weight < previousWeight || count < previousCount;
+          const isBetter = compareResults(
+            { count, weight },
+            { count: previousCount, weight: previousWeight },
+            'better',
+          );
+          const isWorse = compareResults(
+            { count, weight },
+            { count: previousCount, weight: previousWeight },
+            'worse',
+          );
 
           return (
           // TODO: Добавление подхода в VeesList - https://melior-app.atlassian.net/browse/VEES-12
