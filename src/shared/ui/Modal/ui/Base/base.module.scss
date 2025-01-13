@@ -37,7 +37,7 @@
   }
 }
 
-body[data-closing="true"] {
+body[data-modal-closed="true"] {
   /* stylelint-disable-next-line no-descending-specificity */
   .title, .action {
     opacity: 0;

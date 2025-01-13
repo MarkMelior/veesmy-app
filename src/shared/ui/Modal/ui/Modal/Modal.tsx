@@ -31,13 +31,13 @@ export const Modal = ({
   const openModal = useCallback(() => {
     setMount(true);
 
-    body?.setAttribute('data-closing', 'false');
+    body?.setAttribute('data-modal-closed', 'false');
   }, [body]);
 
   const closeModal = useCallback(() => {
     onClose?.();
 
-    body?.setAttribute('data-closing', 'true');
+    body?.setAttribute('data-modal-closed', 'true');
 
     setTimeout(() => {
       setMount(false);

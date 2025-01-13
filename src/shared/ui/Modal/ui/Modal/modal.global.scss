@@ -16,11 +16,11 @@
 }
 
 body {
-  &[data-closing="false"] {
+  &:has(#modal-root > *) {
     overflow: hidden;
   }
 
-  &[data-closing="true"] {
+  &[data-modal-closed="true"] {
     .overlay {
       opacity: 0;
     }
