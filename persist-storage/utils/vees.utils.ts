@@ -38,7 +38,6 @@ export const transformExercises = (
   // Найти предыдущую тренировку, содержащую упражнение с аналогичным id
   const previousResult = allVees
     .flatMap((vees) => vees.exercises)
-    .reverse() // Ищем начиная с последней тренировки
     .find((prevExercise) => prevExercise.id === exercise.id)?.result;
 
   return {

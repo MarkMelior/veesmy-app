@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 import { Card } from '@/widgets/Card';
 
 import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
@@ -12,12 +10,7 @@ import { InfoBlock } from '@/shared/ui/client';
 import { useVeesActive } from '@/entities/vees';
 
 export const ClientRender = () => {
-  const { dataVeesActive, loadVeesActive } = useVeesActive();
-
-  useEffect(() => {
-    loadVeesActive();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { dataVeesActive } = useVeesActive();
 
   if (!dataVeesActive) {
     return;

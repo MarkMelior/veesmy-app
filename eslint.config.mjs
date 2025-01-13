@@ -60,6 +60,8 @@ const eslintCommonRules = {
 };
 
 const eslintReactRules = {
+  // useEffect зависимости
+  'react-hooks/exhaustive-deps': 'off',
   // Указывает пропсам значения true и false
   'react/jsx-boolean-value': ['error', 'always'],
   // Запрет на пропсы-спред, если нужно
@@ -78,7 +80,10 @@ const eslintTypescriptRules = {
       prefer: 'type-imports', // Всегда использовать "import type" для типов
     },
   ],
-  '@typescript-eslint/no-unused-vars': 'error',
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    { argsIgnorePattern: '^_' },
+  ],
 };
 
 const eslintPerfectionistRules = {

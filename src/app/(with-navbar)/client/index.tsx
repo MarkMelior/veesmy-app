@@ -13,19 +13,22 @@ import { FiltersModal } from '@/features/FiltersModal';
 import { SortModal } from '@/features/SortModal';
 
 import { useStats } from '@/entities/stats';
-import { useVeesList } from '@/entities/vees';
+import { useVeesActive, useVeesList } from '@/entities/vees';
 
 import styles from '../page.module.scss';
 
 export const ClientRender = () => {
   const { dataVeesList, loadVeesList } = useVeesList();
   const { dataStats, loadStats } = useStats();
+  const { dataVeesActive } = useVeesActive();
+
+  useEffect(() => {
+    loadVeesList();
+  }, []);
 
   useEffect(() => {
     loadStats();
-    loadVeesList();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dataVeesActive]);
 
   if (!dataStats) {
     return;

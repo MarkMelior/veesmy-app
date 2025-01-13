@@ -10,7 +10,7 @@ export interface IVeesDto {
   }
   exercises: {
     id: string
-    previousId?: string
+    previousId?: string // id упражнения, которое заменили (если есть замена)
     result: IResult[]
     comment?: string
   }[] // Если изменён порядок или удалено/добавлено новое упражнение, то шаблон упражнений isEdited
@@ -24,6 +24,7 @@ export interface IVeesResponse {
   }
   exercises: {
     id: string
+    previousId?: string
     previousResult?: IResult[]
     result: IResult[]
     comment?: string

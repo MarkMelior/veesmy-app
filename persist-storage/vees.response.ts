@@ -37,6 +37,6 @@ export const veesResponse = async (): Promise<IVeesResponse[] | null> => {
       exerciseGroupsMap,
       index,
     ),
-    number: veesList.length - index,
-  }));
+    number: index + 1,
+  })).reverse();
 };
