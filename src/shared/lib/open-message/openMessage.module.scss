@@ -8,6 +8,10 @@
 
   animation: fade-in-from-top 0.3s ease-out forwards;
   backdrop-filter: blur(theme('backdropBlur.xl'));
+
+  [data-message="closed"] & {
+    animation: fade-out-from-top 0.3s ease-in forwards;
+  }
 }
 
 .icon {
@@ -27,25 +31,7 @@
   padding: 12px !important;
 }
 
-:global(#message-root) {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: theme('zIndex.hud');
-  width: 100%;
-  max-width: 640px;
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding: 0 16px;
 
-  transform: translateX(-50%);
-
-  [data-message="closed"] .wrapper {
-    animation: fade-out-from-top 0.3s ease-in forwards;
-  }
-}
 
 @mixin variant($color) {
   color: theme('colors.#{$color}.400');

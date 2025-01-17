@@ -8,6 +8,7 @@ import { CrossIcon, ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from '@/shar
 import { Background, Button, Flex, Text } from '@/shared/ui';
 
 import styles from './openMessage.module.scss';
+import './openMessage.global.scss';
 
 export interface IOpenMessage {
   content: string
