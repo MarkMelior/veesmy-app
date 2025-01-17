@@ -1,6 +1,10 @@
 import { create } from 'zustand';
 
+import { getRandomSupportPhrase } from '@/shared/lib/get-random-support-phrase';
+import type { IErrorResponse } from '@/shared/lib/handle-error';
+import { handleError } from '@/shared/lib/handle-error';
 import { filterUndefined } from '@/shared/lib/object';
+import { openMessage } from '@/shared/lib/open-message';
 
 import { getVeesActive } from '../api';
 import { useVeesList } from './use-vees-list';
@@ -13,22 +17,27 @@ interface IVeesActiveStore {
   completeWithoutSave: () => void
   completeWithSave: () => void
   dataVeesActive: IVeesResponse | null
-  errorVeesActive: string | null
+  errorVeesActive: IErrorResponse | null
   loadingVeesActive: boolean
   loadVeesActive: () => Promise<void>
 };
 
 export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
   completeWithoutSave: async () => {
+    set({ errorVeesActive: null, loadingVeesActive: true });
+
     try {
       await removeVeesActive();
       set({ dataVeesActive: null });
-    }
-    catch (error) {
-      set({ errorVeesActive: (error as Error).message });
+    } catch (error) {
+      set({ errorVeesActive: handleError({ error }) });
+    } finally {
+      set({ loadingVeesActive: false });
     }
   },
   completeWithSave: async () => {
+    set({ errorVeesActive: null, loadingVeesActive: true });
+
     const dataVeesActive = get().dataVeesActive;
 
     if (!dataVeesActive) {
@@ -47,16 +56,22 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
           previousId: exercise.previousId,
           result: exercise.result,
         })),
-      exerciseTemplateId: dataVeesActive.exerciseTemplate?.id,
+      ...filterUndefined({ exerciseTemplateId: dataVeesActive.exerciseTemplate?.id }),
     };
 
     try {
       await saveVeesActive(payload);
       useVeesList.getState().loadVeesList();
       set({ dataVeesActive: null });
-    }
-    catch (error) {
-      set({ errorVeesActive: (error as Error).message });
+
+      openMessage({
+        content: 'Тренировка успешно сохранена!',
+        description: getRandomSupportPhrase(),
+      });
+    } catch (error) {
+      set({ errorVeesActive: handleError({ error }) });
+    } finally {
+      set({ loadingVeesActive: false });
     }
   },
   dataVeesActive: null,
@@ -69,11 +84,9 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
       const dataVeesActive = await getVeesActive();
 
       set({ dataVeesActive });
-    }
-    catch (error) {
-      set({ errorVeesActive: (error as Error).message });
-    }
-    finally {
+    } catch (error) {
+      set({ errorVeesActive: handleError({ error }) });
+    } finally {
       set({ loadingVeesActive: false });
     }
   },

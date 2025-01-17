@@ -1,12 +1,15 @@
 import { create } from 'zustand';
 
+import type { IErrorResponse } from '@/shared/lib/handle-error';
+import { handleError } from '@/shared/lib/handle-error';
+
 import { getExerciseGroups } from '../api';
 
 import type { IExerciseGroupsResponse } from '../types';
 
 interface IExerciseGroupsStore {
   dataExerciseGroup: IExerciseGroupsResponse[] | null
-  errorExerciseGroup: string | null
+  errorExerciseGroup: IErrorResponse | null
   loadExerciseGroup: () => Promise<void>
   loadingExerciseGroup: boolean
 };
@@ -21,11 +24,9 @@ export const useExerciseGroups = create<IExerciseGroupsStore>((set) => ({
       const dataExerciseGroup = await getExerciseGroups();
 
       set({ dataExerciseGroup });
-    }
-    catch (error) {
-      set({ errorExerciseGroup: (error as Error).message });
-    }
-    finally {
+    } catch (error) {
+      set({ errorExerciseGroup: handleError({ error }) });
+    } finally {
       set({ loadingExerciseGroup: false });
     }
   },

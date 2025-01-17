@@ -20,8 +20,7 @@ export const Main = () => {
 
         if (elementPosition < 32) {
           setIsDisabled(false);
-        }
-        else {
+        } else {
           setIsDisabled(true);
         }
       }

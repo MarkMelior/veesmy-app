@@ -35,6 +35,7 @@ const RootLayout = ({ children }: IRootLayout) => (
           </InitialProvider>
           <Light />
           <div id="modal-root" />
+          <div id="message-root" />
         </ThemeProvider>
       </body>
     </html>

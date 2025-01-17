@@ -108,6 +108,7 @@ const config = {
       },
     ],
     'selector-class-pattern': null,
+    'selector-pseudo-class-no-unknown': [true, { ignorePseudoClasses: ['global'] }],
   },
 };
 

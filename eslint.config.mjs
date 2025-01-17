@@ -122,6 +122,8 @@ const eslintStylisticRules = {
   '@stylistic/array-bracket-newline': ['error', { multiline: true }],
   // Применяет скобки вокруг стрелочных функций.
   '@stylistic/arrow-parens': ['error', 'always'],
+  // Обеспечивает единообразный стиль раскосов для блоков.
+  '@stylistic/brace-style': ['error', '1tbs'],
   // Требует или запрещает конечные запятые.
   '@stylistic/comma-dangle': ['error', 'only-multiline'],
   // Обеспечивает единообразие отступов.

@@ -30,7 +30,7 @@ export const ClientRender = () => {
     loadStats();
   }, [dataVeesActive]);
 
-  if (!dataStats) {
+  if (!dataStats || !dataVeesList) {
     return;
   }
 
@@ -41,10 +41,6 @@ export const ClientRender = () => {
     veesCount,
     worseCount,
   } = dataStats;
-
-  if (!dataVeesList) {
-    return;
-  }
 
   // Логика расчета стажа
   const dateFirst = new Date(dateFirstVees);

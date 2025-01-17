@@ -72,8 +72,7 @@ export const useTimer = create<ITimerStore>((set, get) => {
         if (!isPaused) {
           if (time > 0) {
             set((state) => ({ time: state.time - 1 }));
-          }
-          else {
+          } else {
             clearInterval(timer!);
             timer = null;
             playSound();
