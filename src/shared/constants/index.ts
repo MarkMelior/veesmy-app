@@ -1,3 +1,5 @@
+import type { IOpenMessage } from '../lib/open-message';
+
 export enum AppRoutes {
   MAIN = '/',
   VEES = '/vees',
@@ -16,3 +18,9 @@ export enum StorageKey {
   EXERCISE_GROUP = 'EXERCISE_GROUP',
   EXERCISE_TEMPLATE = 'EXERCISE_TEMPLATE',
 }
+
+export const NOT_IMPLEMENTED: IOpenMessage = {
+  content: 'Ещё не реализовано!',
+  description: 'Данный функционал находится в разработке',
+  type: 'warning',
+};
