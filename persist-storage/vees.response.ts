@@ -1,10 +1,10 @@
 import localforage from 'localforage';
 
 import { StorageKey } from '@/shared/constants';
+import type { IVeesDto, IVeesResponse } from '@/shared/types';
 
 import type { IExerciseGroupsDto } from '@/entities/exercise-groups';
 import type { IExerciseTemplatesDto } from '@/entities/exercise-templates';
-import type { IVeesDto, IVeesResponse } from '@/entities/vees';
 
 import {
   createExerciseGroupsMap,
@@ -37,6 +37,7 @@ export const veesResponse = async (): Promise<IVeesResponse[] | null> => {
       exerciseGroupsMap,
       index,
     ),
+    id: vees.id,
     number: index + 1,
   })).reverse();
 };

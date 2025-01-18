@@ -1,7 +1,7 @@
 'use client';
 
 import { clsx } from 'clsx';
-import { useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { PauseIcon, PlayIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { Background, Button, Flex, Layout, Text } from '@/shared/ui';
@@ -13,7 +13,6 @@ import styles from './timer.module.scss';
 
 export const Timer = () => {
   const {
-    initializeAudio,
     isPaused,
     isPlaying,
     isRunning,
@@ -24,12 +23,6 @@ export const Timer = () => {
     stopSound,
     time,
   } = useTimer();
-
-  useEffect(() => {
-    initializeAudio();
-
-    return () => resetTimer();
-  }, [initializeAudio]);
 
   const RenderButtons = useMemo(() => {
     if (isPlaying) {

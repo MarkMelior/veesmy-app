@@ -5,19 +5,20 @@ import { useState } from 'react';
 
 import { DragIcon, MessageIcon, PlusIcon } from '@/shared/icons';
 import { compareResults } from '@/shared/lib/compare-results';
+import type { IVeesResponse } from '@/shared/types';
 import { Button, Chip, Flex, Text } from '@/shared/ui';
-
-import type { IVeesResponse } from '@/entities/vees';
 
 import { Card } from '../Card/Card';
 
 import styles from './veesItem.module.scss';
 
 interface IVeesItem {
+  index: number
+  isEditable?: boolean
   item: NotArray<IVeesResponse['exercises']>
 }
 
-export const VeesItem = ({ item }: IVeesItem) => {
+export const VeesItem = ({ index, isEditable, item }: IVeesItem) => {
   const [isOpen, setIsOpen] = useState<boolean | null>(null);
 
   const {
@@ -42,10 +43,12 @@ export const VeesItem = ({ item }: IVeesItem) => {
         </>
       )}
       isOpen={isOpen}
-      leftAction={(
+      leftAction={isEditable ? (
         <button className={styles.drag}>
           <DragIcon />
         </button>
+      ) : (
+        <Text color="text-base-700" size="text-sm">{`${index + 1}.`}</Text>
       )}
       setIsOpen={setIsOpen}
     >
@@ -105,9 +108,11 @@ export const VeesItem = ({ item }: IVeesItem) => {
             </Button>
           );
         })}
-        <Button className={clsx(styles.button, styles.buttonAdd)} variant="none">
-          <PlusIcon />
-        </Button>
+        {isEditable ? (
+          <Button className={clsx(styles.button, styles.buttonAdd)} variant="none">
+            <PlusIcon />
+          </Button>
+        ) : null}
       </Flex>
       {previousResult?.length ? (
         <Flex

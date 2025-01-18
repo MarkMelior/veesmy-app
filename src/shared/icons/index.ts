@@ -3,6 +3,7 @@ export * from './arrow-dropdown';
 export * from './arrow-left';
 export * from './cross';
 export * from './drag';
+export * from './edit-outline';
 export * from './error';
 export * from './export-outline';
 export * from './filter-outline';

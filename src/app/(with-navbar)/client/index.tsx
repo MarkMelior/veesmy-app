@@ -11,7 +11,7 @@ import { Badge, Button, Flex, Layout, Separator } from '@/shared/ui';
 import { FiltersModal } from '@/features/FiltersModal';
 import { SortModal } from '@/features/SortModal';
 
-import { useVeesList } from '@/entities/vees';
+import { useVeesList } from '@/entities/vees-list';
 
 import styles from '../page.module.scss';
 

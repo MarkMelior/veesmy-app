@@ -1,6 +1,7 @@
+import type { IVeesDto, IVeesResponse } from '@/shared/types';
+
 import type { IExerciseGroupsDto } from '@/entities/exercise-groups';
 import type { IExerciseTemplatesDto } from '@/entities/exercise-templates';
-import type { IVeesDto, IVeesResponse } from '@/entities/vees';
 
 export const createExerciseGroupsMap = (
   exerciseGroups: IExerciseGroupsDto[],

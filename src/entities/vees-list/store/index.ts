@@ -2,10 +2,9 @@ import { create } from 'zustand';
 
 import type { IErrorResponse } from '@/shared/lib/handle-error';
 import { handleError } from '@/shared/lib/handle-error';
+import type { IVeesListResponse } from '@/shared/types';
 
 import { getVeesList } from '../api';
-
-import type { IVeesListResponse } from '../types';
 
 interface IVeesListStore {
   dataVeesList: IVeesListResponse[] | null

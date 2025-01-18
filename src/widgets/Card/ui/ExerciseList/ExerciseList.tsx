@@ -1,7 +1,6 @@
 import type { IErrorResponse } from '@/shared/lib/handle-error';
+import type { IVeesListResponse } from '@/shared/types';
 import { Alert, Empty, Flex, Skeleton } from '@/shared/ui';
-
-import type { IVeesListResponse } from '@/entities/vees';
 
 import { ExerciseItem } from '../ExerciseItem/ExerciseItem';
 
