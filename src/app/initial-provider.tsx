@@ -2,7 +2,9 @@
 
 import { useEffect } from 'react';
 
-import { useVeesActive } from '@/entities/vees';
+import { useTimer } from '@/features/Timer/client';
+
+import { useVeesActive } from '@/entities/vees-active';
 
 interface IInitialProvider {
   children: React.ReactNode
@@ -10,9 +12,16 @@ interface IInitialProvider {
 
 export const InitialProvider = ({ children }: IInitialProvider) => {
   const { loadVeesActive } = useVeesActive();
+  const { initializeAudio, resetTimer } = useTimer();
 
   useEffect(() => {
     loadVeesActive();
+  }, []);
+
+  useEffect(() => {
+    initializeAudio();
+
+    return () => resetTimer();
   }, []);
 
   return children;

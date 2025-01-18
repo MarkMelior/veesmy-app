@@ -5,7 +5,7 @@ import { Background, Button, Flex, ModalBase, Text } from '@/shared/ui';
 
 import { formatTimerTime, useTimer } from '@/features/Timer/client';
 
-import { useVeesActive } from '@/entities/vees';
+import { useVeesActive } from '@/entities/vees-active';
 
 import styles from './backActiveVees.module.scss';
 

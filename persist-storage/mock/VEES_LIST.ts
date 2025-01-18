@@ -1,4 +1,4 @@
-import type { IVeesDto } from '@/entities/vees';
+import type { IVeesDto } from '@/shared/types';
 
 export const VEES_LIST: IVeesDto[] = [
   {
@@ -17,6 +17,7 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-saturday',
+    id: 'c3dce3ed-cedf-4d1f-b907-927e24314f02',
   },
   {
     duration: {
@@ -34,6 +35,7 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-tuesday',
+    id: 'd3dce3ed-cedf-4d1f-b907-927e24314f02',
   },
   {
     duration: {
@@ -51,6 +53,7 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-saturday',
+    id: '7e040e20-61e0-4c2c-818a-192df8fc2cae',
   },
   {
     duration: {
@@ -68,6 +71,7 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-saturday',
+    id: '9ae9be94-3514-487a-920f-802d2a76f804',
   },
   {
     duration: {
@@ -88,6 +92,7 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-tuesday',
+    id: '64f5d700-2ae9-4f53-8d9c-43fe90f63d32',
   },
   {
     duration: {
@@ -108,5 +113,6 @@ export const VEES_LIST: IVeesDto[] = [
       },
     ],
     exerciseTemplateId: 'template-tuesday',
+    id: '64f5d700-2ae9-4f53-8d9c-43fe90f63d33',
   },
 ];

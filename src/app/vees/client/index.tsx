@@ -1,16 +1,26 @@
 'use client';
 
+import { redirect } from 'next/navigation';
+
 import { Card } from '@/widgets/Card';
 
-import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
+import { AppRoutes } from '@/shared/constants';
+import { FinishOutlineIcon, PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { getDateInfo, getDateRangeDuration } from '@/shared/lib/date';
 import { Alert, Button, Chip, Empty, Layout, List, Separator, Skeleton } from '@/shared/ui';
 import { InfoBlock } from '@/shared/ui/client';
 
-import { useVeesActive } from '@/entities/vees';
+import { useVeesActive } from '@/entities/vees-active';
+
+import styles from './index.module.scss';
 
 export const ClientRender = () => {
-  const { dataVeesActive, errorVeesActive, loadingVeesActive } = useVeesActive();
+  const {
+    completeWithSave,
+    dataVeesActive,
+    errorVeesActive,
+    loadingVeesActive,
+  } = useVeesActive();
 
   if (loadingVeesActive) {
     return (
@@ -92,6 +102,18 @@ export const ClientRender = () => {
       <Separator size={32} />
       <Layout padding={false}>
         <Card.VeesList items={exercises} />
+        <Separator size={32} />
+        <Button
+          className={styles.button}
+          icon={<FinishOutlineIcon height={22} width={22} />}
+          onClick={() => {
+            completeWithSave();
+            redirect(AppRoutes.MAIN);
+          }}
+          variant="none"
+        >
+          Завершить и сохранить
+        </Button>
       </Layout>
     </>
   );

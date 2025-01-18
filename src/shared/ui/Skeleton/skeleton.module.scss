@@ -4,12 +4,10 @@
   height: 24px;
 
   background: theme('colors.base.800 / 75%');
-  border-radius: theme('borderRadius.lg');
   border: 1px solid theme('colors.base.600 / 15%');
   overflow: hidden;
 
   transition: all ease 1s;
-  animation: var(--anim-scale-fade-in);
 
   &::before {
       display: block;
@@ -24,6 +22,14 @@
       animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
       content: "";
   }
+}
+
+.animated {
+  animation: var(--anim-scale-fade-in);
+}
+
+.radius-medium {
+  border-radius: theme('borderRadius.lg');
 }
 
 @keyframes load {

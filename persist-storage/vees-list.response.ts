@@ -1,6 +1,5 @@
 import { compareResults } from '@/shared/lib/compare-results';
-
-import type { IVeesListResponse, IVeesResponse } from '@/entities/vees';
+import type { IVeesListResponse, IVeesResponse } from '@/shared/types';
 
 import { veesResponse } from './vees.response';
 
@@ -10,6 +9,7 @@ const mapVeesResponseToList = (data: IVeesResponse): IVeesListResponse => ({
   duration: data.duration,
   exerciseCount: data.exercises.length, // Количество упражнений
   exerciseTemplate: data.exerciseTemplate, // Шаблон упражнения, если есть
+  id: data.id,
   number: data.number, // Номер тренировки
   resultDownCount: data.exercises.reduce(
     (sum, exercise) =>

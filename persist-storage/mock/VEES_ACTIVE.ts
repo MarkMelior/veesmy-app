@@ -1,6 +1,6 @@
-import type { IVeesDto } from '@/entities/vees';
+import type { IVeesDto } from '@/shared/types';
 
-export const VEES_ACTIVE: IVeesDto = {
+export const VEES_ACTIVE: Omit<IVeesDto, 'id'> = {
   duration: {
     from: '2025-01-12T10:00:00',
     to: '2025-01-12T11:00:00',

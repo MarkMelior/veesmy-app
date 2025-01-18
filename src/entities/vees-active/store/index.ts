@@ -5,13 +5,13 @@ import type { IErrorResponse } from '@/shared/lib/handle-error';
 import { handleError } from '@/shared/lib/handle-error';
 import { filterUndefined } from '@/shared/lib/object';
 import { openMessage } from '@/shared/lib/open-message';
+import type { IVeesDto, IVeesResponse } from '@/shared/types';
+
+import { useVeesList } from '@/entities/vees-list'; // ! FIXME
 
 import { getVeesActive } from '../api';
-import { useVeesList } from './use-vees-list';
 import { removeVeesActive } from '../api/remove-vees-active';
 import { saveVeesActive } from '../api/save-vees-active';
-
-import type { IVeesDto, IVeesResponse } from '../types';
 
 interface IVeesActiveStore {
   completeWithoutSave: () => void
@@ -44,7 +44,7 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
       return;
     }
 
-    const payload: IVeesDto = {
+    const payload: Omit<IVeesDto, 'id'> = {
       duration: {
         from: dataVeesActive.duration.from,
         to: new Date().toISOString().split('.')[0],
@@ -61,7 +61,7 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
 
     try {
       await saveVeesActive(payload);
-      useVeesList.getState().loadVeesList();
+      useVeesList.getState().loadVeesList(); // ! FIXME
       set({ dataVeesActive: null });
 
       openMessage({

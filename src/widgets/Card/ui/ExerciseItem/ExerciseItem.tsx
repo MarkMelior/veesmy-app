@@ -1,8 +1,10 @@
 'use client';
 
 import { clsx } from 'clsx';
+import Link from 'next/link';
 import { useState } from 'react';
 
+import { AppRoutes } from '@/shared/constants';
 import {
   ArrowDropdownIcon,
   MessageIcon,
@@ -10,9 +12,8 @@ import {
   StopwatchOutlineIcon,
 } from '@/shared/icons';
 import { getDateInfo, getDateRangeDuration } from '@/shared/lib/date';
+import type { IVeesListResponse } from '@/shared/types';
 import { Chip, Flex, List, Text } from '@/shared/ui';
-
-import type { IVeesListResponse } from '@/entities/vees';
 
 import { Card } from '../Card/Card';
 
@@ -81,7 +82,10 @@ export const ExerciseItem = ({ item }: IExerciseItem) => {
       leftAction={<Text color="text-base-700" size="text-sm">{`${number}.`}</Text>}
       setIsOpen={setIsOpen}
     >
-      <div className={clsx(styles.container, { [styles.open]: isOpen })}>
+      <Link
+        className={clsx(styles.container, { [styles.open]: isOpen })}
+        href={`${AppRoutes.VEES}/${item.id}`}
+      >
         <List.Item
           icon={<PaperOutlineIcon />}
           title="Тренировка"
@@ -115,7 +119,7 @@ export const ExerciseItem = ({ item }: IExerciseItem) => {
           ]}
           showDivider={false}
         />
-      </div>
+      </Link>
     </Card>
   );
 };
