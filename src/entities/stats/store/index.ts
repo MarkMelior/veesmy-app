@@ -17,7 +17,7 @@ interface IStatsStore {
 export const useStats = create<IStatsStore>((set) => ({
   dataStats: null,
   errorStats: null,
-  loadingStats: false,
+  loadingStats: true,
   loadStats: async () => {
     set({ errorStats: null, loadingStats: true });
 

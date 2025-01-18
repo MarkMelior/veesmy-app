@@ -1,43 +1,25 @@
 'use client';
 
-import { clsx } from 'clsx';
 import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { CrossIcon, ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from '@/shared/icons';
-import { Background, Button, Flex, Text } from '@/shared/ui';
+import type { IAlert } from '@/shared/ui/Alert';
+import { Alert } from '@/shared/ui/Alert';
 
 import styles from './openMessage.module.scss';
+
 import './openMessage.global.scss';
 
-export interface IOpenMessage {
-  content: string
-  description?: string
+export interface IOpenMessage extends IAlert {
   duration?: number
-  type?: 'success' | 'info' | 'warning' | 'error' | 'base'
 }
-
-const getIcon = (type: IOpenMessage['type']) => {
-  switch (type) {
-    case 'success':
-      return <SuccessIcon />;
-    case 'info':
-      return <InfoIcon />;
-    case 'warning':
-      return <WarningIcon />;
-    case 'error':
-      return <ErrorIcon />;
-    default:
-      return <InfoIcon />;
-  }
-};
 
 const MessageContainer = ({
   content,
   description,
   duration = 3,
   onClose,
-  type = 'success',
+  type,
 }: IOpenMessage & { onClose: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(onClose, duration * 1000);
@@ -46,28 +28,13 @@ const MessageContainer = ({
   }, [duration, onClose]);
 
   return (
-    <Background
-      className={clsx(styles.wrapper, styles[type])}
-      radius="large"
-    >
-      <Flex align="center" gap={12}>
-        <div className={styles.icon}>
-          {getIcon(type)}
-        </div>
-        <div>
-          <Text weight="font-semibold">{content}</Text>
-          {description && <Text as="p" size="text-sm">{description}</Text>}
-        </div>
-      </Flex>
-      <Button
-        className={styles.close}
-        iconOnly={true}
-        onClick={onClose}
-        variant="none"
-      >
-        <CrossIcon />
-      </Button>
-    </Background>
+    <Alert
+      className={styles.message}
+      content={content}
+      description={description}
+      onClose={onClose}
+      type={type}
+    />
   );
 };
 

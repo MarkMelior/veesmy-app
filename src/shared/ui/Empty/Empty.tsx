@@ -5,7 +5,7 @@ import { Text } from '../Text';
 import styles from './empty.module.scss';
 
 interface IEmpty {
-  description?: string
+  description?: React.ReactNode
   icon?: React.ReactNode
   title?: string
 }
@@ -16,7 +16,7 @@ export const Empty = ({
     <Image
       alt="empty"
       height={512}
-      src="/images/document.png"
+      src="/images/weight.png"
       width={512}
     />
   ),

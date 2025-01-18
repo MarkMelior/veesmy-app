@@ -30,5 +30,5 @@ export const useExerciseGroups = create<IExerciseGroupsStore>((set) => ({
       set({ loadingExerciseGroup: false });
     }
   },
-  loadingExerciseGroup: false,
+  loadingExerciseGroup: true,
 }));

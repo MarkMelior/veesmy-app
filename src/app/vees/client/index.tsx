@@ -4,16 +4,42 @@ import { Card } from '@/widgets/Card';
 
 import { PaperOutlineIcon, StopwatchOutlineIcon } from '@/shared/icons';
 import { getDateInfo, getDateRangeDuration } from '@/shared/lib/date';
-import { Chip, Layout, List, Separator } from '@/shared/ui';
+import { Alert, Button, Chip, Empty, Layout, List, Separator, Skeleton } from '@/shared/ui';
 import { InfoBlock } from '@/shared/ui/client';
 
 import { useVeesActive } from '@/entities/vees';
 
 export const ClientRender = () => {
-  const { dataVeesActive } = useVeesActive();
+  const { dataVeesActive, errorVeesActive, loadingVeesActive } = useVeesActive();
+
+  if (loadingVeesActive) {
+    return (
+      <Layout>
+        <Skeleton height={216} />
+        <Separator size={32} />
+        <Skeleton.List />
+      </Layout>
+    );
+  }
+
+  if (errorVeesActive) {
+    return (
+      <Alert
+        closable={false}
+        content="Ошибка загрузки активной тренировки!"
+        description={errorVeesActive.message}
+        type="error"
+      />
+    );
+  }
 
   if (!dataVeesActive) {
-    return;
+    return (
+      <Empty
+        description={<Button>Начать</Button>}
+        title="Начните тренировку!"
+      />
+    );
   }
 
   const { duration, exercises, exerciseTemplate, number } = dataVeesActive;
