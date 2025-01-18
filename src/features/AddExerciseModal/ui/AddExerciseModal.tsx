@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 import { AddOutlineIcon, SettingsOutlineIcon } from '@/shared/icons';
 import { Background, Button, Chip, Empty, Flex, Input, ModalBase, Text } from '@/shared/ui';
-import { Image } from '@/shared/ui/client';
 
 import type { IExerciseGroupsResponse } from '@/entities/exercise-groups';
 
@@ -105,14 +104,6 @@ export const AddExerciseModal = ({ items }: IAddExerciseModal) => {
               ) : (
                 <Empty
                   description="Добавьте первое упражнение!"
-                  icon={(
-                    <Image
-                      alt="empty"
-                      height={512}
-                      src="/images/weight.png"
-                      width={512}
-                    />
-                  )}
                   title="Здесь пока нет упражнений..."
                 />
               )}

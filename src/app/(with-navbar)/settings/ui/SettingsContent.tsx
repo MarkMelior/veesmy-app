@@ -1,5 +1,6 @@
 'use client';
 
+import localforage from 'localforage';
 import { useTheme } from 'next-themes';
 
 import { NOT_IMPLEMENTED } from '@/shared/constants';
@@ -9,6 +10,7 @@ import {
   FolderOutlineIcon,
   ImportOutlineIcon,
   LangIcon,
+  ResetIcon,
   ThemeIcon,
   VeesIcon,
 } from '@/shared/icons';
@@ -108,8 +110,23 @@ export const SettingsContent = () => {
               duration: 5,
             });
           }}
-          showDivider={false}
           title="Загрузить mock-данные"
+        />
+        <Section.Item
+          color="#FA4838"
+          description="Все ваши данные будут удалены"
+          icon={<ResetIcon height={24} width={24} />}
+          onClick={() => {
+            localforage.clear();
+            openMessage({
+              content: 'Все ваши данные удалены!',
+              description: 'Перезапустите приложение',
+              duration: 5,
+              type: 'error',
+            });
+          }}
+          showDivider={false}
+          title="Очистить все данные"
         />
       </Section>
       <Button

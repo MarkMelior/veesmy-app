@@ -1,3 +1,4 @@
+export * from './Alert';
 export * from './Avatar';
 export * from './Background';
 export * from './Badge';

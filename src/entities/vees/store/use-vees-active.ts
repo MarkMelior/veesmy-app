@@ -76,7 +76,7 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
   },
   dataVeesActive: null,
   errorVeesActive: null,
-  loadingVeesActive: false,
+  loadingVeesActive: true,
   loadVeesActive: async () => {
     set({ errorVeesActive: null, loadingVeesActive: true });
 

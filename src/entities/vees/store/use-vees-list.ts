@@ -17,7 +17,7 @@ interface IVeesListStore {
 export const useVeesList = create<IVeesListStore>((set) => ({
   dataVeesList: null,
   errorVeesList: null,
-  loadingVeesList: false,
+  loadingVeesList: true,
   loadVeesList: async () => {
     set({ errorVeesList: null, loadingVeesList: true });
 
