@@ -3,7 +3,7 @@ import { ThemeProvider } from 'next-themes';
 
 import { Light } from '@/shared/ui';
 
-import { InitialProvider } from './initial-provider';
+import { InitialProvider, LoadingProvider } from './providers';
 
 import type { Metadata } from 'next';
 
@@ -31,7 +31,9 @@ const RootLayout = ({ children }: IRootLayout) => (
       <body className={inter.className}>
         <ThemeProvider attribute="data-mode" defaultTheme="dark">
           <InitialProvider>
-            {children}
+            <LoadingProvider>
+              {children}
+            </LoadingProvider>
           </InitialProvider>
           <Light />
           <div id="modal-root" />

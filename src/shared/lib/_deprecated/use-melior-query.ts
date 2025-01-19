@@ -12,9 +12,9 @@ interface IUseMeliorQueryResult<T> {
   error: string | null
   isError: boolean
   isFetching: boolean
-  isLoading: boolean
   isSuccess: boolean
   isUninitialized: boolean
+  loading: boolean
   refetch: () => void
 }
 
@@ -24,7 +24,7 @@ export const useMeliorQuery = <T>({
 }: IUseMeliorQuery<T>): IUseMeliorQueryResult<T> => {
   const [data, setData] = useState<T | null>(null);
   const [isFetching, setIsFetching] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isUninitialized, setIsUninitialized] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -34,7 +34,7 @@ export const useMeliorQuery = <T>({
     try {
       setIsFetching(true);
       setIsUninitialized(false);
-      setIsLoading(true);
+      setLoading(true);
       setIsSuccess(false);
       setIsError(false);
 
@@ -42,13 +42,13 @@ export const useMeliorQuery = <T>({
 
       setData(response);
       setIsSuccess(true);
-      setIsLoading(false);
+      setLoading(false);
     } catch (error) {
       const { message } = handleError({ error, isMessage: showError });
 
       setError(message);
       setIsError(true);
-      setIsLoading(false);
+      setLoading(false);
     } finally {
       setIsFetching(false);
     }
@@ -63,9 +63,9 @@ export const useMeliorQuery = <T>({
     error,
     isError,
     isFetching,
-    isLoading,
     isSuccess,
     isUninitialized,
+    loading,
     refetch,
   };
 };

@@ -1,7 +1,6 @@
 .wrapper {
-  width: fit-content;
   height: 100%;
-  margin: 64px auto;
+  max-height: calc(100vh - 100px);
 }
 
 .icon {
