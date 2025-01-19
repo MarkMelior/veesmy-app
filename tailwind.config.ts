@@ -89,6 +89,7 @@ export default {
     zIndex: {
       hud: '10',
       light: '35',
+      message: '40',
       overlay: '20',
       overlayChild: '30',
     },

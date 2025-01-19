@@ -24,3 +24,9 @@ export const NOT_IMPLEMENTED: IOpenMessage = {
   description: 'Данный функционал находится в разработке',
   type: 'warning',
 };
+
+export const DEFAULT_ERROR: IOpenMessage = {
+  content: 'Произошла ошибка!',
+  description: 'Попробуйте перезагрузить приложение',
+  type: 'error',
+};

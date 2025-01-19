@@ -39,6 +39,7 @@ export const handleError = ({
     openMessage({
       content: `Ошибка ${errorResponse.name}`,
       description: errorResponse.message,
+      isCopy: true,
       type: 'error',
     });
   }

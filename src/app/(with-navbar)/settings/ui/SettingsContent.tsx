@@ -107,7 +107,7 @@ export const SettingsContent = () => {
             openMessage({
               content: 'Mock-данные успешно подгружены!',
               description: 'Перезапустите приложение',
-              duration: 5,
+              duration: 'infinite',
             });
           }}
           title="Загрузить mock-данные"
@@ -121,7 +121,7 @@ export const SettingsContent = () => {
             openMessage({
               content: 'Все ваши данные удалены!',
               description: 'Перезапустите приложение',
-              duration: 5,
+              duration: 'infinite',
               type: 'error',
             });
           }}

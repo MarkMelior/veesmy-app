@@ -22,6 +22,7 @@ export const ModalBase = ({
   closeOnClickOverlay,
   onClickOverlay,
   onClose,
+  open,
   title,
 }: IModalBase) => (
   <Modal
@@ -29,6 +30,7 @@ export const ModalBase = ({
     closeOnClickOverlay={closeOnClickOverlay}
     onClickOverlay={onClickOverlay}
     onClose={onClose}
+    open={open}
   >
     <Flex align="center" gap={56} vertical={true}>
       <Text

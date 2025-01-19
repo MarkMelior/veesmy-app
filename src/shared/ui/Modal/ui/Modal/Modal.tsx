@@ -15,6 +15,7 @@ export interface IModal {
   closeOnClickOverlay?: boolean
   onClickOverlay?: () => void
   onClose?: () => void
+  open?: boolean
 }
 
 export const Modal = ({
@@ -23,45 +24,60 @@ export const Modal = ({
   closeOnClickOverlay = true,
   onClickOverlay,
   onClose,
+  open,
 }: IModal) => {
   const [isMount, setMount] = useState(false);
+  const [isClosing, setClosing] = useState(false);
 
   const body = isClient() ? document.body : null;
+  const isControlled = open !== undefined;
 
   const openModal = useCallback(() => {
-    setMount(true);
+    if (!isControlled) {
+      setMount(true);
+    }
+    setClosing(false);
 
     body?.setAttribute('data-modal-closed', 'false');
-  }, [body]);
+  }, [body, isControlled]);
 
-  const closeModal = useCallback(() => {
+  const handleCloseModal = useCallback(() => {
+    setClosing(true);
     onClose?.();
 
     body?.setAttribute('data-modal-closed', 'true');
 
     setTimeout(() => {
-      setMount(false);
+      if (!isControlled) {
+        setMount(false);
+      }
+      setClosing(false);
     }, 150);
-  }, [body, onClose]);
+  }, [body, onClose, isControlled]);
 
   const handleClickOverlay = useCallback(() => {
     onClickOverlay?.();
 
     if (closeOnClickOverlay) {
-      closeModal();
+      handleCloseModal();
     }
-  }, [closeModal, closeOnClickOverlay, onClickOverlay]);
+  }, [handleCloseModal, closeOnClickOverlay, onClickOverlay]);
 
   const buttonElement = isValidElement(button)
-    ? cloneElement(button, { onClick: openModal })
+    ? cloneElement(button, { onClick: () => {
+      openModal();
+      button.props.onClick?.();
+    } })
     : button;
 
   const portalTarget = isClient() ? document.querySelector('#modal-root') : null;
 
+  const shouldRender = isControlled ? open || isClosing : isMount;
+
   return (
     <>
       {buttonElement}
-      {isMount && portalTarget ? createPortal(
+      {shouldRender && portalTarget ? createPortal(
         <>
           <div className="overlay" onClick={handleClickOverlay} />
           <Flex className={styles.wrapper} justify="center">

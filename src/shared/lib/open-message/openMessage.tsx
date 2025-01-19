@@ -11,17 +11,23 @@ import styles from './openMessage.module.scss';
 import './openMessage.global.scss';
 
 export interface IOpenMessage extends IAlert {
-  duration?: number
+  duration?: number | 'infinite'
 }
 
 const MessageContainer = ({
+  closable,
   content,
   description,
-  duration = 3,
+  duration = 5,
+  isCopy,
   onClose,
   type,
 }: IOpenMessage & { onClose: () => void }) => {
   useEffect(() => {
+    if (duration === 'infinite') {
+      return;
+    }
+
     const timer = setTimeout(onClose, duration * 1000);
 
     return () => clearTimeout(timer);
@@ -30,8 +36,10 @@ const MessageContainer = ({
   return (
     <Alert
       className={styles.message}
+      closable={closable}
       content={content}
       description={description}
+      isCopy={isCopy}
       onClose={onClose}
       type={type}
     />

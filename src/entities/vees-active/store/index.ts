@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 
+import { DEFAULT_ERROR } from '@/shared/constants';
 import { getRandomSupportPhrase } from '@/shared/lib/get-random-support-phrase';
 import type { IErrorResponse } from '@/shared/lib/handle-error';
 import { handleError } from '@/shared/lib/handle-error';
@@ -9,7 +10,7 @@ import type { IVeesDto, IVeesResponse } from '@/shared/types';
 
 import { useVeesList } from '@/entities/vees-list'; // ! FIXME
 
-import { getVeesActive } from '../api';
+import { addExerciseToActive, getVeesActive } from '../api';
 import { removeVeesActive } from '../api/remove-vees-active';
 import { saveVeesActive } from '../api/save-vees-active';
 
@@ -18,8 +19,10 @@ interface IVeesActiveStore {
   completeWithSave: () => void
   dataVeesActive: IVeesResponse | null
   errorVeesActive: IErrorResponse | null
+  loadingGlobal: boolean
   loadingVeesActive: boolean
   loadVeesActive: () => Promise<void>
+  onAddExerciseToActive: (id: string) => void
 };
 
 export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
@@ -41,7 +44,7 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
     const dataVeesActive = get().dataVeesActive;
 
     if (!dataVeesActive) {
-      return;
+      return openMessage(DEFAULT_ERROR);
     }
 
     const payload: Omit<IVeesDto, 'id'> = {
@@ -76,6 +79,7 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
   },
   dataVeesActive: null,
   errorVeesActive: null,
+  loadingGlobal: false,
   loadingVeesActive: true,
   loadVeesActive: async () => {
     set({ errorVeesActive: null, loadingVeesActive: true });
@@ -88,6 +92,34 @@ export const useVeesActive = create<IVeesActiveStore>((set, get) => ({
       set({ errorVeesActive: handleError({ error }) });
     } finally {
       set({ loadingVeesActive: false });
+    }
+  },
+  onAddExerciseToActive: async (id: string) => {
+    set({ loadingGlobal: true });
+
+    try {
+      const exercise = await addExerciseToActive(id);
+      const dataVeesActive = get().dataVeesActive;
+
+      if (!dataVeesActive || !exercise) {
+        return openMessage(DEFAULT_ERROR);
+      }
+
+      openMessage({
+        content: 'Успешно добавлено!',
+        description: `${exercise.name}`,
+      });
+
+      set({
+        dataVeesActive: {
+          ...dataVeesActive,
+          exercises: [...dataVeesActive.exercises, exercise],
+        },
+      });
+    } catch (error) {
+      handleError({ error });
+    } finally {
+      set({ loadingGlobal: false });
     }
   },
 }));

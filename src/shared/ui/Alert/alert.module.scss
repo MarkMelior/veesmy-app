@@ -21,9 +21,16 @@
   border-radius: 50%;
 }
 
-.close {
+.rightAction {
+  max-width: fit-content;
   margin-left: auto;
-  padding: 12px !important;
+}
+
+.button {
+  min-width: 38px;
+  max-width: 38px;
+  min-height: 38px;
+  max-height: 38px;
 }
 
 @mixin variant($color) {
@@ -37,7 +44,7 @@
     box-shadow: inset 0 0 3px 0 theme('colors.#{$color}.400 / 50%');
   }
 
-  .close:hover {
+  .button:hover {
     background: theme('colors.#{$color}.600 / 20%');
   }
 }

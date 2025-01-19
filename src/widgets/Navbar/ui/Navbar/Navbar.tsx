@@ -3,8 +3,9 @@
 import { clsx } from 'clsx';
 import { usePathname } from 'next/navigation';
 
-import { AppRoutes } from '@/shared/constants';
+import { AppRoutes, NOT_IMPLEMENTED } from '@/shared/constants';
 import { AddOutlineIcon, SettingsOutlineIcon, VeesIcon } from '@/shared/icons';
+import { openMessage } from '@/shared/lib/open-message';
 import type { TLinkOrClick } from '@/shared/types';
 import { Background, Button, Flex, Layout } from '@/shared/ui';
 
@@ -28,7 +29,7 @@ const navbarItems: TNavbarItems[] = [
   },
   {
     icon: <AddOutlineIcon height={28} width={28} />,
-    onClick: () => { /* void */ },
+    onClick: () => openMessage(NOT_IMPLEMENTED),
     title: 'Добавить',
   },
   {

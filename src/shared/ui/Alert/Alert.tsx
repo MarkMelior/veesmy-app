@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
-import { CrossIcon, ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from '@/shared/icons';
+import { CopyIcon, CrossIcon, ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from '@/shared/icons';
+import { copyToClipboard } from '@/shared/lib/copy-to-clipboard';
 
 import { Background } from '../Background';
 import { Button } from '../Button';
@@ -29,6 +30,7 @@ export interface IAlert {
   closable?: boolean
   content: string
   description?: string
+  isCopy?: boolean
   onClose?: () => void
   type?: 'success' | 'info' | 'warning' | 'error' | 'base'
 }
@@ -38,6 +40,7 @@ export const Alert = ({
   closable = true,
   content,
   description,
+  isCopy,
   onClose,
   type = 'success',
 }: IAlert) => (
@@ -54,15 +57,27 @@ export const Alert = ({
         {description && <Text as="p" size="text-sm">{description}</Text>}
       </div>
     </Flex>
-    {closable ? (
-      <Button
-        className={styles.close}
-        iconOnly={true}
-        onClick={onClose}
-        variant="none"
-      >
-        <CrossIcon />
-      </Button>
-    ) : null}
+    <Flex className={styles.rightAction} gap={4}>
+      {isCopy ? (
+        <Button
+          className={styles.button}
+          iconOnly={true}
+          onClick={() => copyToClipboard(`${content} ${description}`)}
+          variant="none"
+        >
+          <CopyIcon height={22} width={22} />
+        </Button>
+      ) : null}
+      {closable ? (
+        <Button
+          className={styles.button}
+          iconOnly={true}
+          onClick={onClose}
+          variant="none"
+        >
+          <CrossIcon />
+        </Button>
+      ) : null}
+    </Flex>
   </Background>
 );
